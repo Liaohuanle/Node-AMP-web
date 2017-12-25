@@ -1,5 +1,10 @@
 
   <body>
     <% include ./component/nav/nav %>
-    <%- include('./component/banner/banner', { countDown}) %>
+    <div class='main'>
+      <div class='main-container'>
+        <%- include('./component/banner/banner', { countDown}) %>
+        <%- include('./component/about/about', { countDown}) %>
+      </div>
+    </div>
   </body>
