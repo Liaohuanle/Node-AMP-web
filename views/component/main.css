@@ -1,4 +1,40 @@
+html{
+  font-family:sans-serif;
+  line-height:1.15;
+  -ms-text-size-adjust:100%;
+  -webkit-text-size-adjust:100%;
+  font-size: 12px;
+}
+body{
+  margin:0;
+  overflow-x: hidden;
 
+}
+article,
+aside,
+footer,
+header,
+nav,
+section{
+  display:block
+}
+h1{
+  font-size:2em;
+  margin:.67em 0
+}
+hr{
+  box-sizing:content-box;
+  height:0;
+  overflow:visible
+}
+pre{
+  font-family:monospace,monospace;
+  font-size:1em
+}
+a{ 
+  background-color:transparent;
+  -webkit-text-decoration-skip:objects
+}
 @media(min-height: 28.75rem){
   .main{
     height:100vh;
@@ -17,4 +53,7 @@
 .main-container{
   height: auto;
   position: relative;
+}
+.page-height{
+  min-height: 60vh;
 }

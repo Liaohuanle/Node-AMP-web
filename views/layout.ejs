@@ -1,5 +1,7 @@
 <!doctype html>
-<html amp lang='en'>
+
+<html>
   <% include ./header %>
-  <%- include('./body', { countDown }); %>
+  <%- include('./body', { winners, videoid, setIntervalTimeNode, aboutTagList }) %>
+  <% include ./run %>
 </html>

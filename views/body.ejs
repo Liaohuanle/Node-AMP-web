@@ -3,8 +3,12 @@
     <% include ./component/nav/nav %>
     <div class='main'>
       <div class='main-container'>
-        <%- include('./component/banner/banner', { countDown}) %>
-        <%- include('./component/about/about', { countDown}) %>
+        <%- include('./component/banner/banner', { setIntervalTimeNode }) %>
+        <%- include('./component/about/about', { aboutTagList }) %>
+        <%- include('./component/winners/winners', { winners }) %>
+        <%- include('./component/video/video', { videoid }) %>
+        <%- include('./component/youcanmeet/youcanmeet') %>
+        <%- include('./component/partners/partners') %>
       </div>
     </div>
   </body>

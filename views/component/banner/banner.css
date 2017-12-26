@@ -18,9 +18,15 @@
 }
 .banner-content{
   width: 100%;
-  height: 100%;
   z-index: 100;
-  padding: 7rem 8rem;
+  padding: 7rem 0rem;
+  -webkit-animation: h 2s .4s ease-out both;
+  animation: h 2s .4s ease-out both
+}
+.banner-image{
+  display: block;
+  margin: 2rem auto;
+  max-width: 100%;
 }
 .banner-mask{
   position: fixed;
@@ -28,8 +34,74 @@
   top: 0px;
   z-index: -1;
 }
-
-@media(min-height: 28.75rem){
+.banner-mask video{
+  width: 100%;
+}
+.countDown{
+  max-width: 960px;
+  margin: 2rem auto;
+  text-align: center;
+}
+.countDown ul {
+  display: block;
+}
+.countDown li {
+  list-style: none;
+  box-sizing: border-box;
+  min-width: 158px;
+  display: inline-block;
+  padding: 3rem;
+  font-size: 1.5rem;
+  color: #fff;
+  border-radius: 1rem;
+  background: transparent;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  overflow: hidden;
+  text-align: center;
+  margin-right: 1rem;
+}
+.countDown li::before{
+  content: '';
+  background: #fff;
+  filter: blur(2px);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  opacity: .2;
+  width: 100%;
+}
+.countDown li span{
+  font-size: 6rem;
+  display: block;
+}
+@media(max-width: 1816px){
+  .banner-image{
+    max-width: 50%;
+    margin-top: 6rem;
+  }
+  .banner-content{
+    padding: 1rem 0;
+  }
+  .countDown li{
+    padding: 2rem;
+  }
+  .countDown li span{
+    font-size: 5rem;
+  }
+}
+@media(max-width: 1512px){
+  .banner-image{
+    max-width: 55%;
+    margin-top: 4rem;
+  }
+  .banner-mask video{
+    width: 130%;
+  }
+}
+@media(max-height: 812px){
   .banner-content{
     padding: 0rem;
   }
