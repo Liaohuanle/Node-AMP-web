@@ -1,12 +1,11 @@
 <section id='winner'>
-  <div class='winner-container page-height'>
+  <div class='winner-container'>
     <h1> WINNERS </h1>
     <div class='winner-tag-cotainer'>
       <div class="ampTabContainer">
         <% for(var i in  winners) { %>
             <button
-              on="tap:AMP.setState({ foo: 'cat' })"
-              class="tabButton winner-tag"
+              class="tabButton winner-tag <%= i == '#15sVinesAudition' ? 'active' : ''%>"
             >
               <%= i %>
             </button>
@@ -14,6 +13,15 @@
           }
         %>
       </div>
+    </div>
+    <div class="nameList">
+      <% for(var i =0; i < winnerNameList.length; i++) { %>
+          <span>
+            @<%= winnerNameList[i] %>
+          </span>
+      <%
+        }
+      %>
     </div>
   </div>
 </section>

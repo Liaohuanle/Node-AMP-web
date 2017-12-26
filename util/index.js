@@ -34,7 +34,30 @@ module.exports =  {
     '#CreativeDuetAudition ': [1,2,3,5],
     '#SexyMomentAudition': [1,2,3,2,5],
   },
+  winnerNameList: [ 'liaohuanle', 'nic', 'hhah', 'liaohuanle', 'nic', 'hhah','liaohuanle', 'nic', 'hhah' ],
   aboutTagList: ['ShareAndWin ', 'Category', 'Prize', 'Rules', 'musical.ly Fest'],
-  videoid: 'lBTCB7yLs8Y',
-  setIntervalTimeNode: `${countDown()}`
+  videoid: 'ftfJRzW',
+  setIntervalTimeNode: `${countDown()}`,
+  meetUserList: [
+    {
+      icon: '../../../assets/person icon.png',
+      title: 'Mysterious surprise'
+    },
+    {
+      icon: '../../../assets/person icon.png',
+      title: 'Mysterious surprise'
+    },
+    {
+      icon: '../../../assets/person icon.png',
+      title: 'Mysterious surprise'
+    },
+    {
+      icon: '../../../assets/person icon.png',
+      title: 'Mysterious surprise'
+    },
+    {
+      icon: '../../../assets/person icon.png',
+      title: 'Mysterious surprise'
+    },
+  ]
 }

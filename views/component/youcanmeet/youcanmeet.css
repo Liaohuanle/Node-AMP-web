@@ -1,0 +1,18 @@
+.slider-meet .tab-item img{
+  max-width: 230px;
+  display: block;
+  margin: 0px auto;
+}
+.slider-meet .tab-item span{
+  font-size: 1.7rem;
+  display: block;
+  text-align: center;
+}
+.slider-meet{
+  margin-top: 5rem;
+}
+@media (max-width:1282px) {
+  .slider-meet .tab-item img{
+    max-width: 200px;
+  }
+}

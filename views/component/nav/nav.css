@@ -17,11 +17,6 @@
   display: block;
   float: right;
 }
-.list-reset{
-  margin: 0px auto;
-  display: block;
-  max-width: 960px;
-}
 .ampstart-nav-item a{
   color: #fff;
 }
@@ -97,7 +92,7 @@
 }
 
 
-.lune-underline-strike:before {
+.lune-underline-strike:before{
   position: absolute;
   bottom: calc(.5em - 4px);
   left: 0;

@@ -1,4 +1,4 @@
-<section id='About' class='about-container page-height'>
+<section id='about' class='about-container top-margin-move'>
   <div class='title-container'>
     <h1>  ABOUT </h1>
     <p>1 Million Audition x musical.ly Fest</p>
@@ -6,10 +6,22 @@
   <div class='tab-container'>
     <ul>
       <% for(var i =0; i < aboutTagList.length; i++) { %>
-        <li>#<%= aboutTagList[i] %></li>
+        <li class="<%= i == 1 ? 'active' : null %>">#<%= aboutTagList[i] %></li>
       <%
         }
       %>
     </ul>
+    <div class='slider'>
+      <div class='tab-item'>
+        <div class='tab-item-img-container'>
+          <img src='../../../assets/phone.png'/>
+        </div>
+      </div>
+      <div><h3>2</h3></div>
+      <div><h3>3</h3></div>
+      <div><h3>4</h3></div>
+      <div><h3>5</h3></div>
+      <div><h3>6</h3></div>
+    </div>
   </div>
 </section>

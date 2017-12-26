@@ -1,5 +1,17 @@
 <section id='youcanmeet'>
-  <div class='title-container page-height meet-container'>
+  <div class='title-container meet-container'>
     <h1> YOU CAN MEET </h1>
+    <div class='tab-container'>
+      <div class='slider-meet'>
+        <% for(var i=0; i < meetUserList.length; i ++) { %>
+          <div class='tab-item'>
+            <img src="<%= meetUserList[i].icon %>" />
+            <span><%= meetUserList[i].title %></span>
+          </div>
+        <%
+          }
+        %>
+      </div>
+    </div>
   </div>
 </section>

@@ -57,3 +57,45 @@ a{
 .page-height{
   min-height: 60vh;
 }
+.top-margin-move{
+  margin-top: -20px;
+}
+.top-margin-move-lg{
+  margin-top: -40px;
+}
+
+.title-container,
+.winner-container,
+.partner-container,
+.meet-container,
+.banner-content{
+  padding-top: 7rem;
+}
+.title-container h1,
+.winner-container h1,
+.banner-content h1,
+.partner-container h1{
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 4.3rem;
+	font-weight: bold;
+	letter-spacing: 0.2px;
+	color: #ffffff;
+}
+.winner-container,
+.meet-container{
+  min-height: 680px;
+}
+
+.tab-container,
+.countDown,
+.list-reset,
+.partner-content,
+.winner-tag-cotainer,
+.nameList,
+.termofuse-container
+{
+  display: block;
+  max-width: 960px;
+  margin: 0rem auto;
+}

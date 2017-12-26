@@ -1,7 +1,3 @@
-.ampTabContainer {
-  display: flex;
-  flex-wrap: wrap;
-}
 
 .tabButton[selected] {
   outline: none;
@@ -45,17 +41,8 @@
 	background-image: linear-gradient(55deg, #e02f53, #ff386d 49%, #ff386e 49%, #ff22a7);
 }
 .title-container{
-  padding-top: 7rem;
   color: #fff;
   padding-bottom: 1rem;
-}
-.partner-content h1,.title-container h1, .winner-container h1, .banner-content h1{
-  text-align: center;
-  margin-bottom: 1rem;
-  font-size: 4.3rem;
-	font-weight: bold;
-	letter-spacing: 0.2px;
-	color: #ffffff;
 }
 .title-container p{
   text-align: center;
@@ -66,12 +53,9 @@
   font-weight: 300;
 	color: #ffffff;
 }
-.tab-container{
-  max-width: 960px;
-  margin: 0rem auto;
-}
 .tab-container ul{
   text-align: center;
+  position: relative;
 }
 .tab-container li{
   list-style: none;
@@ -84,4 +68,31 @@
 }
 .tab-container li.active{
   font-weight: 500;
+}
+.tab-container li.active::before{
+  position: absolute;
+  bottom: calc(.5em - 4px);
+  left: 0;
+  right: 0;
+  height: .1em;
+  min-height: 2px;
+  content: "";
+  background: currentColor;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: left;
+  transform-origin: left;
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease,-webkit-transform .3s ease;
+  color: #fff;
+}
+.tab-item{
+  width: 100%;
+}
+.tab-item-img-container{
+  width: 45%;
+  padding: 0 2rem; 
+  display: inline-block;
 }

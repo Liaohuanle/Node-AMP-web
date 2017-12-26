@@ -1,15 +1,13 @@
 .winner-container{
-  background: url('../../../assets/winner bg@2x.png') no-repeat;  
+  background: url('../../../assets/winner-bg@2x.jpg') no-repeat;  
   background-attachment: fixed;
 }
 .winner-container, .meet-container{
   background-size: 100%;
   width: 100%;
-  min-height: 680px;
-  padding-top: 7rem;
 }
 .meet-container{
-  background: url('../../../assets/you can meet bg@2x.png') no-repeat;    
+  background: url('../../../assets/you-can-meet-bg@2x.png') no-repeat;    
 }
 @media (max-width:1482px) {
   .winner-container, .meet-container{
@@ -27,16 +25,38 @@
   }
 }
 .winner-tag{
-  padding: 3px 5px;
+  padding: 6px 1.3rem;
   border-image-slice: 1;
-  border-radius: 8px;
-  border-image-source: linear-gradient(to bottom, #e23054, #ff24a3);
+  border-radius: 15px;
   background-color: rgba(131, 131, 131, 0.36);
   color: #fff;
   border: 1px solid #ff24a3;
   font-size: 16px;
-  margin-right: 8px;
+  margin-right: 1.5rem;
+  cursor: pointer;
+  margin-top: 1rem;
 }
-.winner-tag-cotainer{
+.winner-tag.active{
+  background: linear-gradient(to bottom, #e23054, #ff24a3);
+}
+.winner-tag-cotainer, .nameList{
   margin: 10px auto;
+}
+.ampTabContainer {
+  text-align: center;
+}
+.nameList{
+  margin-top: 3rem;
+}
+.nameList span{
+  padding: 5px 8px;
+  text-align: left;
+  width: 140px;
+  margin-top: 1rem;
+  text-overflow: ellipsis;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  color: #fff;
 }
