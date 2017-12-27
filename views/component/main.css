@@ -1,5 +1,28 @@
+@font-face {
+  font-family: 'musical-ly';
+  src: url('../../assets/font/AvenirNextLTPro-Regular.eot');
+  src: url('../../assets/font/AvenirNextLTPro-Regular.woff2') format('woff2'),
+       url('../../assets/font/AvenirNextLTPro-Regular.woff') format('woff'),
+       url('../../assets/font/AvenirNextLTPro-Regular.ttf') format('truetype'),
+       url('../../assets/font/AvenirNextLTPro-Regular.svg#AvenirNextLTPro-Regular') format('svg'),
+       url('../../assets/font/AvenirNextLTPro-Regular.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'din';
+  src: url('../../assets/font/DINPro-CondensedBold.eot');
+  src: url('../../assets/font/DINPro-CondensedBold.eot?#iefix') format('embedded-opentype'),
+      url('../../assets/font/DINPro-CondensedBold.woff2') format('woff2'),
+      url('../../assets/font/DINPro-CondensedBold.woff') format('woff'),
+      url('../../assets/font/DINPro-CondensedBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 html{
-  font-family:sans-serif;
+  font-family: musical-ly, sans-serif;
   line-height:1.15;
   -ms-text-size-adjust:100%;
   -webkit-text-size-adjust:100%;
@@ -39,7 +62,6 @@ a{
   .main{
     height:100vh;
     min-height:28.75rem;
-    pointer-events:none;
   }
   .main-container{
     height: calc(2 * 100vh);
@@ -71,6 +93,7 @@ a{
 .banner-content{
   padding-top: 7rem;
 }
+.tab-item h1,
 .title-container h1,
 .winner-container h1,
 .banner-content h1,
@@ -82,12 +105,14 @@ a{
 	letter-spacing: 0.2px;
 	color: #ffffff;
 }
+
 .winner-container,
 .meet-container{
   min-height: 680px;
 }
 
 .tab-container,
+.slider-tab-container,
 .countDown,
 .list-reset,
 .partner-content,
@@ -98,4 +123,86 @@ a{
   display: block;
   max-width: 960px;
   margin: 0rem auto;
+}
+
+.m-t-lg{
+  margin-top: 5rem !important;
+}
+
+.m-t-sm{
+  margin-top: 1rem;
+}
+
+.m-r-md{
+  margin-right: 2rem;
+}
+
+
+.float-right{
+  float: right;
+}
+
+.float-left{
+  float: left;
+}
+
+.width-84{
+  width: 84%;
+}
+
+.width-100{
+  width: 100%;
+}
+
+.img-160{
+  max-width: 160px;
+}
+
+.img-210{
+  max-width: 210px;
+}
+
+.min-height-195{
+  min-height: 195px;
+}
+
+.line-height-55{
+  line-height: 55px;
+}
+
+.line-height-39{
+  line-height: 39px;
+}
+
+@media(max-height: 812px){
+  .title-container{
+    padding-top: 3rem;
+  }
+  .winner-container,
+  .about-container,
+  .partner-container,
+  .meet-container,
+  .banner-content{
+    min-height: 100vh;
+  }
+
+  .title-container h1,
+  .winner-container h1,
+  .banner-content h1,
+  .partner-container h1{
+    font-size: 3.3rem;
+  }
+}
+
+@media(max-height: 667px){
+  .title-container{
+    padding-top: 1.5rem;
+  }
+  .tab-item h1,
+  .title-container h1,
+  .winner-container h1,
+  .banner-content h1,
+  .partner-container h1{
+    font-size: 2.7rem;
+  }
 }

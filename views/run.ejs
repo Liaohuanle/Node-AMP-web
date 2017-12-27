@@ -1,11 +1,10 @@
 
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
-<script src="https://cdn.plyr.io/2.0.18/plyr.js"></script>
 <script>
   const timeNode = <%- setIntervalTimeNode %>
   const restTime = timeNode.restTime
-  window.onload = function(){
+  $(function(){
     initTime(...restTime)
     let sec = restTime[3]
     let min = restTime[2]
@@ -30,25 +29,38 @@
       }
       initTime(day, hour, min, sec)
     }, 1000)
-  }
-
-  $(function(){
     $(".slider").slick({
+      infinite: true,
       dots: false,
-      speed: 500
+      slidesToShow: 1,
+      autoplaySpeed: 2000,
+      slidesToScroll: 1,
+      pauseOnDotsHover: true,
+      appendArrows: false,
+      cssEase: 'linear',
+      mobileFirst: true,
+      initialSlide: 4
     })
-    $(".slider-meet").slick({
+    $("#slick-meet").slick({
+      pauseOnHover: true,
+      pauseOnFocus: true,
+      autoplay: true,
+      infinite: true,
       dots: true,
-      speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 3,
+      slidesToShow: window.outerHeight <= 812 ? 1 : 3,
+      autoplaySpeed: 2000,
+      slidesToScroll: window.outerHeight <= 812 ? 1 : 3,
+      pauseOnDotsHover: true,
+      appendArrows: false,
+      mobileFirst: true
     })
-    plyr.setup($('#muscial_ly_you_tube'), {
-      enabled: true,
-      autoplay: true
+    setTimeout(function(){
+      $('.banner-image').addClass('banner-image-show')
+    }, 800)
+    $('.subItem').click(function(){
+      $(".slider").slick('slickGoTo', $(this).index())
     })
   })
-
   function initTime(day, hour, min, sec){
     $('.days span').html(day < 10 ? `0${day}`: day)
     $('.hours span').html(hour < 10 ? `0${hour}`: hour)

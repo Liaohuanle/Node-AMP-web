@@ -3,19 +3,19 @@
     <img src='../../../assets/title(banner).png' class='banner-image'/>
     <div class='countDown'>
       <ul>
-        <li class='days'>
+        <li class='days countDownItem'>
           <span> 00 </span>
           days
         </li>
-        <li class='hours'>
+        <li class='hours countDownItem'>
           <span> 00 </span>
           hours
         </li>
-        <li class='minutes'>
+        <li class='minutes countDownItem'>
           <span> 00 </span>
           minutes
         </li>
-        <li class='seconds'>
+        <li class='seconds countDownItem'>
           <span> 00 </span>
           seconds
         </li>
@@ -25,8 +25,7 @@
 </section>
 <section class="m0 banner-mask">
   <video
-    autoplay
-    src="../../../assets/india_banner.mp4"
+    autoplay= "autoplay"
     poster="../../../assets/poster.jpeg"
     title="Big Buck Bunny"
     album="Blender"
@@ -34,5 +33,7 @@
     layout="responsive"
     loop
   >
+    <source type="video/mp4" src="../../../assets/india_banner.mp4"></source>
+    <source type="video/ogg" src="../../../assets/india_banner.ogg"></source>
   </video>
 </section>

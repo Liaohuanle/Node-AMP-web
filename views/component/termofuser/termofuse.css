@@ -1,17 +1,19 @@
-.termofuse{
+#termofuse{
   width: 100%;
   background: #000;
-  color: #fff;
-  padding: 3rem 0;
 }
-.termofuse h3{
+.termofuse-container {
+  color: #fff;
+  padding: 3rem;
+}
+.termofuse-container  h3{
   font-size: 1.8rem;
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
   font-weight: 400;
 }
-.termofuse p{
+.termofuse-container  p{
   font-size: 1.4rem;
   text-align: center;
 }
