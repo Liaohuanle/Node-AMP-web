@@ -4,7 +4,7 @@ MAINTAINER Yan Yin <yan.yin@musical.ly>
 ENV LD_LIBRARY_PATH=
 
 RUN mkdir -p /app/node-h5
-COPY dist /app/node-h5/
+COPY * /app/node-h5/
 
 COPY package*.json ./
 
