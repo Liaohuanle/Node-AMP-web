@@ -17,4 +17,4 @@ RUN cp -a /app/node-h5/site.nginx.conf /etc/nginx/conf.d/ \
 WORKDIR /app/node-h5/
 EXPOSE 3000
 
-CMD  ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf", "npm" , "index.js"]
+CMD  ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]
