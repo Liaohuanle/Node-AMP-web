@@ -87,7 +87,8 @@
 }
 @media(min-width: 1910px){
   .banner-mask video{
-    width: 100%;
+    width: 120%;
+    height: initial !important;
   }
 }
 @media(max-width: 1816px){
