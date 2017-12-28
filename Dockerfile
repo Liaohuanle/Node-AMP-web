@@ -4,7 +4,7 @@ MAINTAINER Yan Yin <yan.yin@musical.ly>
 ENV LD_LIBRARY_PATH=
 
 RUN mkdir -p /app/node-h5/
-COPY / /app/node-h5/
+COPY * /app/node-h5/
 
 RUN npm install
 
