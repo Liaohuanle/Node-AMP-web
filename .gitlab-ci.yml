@@ -19,13 +19,3 @@ build_master:
     - master
   tags:
     - maven
-
-build_branches:
-  stage: build
-  when: manual
-  script:
-    - ./deploy_to_registry.sh
-  except:
-    - master
-  tags:
-    - maven
