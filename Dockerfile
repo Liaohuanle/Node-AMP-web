@@ -19,4 +19,4 @@ RUN cp -a /app/mus-cloud/site.nginx.conf /etc/nginx/conf.d/ \
 WORKDIR /app/node-h5/
 EXPOSE 3000
 
-CMD  ["npm", "index.js"]
+CMD  ["npm index.js"]
