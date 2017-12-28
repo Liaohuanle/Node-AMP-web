@@ -1,6 +1,6 @@
 #!/bin/bash
 
-service= node-h5
+service=node-h5
 
 function build_image_for_nodejs()
 {
