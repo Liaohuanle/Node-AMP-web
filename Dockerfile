@@ -6,8 +6,6 @@ ENV LD_LIBRARY_PATH=
 RUN mkdir -p /app/node-h5
 COPY /src /app/node-h5/
 
-COPY src/package*.json ./
-
 RUN npm install
 
 COPY program.supervisord.conf /etc/supervisor/conf.d/program.supervisord.conf
