@@ -1,5 +1,5 @@
 .winner-container{
-  background: url('../../../assets/winner-bg@2x.jpg') no-repeat;  
+  background: url('/winner-bg@2x.jpg') no-repeat;  
   background-attachment: fixed;
 }
 .winner-container{

@@ -40,23 +40,23 @@ module.exports =  {
   setIntervalTimeNode: `${countDown()}`,
   meetUserList: [
     {
-      icon: '../../../assets/person icon.png',
+      icon: 'person_icon.png',
       title: 'Mysterious surprise'
     },
     {
-      icon: '../../../assets/person icon.png',
+      icon: 'person_icon.png',
       title: 'Mysterious surprise'
     },
     {
-      icon: '../../../assets/person icon.png',
+      icon: 'person_icon.png',
       title: 'Mysterious surprise'
     },
     {
-      icon: '../../../assets/person icon.png',
+      icon: 'person_icon.png',
       title: 'Mysterious surprise'
     },
     {
-      icon: '../../../assets/person icon.png',
+      icon: 'person_icon.png',
       title: 'Mysterious surprise'
     },
   ]

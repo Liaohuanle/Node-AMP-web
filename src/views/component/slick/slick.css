@@ -8,8 +8,8 @@
     font-family: 'slick';
     font-weight: normal;
     font-style: normal;
-    src: url('../../../assets/font/slick.eot');
-    src: url('../../../assets/font/slick.eot?#iefix') format('embedded-opentype'), url('../../../assets/font/slick.woff') format('woff'), url('../../../assets/font/slick.ttf') format('truetype');
+    src: url('/font/slick.eot');
+    src: url('/font/slick.eot?#iefix') format('embedded-opentype'), url('/font/slick.woff') format('woff'), url('/font/slick.ttf') format('truetype');
 }
 /* Arrows */
 .slick-prev,
