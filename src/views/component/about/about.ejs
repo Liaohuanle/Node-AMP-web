@@ -1,0 +1,107 @@
+<section id='about' class='about-container'>
+  <div class='title-container'>
+    <h1>  ABOUT </h1>
+    <p>1 Million Audition x musical.ly Fest</p>
+  </div>
+  <div class='tab-container'>
+    <ul>
+      <% for(var i =0; i < aboutTagList.length; i++) { %>
+        <li class="<%= i == 1 ? 'active' : null %> subItem tab-item-text">#<%= aboutTagList[i] %></li>
+      <%
+        }
+      %>
+    </ul>
+    <div class='slider'>
+      <div class='tab-item'>
+        <div class='tab-item-img-container float-left'>
+          <img src='<%- dir %>/phone.png'/>
+        </div>
+        <div class='tab-item-img-container float-right'>
+          <img src='<%- dir %>/about_tab_1.png' class='float-right m-t-lg width-84'/>
+        </div>
+      </div>
+      <div class='tab-item'>
+        <h1>CATEGORIES</h1>
+        <div class='tab-item-img-container m-t-lg'>
+          <img src='<%- dir %>/about_tab_2_1.png' class='img-160 m-t-sm'/>
+          <img src='<%- dir %>/about_tab_2_2.png' class='img-160 m-t-sm'/>
+          <img src='<%- dir %>/about_tab_2_3.png' class='img-160 m-t-sm'/>
+          <img src='<%- dir %>/about_tab_2_4.png' class='img-160 m-t-sm'/>
+          <img src='<%- dir %>/about_tab_2_5.png' class='img-160 m-t-sm'/>
+        </div>
+      </div>
+      <div class='tab-item'>
+        <div class='tab-item-img-container width-100'>
+          <h1>PRIZE</h1>
+          <p>For Each Category:</p>
+          <div class='tab-item-img-container m-t-lg'>
+            <div class='prize-card m-r-md'>
+              <h3>Round 1</h3>
+              <img src='<%- dir %>/about_tab_3_1.png' class='img-210 m-t-sm'/>
+              <p>Merchandise kit</p>
+            </div>
+            <div class='prize-card m-r-md'>
+              <h3>Round 2</h3>
+              <img src='<%- dir %>/about_tab_3_2.png' class='img-210 m-t-sm'/>
+              <p>12 million Rupee cash</p>
+            </div>
+            <div class='prize-card m-r-md'>
+              <h3>musical.ly pick</h3>
+              <img src='<%- dir %>/about_tab_3_3.png' class='img-210 m-t-sm'/>
+              <p>Crown</p>
+            </div>
+            <img src='<%- dir %>/about_tab_3_$.png' class='img-210 m-t-sm'/>
+          </div>
+        </div>
+      </div>
+      <div class='tab-item'>
+        <p> 
+          Winner selection based on creator score,
+          will announce the score after the end of each round.
+        </p>
+        <div class='round-container'>
+          <div class='round-card'>
+              <h2 class='line-height-55'>ROUND 01</h2>
+              <p class='line-height-39'>Pick 1000+ from all participants</p>
+            </div>
+            <div class='round-card'>
+              <h2 class='line-height-55'>ROUND 02</h2>
+              <p class='line-height-39'>Pick Top 200 from 1000+ R1 winners</p>
+            </div>
+            <div class='round-card'>
+              <h2>Final Announcement</h2>
+              <p>200 people will share 12 Million Indian Rupee Cash</p>
+          </div>
+        </div>
+        <p> 
+          Also, Winners will be invited to musical.ly Fest
+        </p>
+        <p class='m-t-lg'> 
+          <a href='#'> Click for more details</a>
+        </p>
+      </div>
+      <div class='tab-item'>
+        <div class='countDown'>
+        <ul>
+          <li class='days countDownItem'>
+            <span> 00 </span>
+            days
+          </li>
+          <li class='hours countDownItem'>
+            <span> 00 </span>
+            hours
+          </li>
+          <li class='minutes countDownItem'>
+            <span> 00 </span>
+            minutes
+          </li>
+          <li class='seconds countDownItem'>
+            <span> 00 </span>
+            seconds
+          </li>
+        </ul>
+    </div>
+      </div>
+    </div>
+  </div>
+</section>

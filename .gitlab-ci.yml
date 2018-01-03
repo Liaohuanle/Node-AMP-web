@@ -1,0 +1,21 @@
+---
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+stages:
+  - build
+
+build:
+  stage: build
+  when:  manual
+  script:
+    -  ./build.sh && ./deploy_to_registry.sh
+
+build_master:
+  stage: build
+  script:
+    - ./deploy_to_registry.sh
+  only: 
+    - master
+  tags:
+    - maven
