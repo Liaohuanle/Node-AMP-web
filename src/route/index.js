@@ -1,4 +1,5 @@
 const {
+  dir,
   winners,
   winnerNameList,
   meetUserList,
@@ -14,7 +15,8 @@ module.exports = (app) => {
       setIntervalTimeNode,
       aboutTagList,
       winnerNameList,
-      meetUserList
+      meetUserList,
+      dir: dir
     })
   })
 }

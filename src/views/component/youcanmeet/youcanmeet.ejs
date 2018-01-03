@@ -5,7 +5,7 @@
       <div class='slider-meet' id='slick-meet'>
         <% for(var i=0; i < meetUserList.length; i ++) { %>
           <div class='slider-tab-item'>
-            <img src="/act/assets/<%= meetUserList[i].icon %>" />
+            <img src=" <%= dir %><%= meetUserList[i].icon %>" />
             <span><%= meetUserList[i].title %></span>
           </div>
         <%

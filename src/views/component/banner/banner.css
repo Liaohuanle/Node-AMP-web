@@ -85,9 +85,15 @@
   display: block;
   font-weight: 600;
 }
-@media(min-width: 1910px){
+@media(min-width: 1800px){
   .banner-mask video{
-    width: 120%;
+    width: initial;
+    height: 100vh !important;
+  }
+}
+@media(min-width: 1200px){
+  .banner-mask video{
+    width: 110%;
     height: initial !important;
   }
 }
@@ -111,8 +117,8 @@
 }
 @media(max-width: 1512px){
   .banner-image{
-    max-width: 70%;
-    margin: 2rem auto;
+    max-width: 52%;
+    margin: 6rem auto;
   }
 }
 @media(max-height: 812px){

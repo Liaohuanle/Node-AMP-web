@@ -1,3 +1,5 @@
+const isPro = true
+const dir = isPro ? '/act/assets' : '/assets/'
 const moment = require('moment')
 
 const setIntervalTimeNode = ['2018.1.1', '2018.1.4', '2018.1.7', '2018.1.10 07:00:00']
@@ -27,6 +29,7 @@ const countDown = () => {
   return JSON.stringify(result)
 }
 module.exports =  {
+  dir,
   winners: {
     '#15sVinesAudition': [1,2,3,5],
     '#SpecialSkillsAudition ': [1,2,3,5,5],

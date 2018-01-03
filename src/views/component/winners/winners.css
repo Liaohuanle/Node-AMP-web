@@ -1,5 +1,5 @@
 .winner-container{
-  background: url('/act/assets/winner-bg@2x.jpg') no-repeat;  
+  background: url(' <%= dir %>winner-bg@2x.jpg') no-repeat;  
   background-attachment: fixed;
 }
 .winner-container{

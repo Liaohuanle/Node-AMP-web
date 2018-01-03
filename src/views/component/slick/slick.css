@@ -8,10 +8,10 @@
     font-family: 'slick';
     font-weight: normal;
     font-style: normal;
-    src: url('/act/assets/font/slick.eot');
-    src: url('/act/assets/font/slick.eot?#iefix') format('embedded-opentype'),
-        url('/act/assets/font/slick.woff') format('woff'),
-        url('/act/assets/font/slick.ttf') format('truetype');
+    src: url(' <%= dir %>font/slick.eot');
+    src: url(' <%= dir %>font/slick.eot?#iefix') format('embedded-opentype'),
+        url(' <%= dir %>font/slick.woff') format('woff'),
+        url(' <%= dir %>font/slick.ttf') format('truetype');
 }
 /* Arrows */
 .slick-prev,
