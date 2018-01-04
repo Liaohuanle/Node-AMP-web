@@ -35,14 +35,16 @@
 }
 .banner-mask{
   position: fixed;
-  width: 100%;
+  width: 100vw;
   top: 0px;
   height: 100vh;
   z-index: -1;
 }
 .banner-mask video{
-  width: initial;
-  height: 100% !important;
+  min-height: 100%;
+  min-width: 100%;
+  width: auto;
+  height: auto;
 }
 .countDown{
   margin: 2rem auto 4rem auto;
@@ -86,10 +88,6 @@
   font-weight: 600;
 }
 @media(max-width: 1816px){
-  .banner-mask video{
-    width: 110%;
-    height: initial !important;
-  }
   .banner-image{
     max-width: 42%;
     margin-top: -3rem;
@@ -127,16 +125,6 @@
   }
   .banner-mask::before{
     height: initial;
-  }
-  .banner-mask video{
-    width: initial;
-    height: 100vh !important;
-  }
-}
-@media(min-width: 1816px){
-  .banner-mask video{
-    width: initial;
-    height: 100vh !important;
   }
 }
 

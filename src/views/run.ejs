@@ -4,6 +4,8 @@
 <script>
   const timeNode = <%- setIntervalTimeNode %>
   const restTime = timeNode.restTime
+  const winWidth = $('window').width()
+  const winHeight = $('window').height()
   $(function(){
     initTime(...restTime)
     let sec = restTime[3]
