@@ -58,6 +58,9 @@ a{
   background-color:transparent;
   -webkit-text-decoration-skip:objects
 }
+ul{
+  padding: initial;
+}
 @media(min-height: 28.75rem){
   .main{
     height:100vh;
@@ -205,4 +208,14 @@ a{
   .partner-container h1{
     font-size: 2.7rem;
   }
+}
+.ad-container,
+.ad-container-single-media-element-annotations,
+.html5-video-player .ad-overlay,
+.ad-overlay{
+  display: none !important;
+}
+#media{
+  margin-bottom: -10px;
+  margin-top: -25px;
 }

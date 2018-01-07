@@ -1,15 +1,10 @@
 
   <body>
-    <% include ./component/nav/nav %>
+    <%- include('./component/nav/nav' , { langTransfor, langText }) %>
     <section class='main'>
       <div class='main-container'>
-        <%- include('./component/banner/banner', { setIntervalTimeNode }) %>
+        <%- include('./component/banner/banner', { setIntervalTimeNode, bannerImgPC, bannerImgMobile }) %>
         <%- include('./component/about/about', { aboutTagList, setIntervalTimeNode }) %>
-        <%- include('./component/winners/winners', { winners, winnerNameList }) %>
-        <%- include('./component/video/video', { videoid }) %>
-        <%- include('./component/youcanmeet/youcanmeet', { meetUserList }) %>
-        <%- include('./component/partners/partners') %>
-        <%- include('./component/termofuser/termofuse') %>
       </div>
     </section>
   </body>

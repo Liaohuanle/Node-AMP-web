@@ -1,7 +1,11 @@
-const isPro = true
 const moment = require('moment')
 
-const setIntervalTimeNode = ['2018.1.1', '2018.1.4', '2018.1.7', '2018.1.10 07:00:00']
+const setIntervalTimeNode = ['2018.1.1', '2018.1.4', '2018.1.7', '2018.1.15 00:00:00']
+
+const YTvideoinfo = {
+  url: 'https://www.youtube.com/embed/Yy8SpbrK_jc',
+  proportion: 315 / 560
+}
 
 const countDown = () => {
   let currentStep = 1
@@ -23,42 +27,71 @@ const countDown = () => {
   }) 
   const result = {
     restTime: [restD, restH, restM, restS],
-    currentStep 
+    currentStep,
   }
   return JSON.stringify(result)
 }
-module.exports =  {
-  winners: {
-    '#15sVinesAudition': [1,2,3,5],
-    '#SpecialSkillsAudition ': [1,2,3,5,5],
-    '#IndianDancerAudition': [1,2,3,5,7],
-    '#CreativeDuetAudition ': [1,2,3,5],
-    '#SexyMomentAudition': [1,2,3,2,5],
-  },
-  winnerNameList: [ 'liaohuanle', 'nic', 'hhah', 'liaohuanle', 'nic', 'hhah','liaohuanle', 'nic', 'hhah' ],
-  aboutTagList: ['ShareAndWin ', 'Category', 'Prize', 'Rules', 'musical.ly Fest'],
-  videoid: 'ftfJRzW',
-  setIntervalTimeNode: `${countDown()}`,
-  meetUserList: [
-    {
-      icon: 'person_icon.png',
-      title: 'Mysterious surprise'
-    },
-    {
-      icon: 'person_icon.png',
-      title: 'Mysterious surprise'
-    },
-    {
-      icon: 'person_icon.png',
-      title: 'Mysterious surprise'
-    },
-    {
-      icon: 'person_icon.png',
-      title: 'Mysterious surprise'
-    },
-    {
-      icon: 'person_icon.png',
-      title: 'Mysterious surprise'
-    },
-  ]
+
+const bannerImgPC = {
+  en: '/act/assets/pc-banner-title-en.png',
+  in: '/act/assets/pc-banner-title-hindi.png',
 }
+
+const bannerImgMobile = {
+  en: '/act/assets/mobile-banner-title.png',
+  in: '/act/assets/mobile-banner-title.png',
+}
+
+const langTransfor = {
+  en: '/act/India/Hindi',
+  in: '/act/India',
+}
+
+const winners = {
+  '#15sVinesAudition': [1,2,3,5],
+  '#SpecialSkillsAudition ': [1,2,3,5,5],
+  '#IndianDancerAudition': [1,2,3,5,7],
+  '#CreativeDuetAudition ': [1,2,3,5],
+  '#SexyMomentAudition': [1,2,3,2,5],
+}
+
+const winnerNameList = [ 'liaohuanle', 'nic', 'hhah', 'liaohuanle', 'nic', 'hhah','liaohuanle', 'nic', 'hhah' ]
+
+const aboutTagList = ['ShareAndWin ', 'Category', 'Prize', 'Rules', 'musical.ly Fest']
+
+const meetUserList = [
+  {
+    icon: 'person_icon.png',
+    title: 'Mysterious surprise'
+  },
+  {
+    icon: 'person_icon.png',
+    title: 'Mysterious surprise'
+  },
+  {
+    icon: 'person_icon.png',
+    title: 'Mysterious surprise'
+  },
+  {
+    icon: 'person_icon.png',
+    title: 'Mysterious surprise'
+  },
+  {
+    icon: 'person_icon.png',
+    title: 'Mysterious surprise'
+  },
+]
+
+module.exports =  (lang) => (
+  {
+    winners,
+    winnerNameList,
+    aboutTagList,
+    YTvideoinfo: JSON.stringify(YTvideoinfo),
+    setIntervalTimeNode: `${countDown()}`,
+    bannerImgPC: bannerImgPC[lang],
+    bannerImgMobile: bannerImgMobile[lang],
+    langTransfor: langTransfor[lang],
+    meetUserList
+  }
+)
