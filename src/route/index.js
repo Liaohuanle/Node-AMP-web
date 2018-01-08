@@ -23,5 +23,8 @@ module.exports = (app) => {
   }),
   app.get('/act/India/termofuse', function(req, res) {
     res.render('../views/component/termofuse-content')
+  }),
+  app.get('/act/India/rules', function(req, res) {
+    res.render('../views/component/rule')
   })
 }

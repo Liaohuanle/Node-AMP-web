@@ -15,12 +15,21 @@
     initScroll()
     transformBanner()
     initBanner()
+    initRule()
   })
 
   function initTermOfUse(){
     $('#getTermOfUse').on('click',function(){
       $.ajax({
         url: '/act/India/termofuse'
+      }).done(appendTerm)
+    })
+  }
+
+  function initRule(){
+    $('#ruleClick').on('click',function(){
+      $.ajax({
+        url: '/act/India/rules'
       }).done(appendTerm)
     })
   }
@@ -54,7 +63,7 @@
       appendArrows: false,
       cssEase: 'linear',
       mobileFirst: true,
-      initialSlide: 4
+      initialSlide: timeNode.currentStep
     })
   }
 
@@ -122,7 +131,7 @@
     window.onscroll = function(e) {
       $('.ampstart-headerbar').removeClass('theme-red-nav')
       $('.banner-mask video').attr('style', 'display: block')
-      if(window.scrollY && winWidth > 768 && window.scrollY > winHeight) {
+      if(window.scrollY && winWidth > 769 && window.scrollY > winHeight) {
         $('.ampstart-headerbar').addClass('theme-red-nav')
         $('.banner-mask video').attr('style', 'display: none')
       }

@@ -94,7 +94,7 @@ ul{
 .partner-container,
 .meet-container,
 .banner-content{
-  padding-top: 7rem;
+  padding-top: 10vh;
 }
 .tab-item h1,
 .title-container h1,
@@ -151,7 +151,7 @@ ul{
 }
 
 .width-84{
-  width: 84%;
+  width: 84% !important;
 }
 
 .width-100{
@@ -178,7 +178,11 @@ ul{
   line-height: 39px;
 }
 
-@media(max-width: 768px){
+.about-container{
+  max-height: 940px;
+}
+
+@media(max-width: 769px){
   .title-container{
     padding-top: 6vh;
   }

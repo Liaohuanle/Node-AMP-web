@@ -114,13 +114,13 @@
 .round-container{
   margin: 3rem auto;
   overflow: hidden;
+  text-align: center;
 }
 
 .round-card{
   border: 2px solid #fff;
   border-radius: 8px;
   display: inline-block;
-  float: left;
   width: 282px;
   margin-right: 1rem;
 }
@@ -148,7 +148,13 @@
   font-size: 12px;
 }
 
-@media(max-width: 768px){
+.img-vw{
+  width: 45vw !important;
+  min-width: 300px;
+  max-width: 462px;
+}
+
+@media(max-width: 769px){
   .title-container p{
     font-size: 16px;
   }
@@ -175,21 +181,6 @@
   }
   .m-t-sm{
     margin-top: 1.5vh;
-  }
-  .prize-card{
-    width: 40%;
-  }
-  .prize-card:nth-child(2n){
-    margin-right: initial;
-  }
-  .prize-card h3, .prize-card p, .prize-card img{
-    font-size: 1.2rem;
-  }
-  .prize-card h3{
-    margin-bottom: .8rem;
-  }
-  .prize-card p{
-    margin-top: .5rem;
   }
   .img-210{
     max-width: 110px;

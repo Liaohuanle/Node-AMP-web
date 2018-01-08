@@ -19,6 +19,7 @@
   cursor: pointer;
   margin-top: 2rem;
 }
+
 .winner-tag.active{
   background: linear-gradient(to bottom, #e23054, #ff24a3);
 }
@@ -61,7 +62,7 @@
     background-size: 120%;
   }
 }
-@media (max-width:768px) {
+@media (max-width:769px) {
   .winner-container{
     background-size: 240%;
   }

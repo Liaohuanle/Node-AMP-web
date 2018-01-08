@@ -1,6 +1,6 @@
 const moment = require('moment')
 
-const setIntervalTimeNode = ['2018.1.1', '2018.1.4', '2018.1.7', '2018.1.15 00:00:00']
+const setIntervalTimeNode = ['2018.1.10', '2018.1.4', '2018.1.7', '2018.1.15 00:00:00']
 
 const YTvideoinfo = {
   url: 'https://www.youtube.com/embed/Yy8SpbrK_jc',
@@ -41,7 +41,7 @@ const countDown = (lang) => {
   }
   const result = {
     restTime: [restD, restH, restM, restS],
-    currentStep,
+    currentStep: 0,
     spanText: JSON.stringify(spanText[lang])
   }
   return JSON.stringify(result)
@@ -63,16 +63,19 @@ const langTransfor = {
 }
 
 const winners = {
-  '#15sVinesAudition': [1,2,3,5],
-  '#SpecialSkillsAudition ': [1,2,3,5,5],
-  '#IndianDancerAudition': [1,2,3,5,7],
-  '#CreativeDuetAudition ': [1,2,3,5],
-  '#SexyMomentAudition': [1,2,3,2,5],
+  '#15s Vines Audition': [1,2,3,5],
+  '#Duet Audition': [1,2,3,5,5],
+  '#Special Skills Audition': [1,2,3,5,7],
+  '#Dance India Audition ': [1,2,3,5],
+  '#Sexy Moves Audition': [1,2,3,2,5],
 }
 
 const winnerNameList = [ 'liaohuanle', 'nic', 'hhah', 'liaohuanle', 'nic', 'hhah','liaohuanle', 'nic', 'hhah' ]
 
-const aboutTagList = ['ShareAndWin ', 'Category', 'Prize', 'Rules', 'musical.ly Fest']
+const aboutTagList = {
+  en: ['ShareAndWin ', 'Category', 'Prize', 'Rules', 'Celebration Party'],
+  in: ['ShareAndWin ', 'वर्ग', 'इनाम', 'नियम', 'उत्सव पार्टी']
+}
 
 const meetUserList = [
   {
@@ -116,7 +119,7 @@ module.exports =  (lang) => (
   {
     winners,
     winnerNameList,
-    aboutTagList,
+    aboutTagList: aboutTagList[lang],
     YTvideoinfo: JSON.stringify(YTvideoinfo),
     setIntervalTimeNode: `${countDown(lang)}`,
     bannerImgPC: bannerImgPC[lang],
