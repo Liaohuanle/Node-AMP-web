@@ -3,23 +3,24 @@
   <div class='banner-content'>
     <img src='<%= bannerImgPC %>' class='banner-image banner-image-pc'/>
     <img src='<%= bannerImgMobile %>' class='banner-image banner-image-mobile'/>
+    <a href='<%=langTransfor%>' class='lang-transfor-mobile'><%= langText %></a>
     <div class='countDown'>
       <ul>
         <li class='days countDownItem'>
           <span> 00 </span>
-          days
+          <%= JSON.parse(spanText).day %>
         </li>
         <li class='hours countDownItem'>
           <span> 00 </span>
-          hours
+           <%= JSON.parse(spanText).hour %>
         </li>
         <li class='minutes countDownItem'>
           <span> 00 </span>
-          minutes
+           <%= JSON.parse(spanText).minute %>
         </li>
         <li class='seconds countDownItem'>
           <span> 00 </span>
-          seconds
+           <%= JSON.parse(spanText).second %>
         </li>
       </ul>
     </div>

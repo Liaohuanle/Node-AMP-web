@@ -6,21 +6,7 @@
   background-size: 100%;
   width: 100%;
 }
-@media (max-width:1482px) {
-  .winner-container{
-    background-size: 120%;
-  }
-}
-@media (max-width:1282px) {
-  .winner-container{
-    background-size: 175%;
-  }
-}
-@media (max-width:832px) {
-  .winner-container{
-    background-size: 240%;
-  }
-}
+
 .winner-tag{
   padding: 6px 1.3rem;
   border-image-slice: 1;
@@ -64,12 +50,32 @@
   color: #fff;
 }
 
-@media(max-height: 667px){
+@media (max-width:1282px) {
+  .winner-container{
+    background-size: 175%;
+  }
+}
+
+@media (max-width:1482px) {
+  .winner-container{
+    background-size: 120%;
+  }
+}
+@media (max-width:768px) {
+  .winner-container{
+    background-size: 240%;
+  }
+  .slider-meet .slider-tab-item img{
+    max-width: 150px !important;
+  }
+  .slider-tab-item span{
+    margin-top: 2vh;
+  }
   .winner-tag{
-    padding: 6px 1.1rem;
-    border-radius: 25px;
-    font-size: 16px;
-    margin-right: 2rem;
-    margin-top: 1.5rem;
+    padding: 6px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin-right: .5rem;
+    margin-top: .5rem;
   }
 }

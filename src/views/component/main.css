@@ -111,7 +111,8 @@ ul{
 
 .winner-container,
 .meet-container{
-  min-height: 680px;
+  height: 70vh;
+  min-height: 600px;
 }
 
 .tab-container,
@@ -177,38 +178,29 @@ ul{
   line-height: 39px;
 }
 
-@media(max-height: 812px){
+@media(max-width: 768px){
   .title-container{
-    padding-top: 3rem;
+    padding-top: 6vh;
   }
   .winner-container,
   .about-container,
   .partner-container,
-  .meet-container,
   .banner-content{
-    min-height: 100vh;
+    height: 100vh;
   }
 
   .title-container h1,
   .winner-container h1,
   .banner-content h1,
-  .partner-container h1{
+  .partner-container h1,
+  .tab-item h1{
     font-size: 3.3rem;
   }
+  .img-160{
+    width: 109px;
+  }
 }
 
-@media(max-height: 667px){
-  .title-container{
-    padding-top: 1.5rem;
-  }
-  .tab-item h1,
-  .title-container h1,
-  .winner-container h1,
-  .banner-content h1,
-  .partner-container h1{
-    font-size: 2.7rem;
-  }
-}
 .ad-container,
 .ad-container-single-media-element-annotations,
 .html5-video-player .ad-overlay,
@@ -218,4 +210,7 @@ ul{
 #media{
   margin-bottom: -10px;
   margin-top: -25px;
+}
+.overflow-y-hidden{
+  overflow-y: hidden;
 }

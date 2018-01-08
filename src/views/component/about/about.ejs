@@ -1,6 +1,6 @@
-<section id='about' class='about-container'>
+<section id='about' class='about-container overflow-y-hidden'>
   <div class='title-container'>
-    <h1>  ABOUT </h1>
+    <h1>  <%= JSON.parse(titleList).about %> </h1>
     <p>1 Million Audition x musical.ly Fest</p>
   </div>
   <div class='tab-container'>
@@ -12,7 +12,7 @@
       %>
     </ul>
     <div class='slider'>
-      <div class='tab-item'>
+      <div class='tab-item mobile-layout'>
         <div class='tab-item-img-container float-left'>
           <img src='/act/assets/phone.png'/>
         </div>
@@ -23,11 +23,11 @@
       <div class='tab-item'>
         <h1>CATEGORIES</h1>
         <div class='tab-item-img-container m-t-lg'>
-          <img src='/act/assets/about_tab_2_1.png' class='img-160 m-t-sm'/>
-          <img src='/act/assets/about_tab_2_2.png' class='img-160 m-t-sm'/>
-          <img src='/act/assets/about_tab_2_3.png' class='img-160 m-t-sm'/>
-          <img src='/act/assets/about_tab_2_4.png' class='img-160 m-t-sm'/>
-          <img src='/act/assets/about_tab_2_5.png' class='img-160 m-t-sm'/>
+          <img src='/act/assets/about_tab_2_1.png' class='img-160 m-t-sm tmanual-width'/>
+          <img src='/act/assets/about_tab_2_2.png' class='img-160 m-t-sm tmanual-width'/>
+          <img src='/act/assets/about_tab_2_3.png' class='img-160 m-t-sm tmanual-width'/>
+          <img src='/act/assets/about_tab_2_4.png' class='img-160 m-t-sm tmanual-width'/>
+          <img src='/act/assets/about_tab_2_5.png' class='img-160 m-t-sm tmanual-width'/>
         </div>
       </div>
       <div class='tab-item'>
@@ -50,7 +50,9 @@
               <img src='/act/assets/about_tab_3_3.png' class='img-210 m-t-sm'/>
               <p>Crown</p>
             </div>
-            <img src='/act/assets/about_tab_3_$.png' class='img-210 m-t-sm'/>
+            <div class='prize-card m-r-md'>
+              <img src='/act/assets/about_tab_3_$.png' class='img-210 m-t-sm m-r-b'/>
+            </div>
           </div>
         </div>
       </div>
@@ -77,7 +79,7 @@
           Also, Winners will be invited to musical.ly Fest
         </p>
         <p class='m-t-lg'> 
-          <a href='#'> Click for more details</a>
+          <a href='#' class='link'> Click for more details</a>
         </p>
       </div>
       <div class='tab-item'>

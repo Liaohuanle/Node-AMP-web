@@ -3,8 +3,17 @@
     <%- include('./component/nav/nav' , { langTransfor, langText }) %>
     <section class='main'>
       <div class='main-container'>
-        <%- include('./component/banner/banner', { setIntervalTimeNode, bannerImgPC, bannerImgMobile }) %>
-        <%- include('./component/about/about', { aboutTagList, setIntervalTimeNode }) %>
+        <%- include('./component/banner/banner', {
+            spanText: JSON.parse(setIntervalTimeNode).spanText,
+            bannerImgPC,
+            bannerImgMobile,
+            langTransfor
+          }) %>
+        <%- include('./component/about/about', {
+            aboutTagList,
+            setIntervalTimeNode,
+            titleList
+          }) %>
       </div>
     </section>
   </body>

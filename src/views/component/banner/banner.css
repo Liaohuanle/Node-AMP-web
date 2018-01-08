@@ -100,14 +100,14 @@
 }
 @media(max-width: 1816px){
   .banner-image{
-    max-width: 50%;
+    max-width: 39%;
     margin-top: -3rem;
   }
   .banner-image-show{
     margin-top: 1vh;
   }
   .banner-content{
-    margin: 6vh auto;
+    margin: 1vh auto;
   }
   .countDown li{
     padding: 2rem;
@@ -139,7 +139,7 @@
   }
   .banner-image-show{
     max-width: 85%;
-    margin: 6vh auto 9vh auto
+    margin: 6vh auto 5vh auto
   }
   .banner-mask video{
     display: none;
@@ -165,6 +165,9 @@
   }
   .countDownItem span{
     font-size: 3.5rem;
+  }
+  .lang-transfor-mobile {
+    display: block;
   }
 }
 

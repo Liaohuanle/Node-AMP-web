@@ -7,7 +7,7 @@ const YTvideoinfo = {
   proportion: 315 / 560
 }
 
-const countDown = () => {
+const countDown = (lang) => {
   let currentStep = 1
   const restTime = [0, 0, 0, 0]
   const finnalTime = setIntervalTimeNode && setIntervalTimeNode[ setIntervalTimeNode.length -1 ]
@@ -25,9 +25,24 @@ const countDown = () => {
     currentStep = index + 1
    } 
   }) 
+  const spanText = {
+    en: {
+      day: 'Days',
+      hour: 'Hours',
+      minute: 'Minutes',
+      second: 'Seconds'
+    },
+    in: {
+      day: 'दिन',
+      hour: 'घंटे',
+      minute: 'मिनट',
+      second: 'सेकंड'
+    }
+  }
   const result = {
     restTime: [restD, restH, restM, restS],
     currentStep,
+    spanText: JSON.stringify(spanText[lang])
   }
   return JSON.stringify(result)
 }
@@ -39,7 +54,7 @@ const bannerImgPC = {
 
 const bannerImgMobile = {
   en: '/act/assets/mobile-banner-title.png',
-  in: '/act/assets/mobile-banner-title.png',
+  in: '/act/assets/mobile-banner-title-hindi.png',
 }
 
 const langTransfor = {
@@ -82,16 +97,32 @@ const meetUserList = [
   },
 ]
 
+const titleList = {
+  en: {
+    about: 'ABOUT',
+    youcanmeet: 'YOU CAN MEET',
+    outpartener: 'OUR PARTNERS',
+    winner: 'WINNERS'
+  },
+  in: {
+    about: 'के बारे में',
+    youcanmeet: 'तुम मिल सकते हो',
+    outpartener: 'हमारे सहयोगी',
+    winner: 'चौंका 1 विजेताओं'
+  }
+}
+
 module.exports =  (lang) => (
   {
     winners,
     winnerNameList,
     aboutTagList,
     YTvideoinfo: JSON.stringify(YTvideoinfo),
-    setIntervalTimeNode: `${countDown()}`,
+    setIntervalTimeNode: `${countDown(lang)}`,
     bannerImgPC: bannerImgPC[lang],
     bannerImgMobile: bannerImgMobile[lang],
     langTransfor: langTransfor[lang],
-    meetUserList
+    meetUserList,
+    titleList: JSON.stringify(titleList[lang])
   }
 )

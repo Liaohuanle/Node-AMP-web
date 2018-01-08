@@ -1,68 +1,27 @@
 const enOBj = require('../util/index')('en')
 const inOBj = require('../util/index')('in')
+ inOBj.langText = 'English Vision'
+ enOBj.langText = 'Hindi Vision'
 module.exports = (app) => {
   app.get('/act/India', function(req, res) {
-    const {
-      winners,
-      winnerNameList,
-      meetUserList,
-      YTvideoinfo,
-      setIntervalTimeNode,
-      aboutTagList,
-      bannerImgPC,
-      bannerImgMobile,
-      langTransfor
-    }  = enOBj
-    res.render('../views/layout', {
-      setIntervalTimeNode,
-      aboutTagList,
-      YTvideoinfo,
-      bannerImgPC,
-      langTransfor,
-      bannerImgMobile,
-      langText: 'Hindi Version'
-    })
+    enOBj.ajaxUrl = '/act/India/getRest'
+    res.render('../views/layout', enOBj)
   }),
   app.get('/act/India/getRest', function(req, res) {
-    const {
-      winners,
-      winnerNameList,
-      meetUserList,
-      YTvideoinfo,
-      setIntervalTimeNode,
-      aboutTagList,
-      bannerImgPC,
-      bannerImgMobile,
-      langTransfor
-    }  = enOBj
-    const videoUrl = JSON.parse(YTvideoinfo).url
-    res.render('../views/body-second', {
-      winners,
-      videoUrl,
-      winnerNameList,
-      meetUserList
-    })
+    const yt = enOBj.YTvideoinfo
+    enOBj.videoUrl = JSON.parse(yt).url
+    res.render('../views/body-second', enOBj)
   }),
   app.get('/act/India/Hindi', function(req, res) {
-    const {
-      winners,
-      winnerNameList,
-      meetUserList,
-      YTvideoinfo,
-      setIntervalTimeNode,
-      aboutTagList,
-      bannerImgPC,
-      bannerImgMobile,
-      langTransfor
-    }  = inOBj
-    res.render('../views/layout', {
-      setIntervalTimeNode,
-      aboutTagList,
-      YTvideoinfo,
-      bannerImgPC,
-      langTransfor,
-      bannerImgMobile,
-      langText: 'English Version'
-    })
+    inOBj.ajaxUrl = '/act/India/Hindi/getRest'
+    res.render('../views/layout', inOBj)
+  }),
+  app.get('/act/India/Hindi/getRest', function(req, res) {
+    const yt = inOBj.YTvideoinfo
+    inOBj.videoUrl = JSON.parse(yt).url
+    res.render('../views/body-second', inOBj)
+  }),
+  app.get('/act/India/termofuse', function(req, res) {
+    res.render('../views/component/termofuse-content')
   })
 }
