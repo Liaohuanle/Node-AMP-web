@@ -130,10 +130,10 @@
   function initScroll(){
     window.onscroll = function(e) {
       $('.ampstart-headerbar').removeClass('theme-red-nav')
-      $('.banner-mask video').attr('style', 'display: block')
-      if(window.scrollY && winWidth > 769 && window.scrollY > winHeight) {
-        $('.ampstart-headerbar').addClass('theme-red-nav')
-        $('.banner-mask video').attr('style', 'display: none')
+      $('.banner-mask video,.banner-mask img').attr('style', 'display: block')
+      if(window.scrollY > winHeight) {
+        window.scrollY && winWidth > 769 && $('.ampstart-headerbar').addClass('theme-red-nav')
+        $('.banner-mask video, .banner-mask img').attr('style', 'display: none')
       }
     }
   }
@@ -141,9 +141,9 @@
   function transformBanner(){
     if(justifiy.IsSafari()){
       $('.banner-mask video').remove();
-      // $('.banner-mask img')
-      // .attr('src', '/act/assets/pc-banner-bg.png')
-      // .attr('style', 'display: block');
+      $('.banner-mask img')
+      .attr('src', '/act/assets/pc-banner-bg.png')
+      .attr('style', 'display: block');
     }
   }
 
