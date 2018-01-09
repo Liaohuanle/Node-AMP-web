@@ -22,7 +22,7 @@
 #section-container.section-container-show{
   height: 92vh;
   overflow-y: scroll;
-  top: 4vh;
+  top: 63px;
   transform: translateY(0vh);
 }
 #section-container{

@@ -129,10 +129,6 @@ ul{
   margin: 0rem auto;
 }
 
-.m-t-lg{
-  margin-top: 5rem !important;
-}
-
 .m-t-sm{
   margin-top: 1rem;
 }
@@ -153,7 +149,9 @@ ul{
 .width-84{
   width: 84% !important;
 }
-
+.width-49{
+  width: 49%;
+}
 .width-100{
   width: 100%;
 }

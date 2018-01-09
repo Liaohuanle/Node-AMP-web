@@ -1,6 +1,6 @@
 
   <body>
-    <%- include('./component/nav/nav' , { langTransfor, langText }) %>
+    <%- include('./component/nav/nav' , { langTransfor, langText, navList }) %>
     <section class='main'>
       <div class='main-container'>
         <%- include('./component/banner/banner', {
@@ -10,11 +10,12 @@
             langTransfor
           }) %>
         <%- include('./component/about/about', {
-            currentStep: JSON.parse(setIntervalTimeNode).currentStep,
-            spanText: JSON.parse(setIntervalTimeNode).spanText,
+            currentStep: JSON.parse(aboutPanelTimeNode).currentStep,
+            spanText: JSON.parse(aboutPanelTimeNode).spanText,
             aboutTagList,
-            setIntervalTimeNode,
-            titleList
+            setIntervalTimeNode: aboutPanelTimeNode,
+            titleList,
+            rule
           }) %>
       </div>
     </section>

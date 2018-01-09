@@ -1,17 +1,20 @@
 const moment = require('moment')
 
-const setIntervalTimeNode = ['2018.1.10', '2018.1.4', '2018.1.7', '2018.1.15 00:00:00']
+const setIntervalTimeNode = ['2018.1.10 00:00:00', '2018.1.14 00:00:00', '2018.1.17 00:00:00', '2018.1.19 00:00:00']
 
 const YTvideoinfo = {
   url: 'https://www.youtube.com/embed/Yy8SpbrK_jc',
   proportion: 315 / 560
 }
 
-const countDown = (lang) => {
+const finnalTime = setIntervalTimeNode && setIntervalTimeNode[ setIntervalTimeNode.length -1 ]
+
+const aboutFinalTime = '2018.2.10 12:00:00'
+
+const countDown = (lang, finnalTime) => {
   let currentStep = 1
   const restTime = [0, 0, 0, 0]
-  const finnalTime = setIntervalTimeNode && setIntervalTimeNode[ setIntervalTimeNode.length -1 ]
-  const duration = moment.duration(moment(finnalTime).diff(moment.now()))
+  const duration = moment.duration(moment(finnalTime).subtract(2.5, 'hours').diff(moment.now()))
   const allTime = duration.asDays()
   const restD = Math.floor(allTime)
   const allHour = allTime % 1 * 24
@@ -63,42 +66,85 @@ const langTransfor = {
 }
 
 const winners = {
-  '#15s Vines Audition': [1,2,3,5],
-  '#Duet Audition': [1,2,3,5,5],
-  '#Special Skills Audition': [1,2,3,5,7],
-  '#Dance India Audition ': [1,2,3,5],
-  '#Sexy Moves Audition': [1,2,3,2,5],
+  '#15sVinesAudition': [1,2,3,5],
+  '#DuetAudition': [1,2,3,5,5],
+  '#SpecialSkillsAudition': [1,2,3,5,7],
+  '#DanceIndiaAudition': [1,2,3,5],
+  '#SexyMovesAudition': [1,2,3,2,5],
 }
 
 const winnerNameList = [ 'liaohuanle', 'nic', 'hhah', 'liaohuanle', 'nic', 'hhah','liaohuanle', 'nic', 'hhah' ]
 
 const aboutTagList = {
-  en: ['ShareAndWin ', 'Category', 'Prize', 'Rules', 'Celebration Party'],
-  in: ['ShareAndWin ', 'वर्ग', 'इनाम', 'नियम', 'उत्सव पार्टी']
+  en: ['#ShareAndWin ', 'Category', 'Prize', 'Rules', 'Celebration Party'],
+  in: ['#ShareAndWin ', 'वर्ग', 'इनाम', 'नियम', 'उत्सव पार्टी']
 }
 
-const meetUserList = [
-  {
-    icon: 'person_icon.png',
-    title: 'Mysterious surprise'
+const meetUserList = {
+  en: [
+    {
+      icon: 'person_icon.png',
+      title: 'Special Guest'
+    },
+    {
+      icon: 'person_icon.png',
+      title: 'Special Guest'
+    },
+    {
+      icon: 'person_icon.png',
+      title: 'Special Guest'
+    },
+    {
+      icon: 'person_icon.png',
+      title: 'Special Guest'
+    },
+    {
+      icon: 'person_icon.png',
+      title: 'Special Guest'
+    },
+  ],
+  in: [
+    {
+      icon: 'person_icon.png',
+      title: 'वशषे अ,त-थ'
+    },
+    {
+      icon: 'person_icon.png',
+      title: 'वशषे अ,त-थ'
+    },
+    {
+      icon: 'person_icon.png',
+      title: 'वशषे अ,त-थ'
+    },
+    {
+      icon: 'person_icon.png',
+      title: 'वशषे अ,त-थ'
+    },
+    {
+      icon: 'person_icon.png',
+      title: 'वशषे अ,त-थ'
+    },
+  ]
+}
+
+const navList = {
+  en: {
+    home: 'Home',
+    about: 'About',
+    winner: 'Winner',
+    media: 'Media',
+    video: 'Video',
+    youcanmeet: 'You Can Meet'
   },
-  {
-    icon: 'person_icon.png',
-    title: 'Mysterious surprise'
-  },
-  {
-    icon: 'person_icon.png',
-    title: 'Mysterious surprise'
-  },
-  {
-    icon: 'person_icon.png',
-    title: 'Mysterious surprise'
-  },
-  {
-    icon: 'person_icon.png',
-    title: 'Mysterious surprise'
-  },
-]
+  in: {
+    home: 'होम',
+    about: 'के बारे में',
+    winner: 'चौंका 1 विजेताओं',
+    media: 'मीडिया',
+    video: '1 मिलियन ऑडिशन प्रतिभा से मिलें',
+    youcanmeet: 'तुम मिल सकते हो'
+  }
+}
 
 const titleList = {
   en: {
@@ -111,7 +157,28 @@ const titleList = {
     about: 'के बारे में',
     youcanmeet: 'तुम मिल सकते हो',
     outpartener: 'हमारे सहयोगी',
-    winner: 'चौंका 1 विजेताओं'
+    winner: 'वजेताओं'
+  }
+}
+
+const rule = {
+  en: {
+    titleText: 'Winner selection is based on creator score which will be announced after the end of each round.',
+    round1: 'Round 1',
+    round1Text: 'Pick 1000 from all participants',
+    round2: 'Round 2',
+    round2Text: 'Pick Top 200 from 1000 Round 1 winners',
+    subText: 'Also, winners will be invited to musical.ly Celebration Party',
+    click: 'Click here for more details'
+  },
+  in: {
+    titleText: 'विजेता चयन निर्माता स्कोर पर आधारित होता है जो प्रत्येक दौर के अंत के बाद घोषित किया जाएगा।',
+    round1: 'राउंड 1',
+    round1Text: 'सभी प्रतिभागियों से 1000 चुनें',
+    round2: 'राउंड 2',
+    round2Text: '1000 राउंड 1 विजेताओं से टॉप 200 चुनें',
+    subText: 'इसके अलावा, विजेताओं को musical.ly Celebration Party के लिए आमंत्रित किया जाएगा',
+    click: 'अधिक जानकारी के लिए यहां क्लिक करें'
   }
 }
 
@@ -121,11 +188,14 @@ module.exports =  (lang) => (
     winnerNameList,
     aboutTagList: aboutTagList[lang],
     YTvideoinfo: JSON.stringify(YTvideoinfo),
-    setIntervalTimeNode: `${countDown(lang)}`,
+    setIntervalTimeNode: `${countDown(lang, finnalTime)}`,
+    aboutPanelTimeNode: `${countDown(lang, aboutFinalTime)}`,
     bannerImgPC: bannerImgPC[lang],
     bannerImgMobile: bannerImgMobile[lang],
     langTransfor: langTransfor[lang],
-    meetUserList,
+    meetUserList: meetUserList[lang],
+    navList: navList[lang],
+    rule: rule[lang],
     titleList: JSON.stringify(titleList[lang])
   }
 )

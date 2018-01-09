@@ -75,8 +75,9 @@
   color: #fff;
 }
 .tab-item{
-  margin-top: 5rem;
+  margin-top: 7rem;
   padding: 0 2rem;
+  text-align: center;
 }
 .tab-item-img-container{
   display: inline-block;
@@ -173,14 +174,17 @@
   .tab-item{
     margin-top: 3vh;
   }
+  .mobile-layout{
+    text-align: center;
+  }
   .mobile-layout img{
     width: 100%;
   }
-  .m-t-lg{
-    margin: 0px !important;
-  }
   .m-t-sm{
     margin-top: 1.5vh;
+  }
+  .m-t-md{
+    margin-top: 3vh;
   }
   .img-210{
     max-width: 110px;
@@ -227,5 +231,11 @@
   .title-container p, .tab-item p{
     font-size: 16px;
     font-weight: 400;
+  }
+  .width-49{
+    width: 61%;
+  }
+  .float-sm-init{
+    float: initial;
   }
 }

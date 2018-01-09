@@ -63,6 +63,7 @@
   box-sizing: border-box;
   max-width: 200px;
   width: 10vw;
+  min-width: 110px;
   display: inline-block;
   padding: 3rem;
   font-size: 1.5rem;

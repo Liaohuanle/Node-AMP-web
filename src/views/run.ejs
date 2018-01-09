@@ -3,19 +3,22 @@
 <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
 <script>
   const timeNode = <%- setIntervalTimeNode %>
+  const aboutPannelNode = <%- aboutPanelTimeNode %>
   const YTP= <%- YTvideoinfo %>
   const ajaxUrl= "<%- ajaxUrl %>"
   const restTime = timeNode.restTime
+  const aboutTime = aboutPannelNode.restTime
   const winWidth = $(window).width()
   const winHeight = $(window).height()
   $(function(){
-    initTime(...restTime)
-    countDownTime()
+    countDownTime(restTime, '#bannerPanel')
+    countDownTime(aboutTime,  '#aboutPannel')
     slideInit()
     initScroll()
     transformBanner()
     initBanner()
     initRule()
+    clickScroll()
   })
 
   function initTermOfUse(){
@@ -67,18 +70,18 @@
     })
   }
 
-  function initTime(day, hour, min, sec){
-    $('.days span').html(day < 10 ? `0${day}`: day)
-    $('.hours span').html(hour < 10 ? `0${hour}`: hour)
-    $('.minutes span').html(min < 10 ? `0${min}`: min)
-    $('.seconds span').html(sec < 10 ? `0${sec}`: sec)
+  function initTime(day, hour, min, sec, ele){
+    $(`${ele} .days span`).html(day < 10 ? `0${day}`: day)
+    $(`${ele} .hours span`).html(hour < 10 ? `0${hour}`: hour)
+    $(`${ele} .minutes span`).html(min < 10 ? `0${min}`: min)
+    $(`${ele} .seconds span`).html(sec < 10 ? `0${sec}`: sec)
   }
 
-  function countDownTime(){
-    let sec = restTime[3]
-    let min = restTime[2]
-    let hour = restTime[1]
-    let day = restTime[0]
+  function countDownTime(time, ele){
+    let sec = time[3]
+    let min = time[2]
+    let hour = time[1]
+    let day = time[0]
     setInterval(function(){
       sec--
       if( sec <= 0 ){
@@ -96,7 +99,7 @@
           }
         }
       }
-      initTime(day, hour, min, sec)
+      initTime(day, hour, min, sec, ele)
     }, 1000)
   }
 
@@ -106,7 +109,12 @@
     }).done(function(res) {
       $('.main-container').append(res)
       $('.subItem').click(function(){
-        $(".slider").slick('slickGoTo', $(this).index())
+        $(".slider")
+        .slick('slickGoTo', $(this).index())
+        $(this)
+        .addClass('active')
+        .siblings()
+        .removeClass('active')
       })
       $("#slick-meet").slick({
         pauseOnHover: true,
@@ -145,6 +153,19 @@
       .attr('src', '/act/assets/pc-banner-bg.png')
       .attr('style', 'display: block');
     }
+  }
+
+  function clickScroll(){
+    $('.ampstart-headerbar-nav li a').click(function(){
+      $('html, body')
+      .animate(
+        { scrollTop: $($(this.hash).selector).offset().top },
+        900,
+        function(){
+          $($(this.hash).selector).addClass('active').siblings().removeClass('active')
+        }
+      )
+    })
   }
 
   var justifiy = {

@@ -4,12 +4,15 @@
   <%- include('./header') %>
   <%- include('./body', {
     setIntervalTimeNode,
+    aboutPanelTimeNode,
     aboutTagList,
     bannerImgPC,
     bannerImgMobile,
     langTransfor,
     langText,
-    titleList
+    titleList,
+    navList,
+    rule
   }) %>
-  <%- include('./run',  { setIntervalTimeNode, YTvideoinfo, ajaxUrl}) %>
+  <%- include('./run',  { setIntervalTimeNode, aboutPanelTimeNode, YTvideoinfo, ajaxUrl}) %>
 </html> 

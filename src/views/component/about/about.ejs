@@ -1,23 +1,23 @@
 <section id='about' class='about-container overflow-y-hidden'>
   <div class='title-container'>
     <h1>  <%= JSON.parse(titleList).about %> </h1>
-    <p>1 Million Audition x musical.ly Fest</p>
+    <p>1 Million Audition</p>
   </div>
   <div class='tab-container'>
     <ul>
       <% for(var i =0; i < aboutTagList.length; i++) { %>
-        <li class="<%= i == currentStep ? 'active' : null %> subItem tab-item-text">#<%= aboutTagList[i] %></li>
+        <li class="<%= i == currentStep ? 'active' : null %> subItem tab-item-text"><%= aboutTagList[i] %></li>
       <%
         }
       %>
     </ul>
     <div class='slider'>
       <div class='tab-item mobile-layout'>
-        <div class='tab-item-img-container float-left'>
-          <img src='/act/assets/phone.png'/>
+        <div class='tab-item-img-container float-left width-49 float-sm-init'>
+          <img src='/act/assets/phone.png' class='width-84'/>
         </div>
-        <div class='tab-item-img-container float-right'>
-          <img src='/act/assets/about_tab_1.png' class='float-right m-t-lg width-84'/>
+        <div class='tab-item-img-container float-right width-49 float-sm-init m-t-md'>
+          <img src='/act/assets/about_tab_1.png' class='m-t-lg width-84'/>
         </div>
       </div>
       <div class='tab-item'>
@@ -33,34 +33,33 @@
       <div class='tab-item'>
         <div class='tab-item-img-container width-100'>
           <h1>PRIZE</h1>
-          <img src='/act/assets/about_tab_3_prize.png' class='img-vw'/>
+          <img src='/act/assets/about_tab_3_prize.png' class='img-vw m-t-md'/>
         </div>
       </div>
       <div class='tab-item'>
         <p> 
-          Winner selection based on creator score,
-          will announce the score after the end of each round.
+          <%= rule.titleText %>
         </p>
         <div class='round-container'>
           <div class='round-card'>
-            <h2 class='line-height-55'>ROUND 01</h2>
-            <p class='line-height-39'>Pick 1000+ from all participants</p>
+            <h2 class='line-height-55'><%= rule.round1 %></h2>
+            <p class='line-height-39'><%= rule.round1Text %></p>
           </div>
           <div class='round-card'>
-            <h2 class='line-height-55'>ROUND 02</h2>
-            <p class='line-height-39'>Pick Top 200 from 1000+ R1 winners</p>
+            <h2 class='line-height-55'><%= rule.round2 %></h2>
+            <p class='line-height-39'><%= rule.round2Text %></p>
           </div>
         </div>
         <p> 
-          Also, Winners will be invited to Celebration Party
+          <%= rule.subText %>
         </p>
         <p class='m-t-lg'> 
-          <a href='javascript:void(0)' id='ruleClick' class='link'> Click for more details</a>
+          <a href='javascript:void(0)' id='ruleClick' class='link'> <%= rule.click %> </a>
         </p>
       </div>
       <div class='tab-item'>
-        <p>Final winners, see you in bombay!</p>
-        <div class='countDown'>
+        <p>see you in Bombay</p>
+        <div class='countDown' id='aboutPannel'>
           <ul>
             <li class='days countDownItem'>
               <span> 00 </span>
