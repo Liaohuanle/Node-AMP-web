@@ -61,7 +61,7 @@ const bannerImgMobile = {
 }
 
 const langTransfor = {
-  en: '/act/India/Hindi',
+  en: '/act/India/English',
   in: '/act/India',
 }
 
@@ -139,7 +139,7 @@ const navList = {
   in: {
     home: 'होम',
     about: 'के बारे में',
-    winner: 'चौंका 1 विजेताओं',
+    winner: 'विजेताओं',
     media: 'मीडिया',
     video: '1 मिलियन ऑडिशन प्रतिभा से मिलें',
     youcanmeet: 'तुम मिल सकते हो'

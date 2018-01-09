@@ -4,7 +4,7 @@ const imageminPngquant = require('imagemin-pngquant')
 module.exports = () => imagemin(['build/*.{jpg,png}'], 'assets', {
 	plugins: [
 		imageminJpegtran(),
-		imageminPngquant({quality: '15-25'})
+		imageminPngquant({quality: '25-35'})
 	]
 }).then(files => {
 	console.log(files);
