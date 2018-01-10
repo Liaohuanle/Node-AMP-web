@@ -190,7 +190,7 @@
     max-width: 110px;
   }
   .tab-item-img-container .tmanual-width{
-    width: 31%;
+    width: 27%;
   }
   .round-container{
     margin: 3vh auto;
@@ -224,6 +224,10 @@
     padding: .5rem;
     font-size: 1.2rem;
   }
+  .round-card small{
+    display: block;
+    color: #fff;
+  }
   .line-height-55{
     line-height: 4vh;
   }
@@ -234,8 +238,13 @@
     font-size: 16px;
     font-weight: 400;
   }
-  .width-49{
-    width: 61%;
+  .width-49 img{
+    width: initial;
+  }
+  .width-49 img{
+    width: initial;
+    height: 31vh;
+    min-height: 130px;
   }
   .float-sm-init{
     float: initial;
