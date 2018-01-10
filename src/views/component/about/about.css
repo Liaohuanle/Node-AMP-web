@@ -238,12 +238,12 @@
     font-size: 16px;
     font-weight: 400;
   }
-  .width-49 img{
+  .width-49{
     width: initial;
   }
   .width-49 img{
     width: initial;
-    height: 31vh;
+    height: 27vh;
     min-height: 130px;
   }
   .float-sm-init{
