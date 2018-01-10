@@ -1,5 +1,9 @@
 .winner-container{
-  background: url('/act/assets/winner-bg@2x.jpg') no-repeat;  
+  background: url('/act/assets/winner-bg@2x.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   background-attachment: fixed;
 }
 .winner-container{

@@ -5,6 +5,7 @@
   const timeNode = <%- setIntervalTimeNode %>
   const aboutPannelNode = <%- aboutPanelTimeNode %>
   const YTP= <%- YTvideoinfo %>
+  const ruleAjaxUrl = "<%- ruleAjaxUrl %>"
   const ajaxUrl= "<%- ajaxUrl %>"
   const restTime = timeNode.restTime
   const aboutTime = aboutPannelNode.restTime
@@ -33,7 +34,7 @@
   function initRule(){
     $('#ruleClick').on('click',function(){
       $.ajax({
-        url: '/act/India/rules'
+        url: ruleAjaxUrl
       }).done(appendTerm)
     })
   }

@@ -200,12 +200,14 @@
   .round-card{
     border: 1px solid #fff;
     border-radius: 6px;
-    width: 145px;
+    width: 45%;
     margin-right: 10px;
     float: initial;
     margin-bottom: 10px;
+    float: left;
   }
   .round-card:last-child{
+    float: right;
     margin-bottom: initial;
   }
 

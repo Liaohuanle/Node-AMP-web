@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class='tab-item'>
-        <h1>CATEGORIES</h1>
+        <h1> <%= aboutSubList.cat %> </h1>
         <div class='tab-item-img-container m-t-lg'>
           <img src='/act/assets/about_tab_2_1.png' class='img-160 m-t-sm tmanual-width'/>
           <img src='/act/assets/about_tab_2_2.png' class='img-160 m-t-sm tmanual-width'/>
@@ -32,7 +32,7 @@
       </div>
       <div class='tab-item'>
         <div class='tab-item-img-container width-100'>
-          <h1>PRIZE</h1>
+          <h1> <%= aboutSubList.prize %></h1>
           <img src='/act/assets/about_tab_3_prize.png' class='img-vw m-t-md'/>
         </div>
       </div>
@@ -43,11 +43,17 @@
         <div class='round-container'>
           <div class='round-card'>
             <h2 class='line-height-55'><%= rule.round1 %></h2>
-            <p class='line-height-39'><%= rule.round1Text %></p>
+            <p class='line-height-39'>
+              <%= rule.round1Text %>
+              <small>2018/01/19-01/27</small>
+            </p>
           </div>
           <div class='round-card'>
             <h2 class='line-height-55'><%= rule.round2 %></h2>
-            <p class='line-height-39'><%= rule.round2Text %></p>
+            <p class='line-height-39'>
+              <%= rule.round2Text %>
+              <small>2018/01/31-02/05</small>
+            </p>
           </div>
         </div>
         <p> 
@@ -58,7 +64,7 @@
         </p>
       </div>
       <div class='tab-item'>
-        <p>see you in Bombay</p>
+        <p><%= aboutSubList.seeyou %> </p>
         <div class='countDown' id='aboutPannel'>
           <ul>
             <li class='days countDownItem'>

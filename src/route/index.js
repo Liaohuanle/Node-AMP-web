@@ -4,6 +4,8 @@ const inOBj = require('../util/index')('in')
  enOBj.langText = 'Hindi Vision'
  inOBj.ajaxUrl = '/act/India/Hindi/getRest'
  enOBj.ajaxUrl = '/act/India/English/getRest'
+ inOBj.ruleAjaxUrl = '/act/India/Hindi/rule'
+ enOBj.ruleAjaxUrl = '/act/India/English/rule'
 module.exports = (app) => {
   app.get('/act/India', function(req, res) {
     res.render('../views/layout', inOBj)
@@ -24,7 +26,10 @@ module.exports = (app) => {
   app.get('/act/India/termofuse', function(req, res) {
     res.render('../views/component/termofuse-content')
   }),
-  app.get('/act/India/rules', function(req, res) {
+  app.get(inOBj.ruleAjaxUrl, function(req, res) {
+    res.render('../views/component/rule-hindi')
+  })
+  app.get(enOBj.ruleAjaxUrl, function(req, res) {
     res.render('../views/component/rule')
   })
 }

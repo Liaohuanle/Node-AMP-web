@@ -3,7 +3,7 @@ const moment = require('moment')
 const setIntervalTimeNode = ['2018.1.10 00:00:00', '2018.1.14 00:00:00', '2018.1.17 00:00:00', '2018.1.19 00:00:00']
 
 const YTvideoinfo = {
-  url: 'https://www.youtube.com/embed/Yy8SpbrK_jc',
+  url: 'https://www.youtube.com/embed/ezSlUSmXecM?rel=0&amp;controls=0&amp;showinfo=0',
   proportion: 315 / 560
 }
 
@@ -61,8 +61,8 @@ const bannerImgMobile = {
 }
 
 const langTransfor = {
-  en: '/act/India/English',
-  in: '/act/India',
+  in: '/act/India/English',
+  en: '/act/India',
 }
 
 const winners = {
@@ -78,6 +78,23 @@ const winnerNameList = [ 'liaohuanle', 'nic', 'hhah', 'liaohuanle', 'nic', 'hhah
 const aboutTagList = {
   en: ['#ShareAndWin ', 'Category', 'Prize', 'Rules', 'Celebration Party'],
   in: ['#ShareAndWin ', 'वर्ग', 'इनाम', 'नियम', 'उत्सव पार्टी']
+}
+
+const aboutSubList = {
+  en: {
+    cat: 'CATEGORIES',
+    prize: 'PRIZE',
+    prizeWin: 'Win₹10,000,000',
+    seeyou: 'see you in Bombay',
+    comesoon: 'Coming soon...'
+  },
+  in: {
+    cat: 'वग',
+    prize: 'इनाम',
+    prizeWin: 'जीत₹10,000,000',
+    seeyou: 'अ6ंतम7वजेता,आपकोबॉ>बेम?देख?!',
+    comesoon: 'जBदआरहाहै'
+  }
 }
 
 const meetUserList = {
@@ -196,6 +213,7 @@ module.exports =  (lang) => (
     meetUserList: meetUserList[lang],
     navList: navList[lang],
     rule: rule[lang],
+    aboutSubList: aboutSubList[lang],
     titleList: JSON.stringify(titleList[lang])
   }
 )
