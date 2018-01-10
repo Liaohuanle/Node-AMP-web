@@ -176,10 +176,6 @@ ul{
   line-height: 39px;
 }
 
-.about-container{
-  max-height: 940px;
-}
-
 @media(max-width: 769px){
   .title-container{
     padding-top: 6vh;
