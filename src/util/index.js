@@ -150,14 +150,14 @@ const navList = {
   en: {
     home: 'Home',
     about: 'About',
-    winner: 'Winner',
+    media: 'Media',
     video: 'Video',
     youcanmeet: 'You Can Meet'
   },
   in: {
     home: 'होम',
     about: 'के बारे में',
-    winner: 'विजेताओं',
+    media: 'मीडिया',
     video: '1 मिलियन ऑडिशन प्रतिभा से मिलें',
     youcanmeet: 'तुम मिल सकते हो'
   }
