@@ -86,14 +86,16 @@ const aboutSubList = {
     prize: 'PRIZE',
     prizeWin: 'Win₹10,000,000',
     seeyou: 'see you in Bombay',
-    comesoon: 'Coming soon...'
+    comesoon: 'Coming soon...',
+    youcanmeetsub: 'at Celebration Party'
   },
   in: {
     cat: 'वग',
     prize: 'इनाम',
     prizeWin: 'जीत₹10,000,000',
     seeyou: 'अ6ंतम7वजेता,आपकोबॉ>बेम?देख?!',
-    comesoon: 'जBदआरहाहै'
+    comesoon: 'जBदआरहाहै',
+    youcanmeetsub: 'उत्सव पार्टी में'
   }
 }
 
@@ -149,7 +151,6 @@ const navList = {
     home: 'Home',
     about: 'About',
     winner: 'Winner',
-    media: 'Media',
     video: 'Video',
     youcanmeet: 'You Can Meet'
   },
@@ -157,7 +158,6 @@ const navList = {
     home: 'होम',
     about: 'के बारे में',
     winner: 'विजेताओं',
-    media: 'मीडिया',
     video: '1 मिलियन ऑडिशन प्रतिभा से मिलें',
     youcanmeet: 'तुम मिल सकते हो'
   }
@@ -217,3 +217,6 @@ module.exports =  (lang) => (
     titleList: JSON.stringify(titleList[lang])
   }
 )
+
+//hide winner
+//<-<%- include('./component/winners/winners', { winners, winnerNameList, titleList, aboutSubList }) %>->

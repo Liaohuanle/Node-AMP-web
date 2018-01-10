@@ -184,7 +184,7 @@ ul{
   .about-container,
   .partner-container,
   .banner-content{
-    height: 100vh;
+    min-height: 100vh;
   }
 
   .title-container h1,
@@ -207,7 +207,6 @@ ul{
 }
 #media{
   margin-bottom: -10px;
-  margin-top: -25px;
 }
 .overflow-y-hidden{
   overflow-y: hidden;

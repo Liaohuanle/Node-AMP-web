@@ -1,4 +1,4 @@
-<section id='about' class='about-container overflow-y-hidden'>
+<section id='about' class='about-container'>
   <div class='title-container'>
     <h1>  <%= JSON.parse(titleList).about %> </h1>
     <p>1 Million Audition</p>
@@ -13,12 +13,8 @@
     </ul>
     <div class='slider'>
       <div class='tab-item mobile-layout'>
-        <div class='tab-item-img-container float-left width-49 float-sm-init'>
-          <img src='/act/assets/phone.png'/>
-        </div>
-        <div class='tab-item-img-container float-right width-49 float-sm-init m-t-md'>
-          <img src='/act/assets/about_tab_1.png' class='m-t-lg'/>
-        </div>
+        <img src='/act/assets/phone.png' class='about-tab-1 float-left'/>
+        <img src='/act/assets/about_tab_1.png' class='m-t-lg about-tab-2 p-l-sm'/>
       </div>
       <div class='tab-item'>
         <h1> <%= aboutSubList.cat %> </h1>
@@ -45,14 +41,14 @@
             <h2 class='line-height-55'><%= rule.round1 %></h2>
             <p class='line-height-39'>
               <%= rule.round1Text %>
-              <small>2018/01/19-01/27</small>
+              <span>2018/01/19-01/27</span>
             </p>
           </div>
           <div class='round-card'>
             <h2 class='line-height-55'><%= rule.round2 %></h2>
             <p class='line-height-39'>
               <%= rule.round2Text %>
-              <small>2018/01/31-02/05</small>
+              <span>2018/01/31-02/05</span>
             </p>
           </div>
         </div>

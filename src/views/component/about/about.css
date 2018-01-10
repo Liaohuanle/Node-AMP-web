@@ -144,6 +144,13 @@
   margin-bottom: 20px !important;
 }
 
+.m-t-lg{
+  margin-top: 6vh;
+}
+.p-l-sm{
+  padding-left: 2vw;
+}
+
 .link{
   color: #fff;
   font-size: 12px;
@@ -153,6 +160,17 @@
   width: 45vw !important;
   min-width: 300px;
   max-width: 462px;
+}
+
+.tab-item .about-tab-1, .about-tab-2{
+  display: inline-block;
+  width: 45%;
+}
+
+.round-card span{
+  display: block;
+  color: #fff;
+  font-size: 12px;
 }
 
 @media(max-width: 769px){
@@ -176,9 +194,6 @@
   }
   .mobile-layout{
     text-align: center;
-  }
-  .mobile-layout img{
-    width: 100%;
   }
   .m-t-sm{
     margin-top: 1.5vh;
@@ -224,10 +239,6 @@
     padding: .5rem;
     font-size: 1.2rem;
   }
-  .round-card small{
-    display: block;
-    color: #fff;
-  }
   .line-height-55{
     line-height: 4vh;
   }
@@ -238,15 +249,22 @@
     font-size: 16px;
     font-weight: 400;
   }
-  .width-49{
-    width: initial;
-  }
-  .width-49 img{
-    width: initial;
-    height: 29vh;
-    min-height: 130px;
-  }
   .float-sm-init{
     float: initial;
+  }
+  .p-l-sm{
+    padding-left: initial;
+  }
+  .tab-item .about-tab-1{
+    float: initial;
+  }
+  .tab-item .about-tab-2{
+    width: 57%;
+    display: initial;
+    margin: 1vh;
+  }
+
+  .m-t-lg{
+    margin-top: 1vh;
   }
 }

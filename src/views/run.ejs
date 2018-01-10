@@ -1,7 +1,7 @@
 
 <script
-  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
 <script>
@@ -157,6 +157,12 @@
       $('.banner-mask img')
       .attr('src', '/act/assets/pc-banner-bg.png')
       .attr('style', 'display: block');
+    }
+    if( winWidth < 769 ){
+      $('.banner-mask video').remove();
+      $('.banner-mask img')
+        .attr('src', '/act/assets/mobel-banner-bg.png')
+        .attr('style', 'display: block');
     }
   }
 
