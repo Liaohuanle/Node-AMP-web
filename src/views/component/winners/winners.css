@@ -68,7 +68,7 @@
 }
 @media (max-width:769px) {
   .winner-container{
-    background-size: 240%;
+    background-size: 280%;
   }
   .slider-meet .slider-tab-item img{
     max-width: 150px !important;
