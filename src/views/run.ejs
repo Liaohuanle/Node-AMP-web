@@ -144,7 +144,7 @@
     window.onscroll = function(e) {
       $('.ampstart-headerbar').removeClass('theme-red-nav')
       $('.banner-mask video,.banner-mask img').attr('style', 'display: block')
-      if(window.scrollY > winHeight) {
+      if(window.scrollY >= winHeight + 100) {
         window.scrollY && winWidth > 769 && $('.ampstart-headerbar').addClass('theme-red-nav')
         $('.banner-mask video, .banner-mask img').attr('style', 'display: none')
       }
@@ -161,7 +161,7 @@
     if( winWidth < 769 ){
       $('.banner-mask video').remove();
       $('.banner-mask img')
-        .attr('src', '/act/assets/mobel-banner-bg.png')
+        .attr('src', '/act/assets/mobel-banner-bg.jpg')
         .attr('style', 'display: block');
     }
   }
