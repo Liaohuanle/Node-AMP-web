@@ -8,20 +8,14 @@ const inOBj = require('../util/index')('in')
  enOBj.ruleAjaxUrl = '/act/India/English/rule'
 module.exports = (app) => {
   app.get('/act/India', function(req, res) {
-    res.render('../views/layout', inOBj)
-  }),
-  app.get(inOBj.ajaxUrl, function(req, res) {
     const yt = enOBj.YTvideoinfo
     inOBj.videoUrl = JSON.parse(yt).url
-    res.render('../views/body-second', inOBj)
+    res.render('../views/layout', inOBj)
   }),
   app.get('/act/India/English', function(req, res) {
-    res.render('../views/layout', enOBj)
-  }),
-  app.get(enOBj.ajaxUrl, function(req, res) {
     const yt = inOBj.YTvideoinfo
     enOBj.videoUrl = JSON.parse(yt).url
-    res.render('../views/body-second', enOBj)
+    res.render('../views/layout', enOBj)
   }),
   app.get('/act/India/termofuse', function(req, res) {
     res.render('../views/component/termofuse-content')
