@@ -1,6 +1,6 @@
 const moment = require('moment')
 
-const setIntervalTimeNode = ['2018.1.10 00:00:00', '2018.1.14 00:00:00', '2018.1.17 00:00:00', '2018.1.19 00:00:00']
+const setIntervalTimeNode = ['2018.1.10 00:00:00', '2018.1.18 00:00:00', '2018.1.17 00:00:00', '2018.1.19 00:00:00']
 
 const YTvideoinfo = {
   url: 'https://www.youtube.com/embed/ezSlUSmXecM?rel=0&amp;controls=0&amp;showinfo=0',
@@ -23,11 +23,6 @@ const countDown = (lang, finnalTime) => {
   const restM = Math.floor(allMinute)
   const allSecounds = allMinute % 1 * 60
   const restS = Math.floor(allSecounds)
-  setIntervalTimeNode && setIntervalTimeNode.forEach((item, index ) => {
-   if(moment().isSame(item, 'day')){
-    currentStep = index + 1
-   } 
-  }) 
   const spanText = {
     en: {
       day: 'Days',
@@ -85,17 +80,19 @@ const aboutSubList = {
     cat: 'CATEGORIES',
     prize: 'PRIZE',
     prizeWin: 'Win₹10,000,000',
-    seeyou: 'see you in Bombay',
+    seeyou: 'see you in Mumbai',
     comesoon: 'Coming soon...',
-    youcanmeetsub: 'at Celebration Party'
+    youcanmeetsub: 'at Celebration Party',
+    abouttab1Image: '/act/assets/about_tab_1.png'
   },
   in: {
-    cat: 'वग',
+    cat: 'वर्ग',
     prize: 'इनाम',
     prizeWin: 'जीत₹10,000,000',
-    seeyou: 'अ6ंतम7वजेता,आपकोबॉ>बेम?देख?!',
+    seeyou: 'Mumbai मे मिलते हैं।',
     comesoon: 'जBदआरहाहै',
-    youcanmeetsub: 'उत्सव पार्टी में'
+    youcanmeetsub: 'उत्सव पार्टी में',
+    abouttab1Image: '/act/assets/about_tab_1_hindi.png'
   }
 }
 
@@ -191,9 +188,9 @@ const rule = {
   in: {
     titleText: 'विजेता चयन निर्माता स्कोर पर आधारित होता है जो प्रत्येक दौर के अंत के बाद घोषित किया जाएगा।',
     round1: 'राउंड 1',
-    round1Text: 'सभी प्रतिभागियों से 1000 चुनें',
+    round1Text: 'सभी प्रतियोगियों मे से 1000 चुने जाएँगे।',
     round2: 'राउंड 2',
-    round2Text: '1000 राउंड 1 विजेताओं से टॉप 200 चुनें',
+    round2Text: 'राउंड 1 के 1000 प्रतियोगियों मे से 200 चुने जाएँगे।',
     subText: 'इसके अलावा, विजेताओं को musical.ly Celebration Party के लिए आमंत्रित किया जाएगा',
     click: 'अधिक जानकारी के लिए यहां क्लिक करें'
   }
