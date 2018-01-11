@@ -1,10 +1,11 @@
 const express = require('express')
 const routes = require('./route')
-const { dir } = require('./util/index')
+const compress = require('./compress')
 const app = new express()
-app.use( dir, express.static(__dirname + dir))
+app.use( '/act/assets/', express.static(__dirname + '/assets/'))
 
 app.set('view engine', 'ejs')
+// compress()
 routes(app)
 app.listen(3000, (err) => {
   console.info(err || 'success')

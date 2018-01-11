@@ -1,15 +1,97 @@
 
-<script type="text/javascript" src="<%- dir %>/js/jquery.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
 <script>
   const timeNode = <%- setIntervalTimeNode %>
+  const aboutPannelNode = <%- aboutPanelTimeNode %>
+  const YTP= <%- YTvideoinfo %>
+  const ruleAjaxUrl = "<%- ruleAjaxUrl %>"
+  const ajaxUrl= "<%- ajaxUrl %>"
   const restTime = timeNode.restTime
+  const aboutTime = aboutPannelNode.restTime
+  const winWidth = $(window).width()
+  const winHeight = $(window).height()
   $(function(){
-    initTime(...restTime)
-    let sec = restTime[3]
-    let min = restTime[2]
-    let hour = restTime[1]
-    let day = restTime[0]
+    countDownTime(restTime, '#bannerPanel')
+    countDownTime(aboutTime,  '#aboutPannel')
+    slideInit()
+    initScroll()
+    transformBanner()
+    initBanner()
+    initRule()
+    clickScroll()
+    initVideo()
+    getREST()
+    SafariScable()
+  })
+
+  function initTermOfUse(){
+    $('#getTermOfUse').on('click',function(){
+      $.ajax({
+        url: '/act/India/termofuse'
+      }).done(appendTerm)
+    })
+  }
+
+  function initRule(){
+    $('#ruleClick').on('click',function(){
+      $.ajax({
+        url: ruleAjaxUrl
+      }).done(appendTerm)
+    })
+  }
+
+  function appendTerm(res){
+    $('#section-container')
+    .addClass('section-container-show')
+    .html(res)
+    $('body').addClass('overflow-y-hidden')
+    $('.close').click(function(){
+      $('#section-container').removeClass('section-container-show')
+      $('body').removeClass('overflow-y-hidden')
+    })
+  }
+
+  function initBanner(){
+    setTimeout(function(){
+      $('.banner-image').addClass('banner-image-show')
+    }, 800)
+  }
+
+  function initVideo(){
+    // $('#banner-video').addEventListener('playing', paintVideo)
+  }
+
+  function slideInit(){
+    $(".slider").slick({
+      infinite: true,
+      dots: false,
+      slidesToShow: 1,
+      autoplaySpeed: 2000,
+      slidesToScroll: 1,
+      pauseOnDotsHover: true,
+      appendArrows: false,
+      cssEase: 'linear',
+      mobileFirst: true,
+      initialSlide: timeNode.currentStep
+    })
+  }
+
+  function initTime(day, hour, min, sec, ele){
+    $(`${ele} .days span`).html(day < 10 ? `0${day}`: day)
+    $(`${ele} .hours span`).html(hour < 10 ? `0${hour}`: hour)
+    $(`${ele} .minutes span`).html(min < 10 ? `0${min}`: min)
+    $(`${ele} .seconds span`).html(sec < 10 ? `0${sec}`: sec)
+  }
+
+  function countDownTime(time, ele){
+    let sec = time[3]
+    let min = time[2]
+    let hour = time[1]
+    let day = time[0]
     setInterval(function(){
       sec--
       if( sec <= 0 ){
@@ -27,19 +109,18 @@
           }
         }
       }
-      initTime(day, hour, min, sec)
+      initTime(day, hour, min, sec, ele)
     }, 1000)
-    $(".slider").slick({
-      infinite: true,
-      dots: false,
-      slidesToShow: 1,
-      autoplaySpeed: 2000,
-      slidesToScroll: 1,
-      pauseOnDotsHover: true,
-      appendArrows: false,
-      cssEase: 'linear',
-      mobileFirst: true,
-      initialSlide: 4
+  }
+
+  function getREST(){
+    $('.subItem').click(function(){
+      $(".slider")
+      .slick('slickGoTo', $(this).index())
+      $(this)
+      .addClass('active')
+      .siblings()
+      .removeClass('active')
     })
     $("#slick-meet").slick({
       pauseOnHover: true,
@@ -54,18 +135,76 @@
       appendArrows: false,
       mobileFirst: true
     })
-    setTimeout(function(){
-      $('.banner-image').addClass('banner-image-show')
-    }, 800)
-    $('.subItem').click(function(){
-      $(".slider").slick('slickGoTo', $(this).index())
+    $('#media iframe').width(winWidth)
+    $('#media iframe').height(winWidth * YTP.proportion)
+    initTermOfUse()
+  }
+
+  function initScroll(){
+    window.onscroll = function(e) {
+      $('.ampstart-headerbar').removeClass('theme-red-nav')
+      $('.banner-mask video,.banner-mask img').attr('style', 'display: block')
+      if(window.scrollY >= winHeight + 100) {
+        window.scrollY && winWidth > 769 && $('.ampstart-headerbar').addClass('theme-red-nav')
+        $('.banner-mask video, .banner-mask img').attr('style', 'display: none')
+      }
+    }
+  }
+
+  function transformBanner(){
+    if(justifiy.IsSafari()){
+      $('.banner-mask video').remove();
+      $('.banner-mask img')
+      .attr('src', '//mpaw-sinc1.muscdn.com/ops/upload/default/2018/01/10/15/7d13bfc5-3c96-4891-adc4-c43d9bab8ce7.png')
+      .attr('style', 'display: block');
+    }
+    if( winWidth < 769 ){
+      $('.banner-mask video').remove();
+      $('.banner-mask img')
+        .attr('src', '//mpaw-sinc1.muscdn.com/ops/upload/default/2018/01/10/15/660c03e2-af16-48fa-b78f-7169e2157a4a.png')
+        .attr('style', 'display: block');
+    }
+  }
+
+  function clickScroll(){
+    $('.ampstart-headerbar-nav li a').click(function(){
+      $('html, body')
+      .animate(
+        { scrollTop: $($(this.hash).selector).offset().top },
+        900,
+        function(){
+          $($(this.hash).selector).addClass('active').siblings().removeClass('active')
+        }
+      )
     })
-  })
-  function initTime(day, hour, min, sec){
-    $('.days span').html(day < 10 ? `0${day}`: day)
-    $('.hours span').html(hour < 10 ? `0${hour}`: hour)
-    $('.minutes span').html(min < 10 ? `0${min}`: min)
-    $('.seconds span').html(sec < 10 ? `0${sec}`: sec)
+  }
+
+  var justifiy = {
+    isWeixinBrowser: function(){
+      return /micromessenger/.test(navigator.userAgent.toLowerCase())
+    },
+    isAndroid: function(){
+      return (/android/i).test(navigator.userAgent)
+    },
+    IsSafari: function() {
+      return navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1
+    }
+  }
+
+  function SafariScable(){
+    document.addEventListener('touchstart',function (event) {  
+      if(event.touches.length>1){  
+        event.preventDefault();  
+      }  
+    })  
+    var lastTouchEnd=0;  
+    document.addEventListener('touchend',function (event) {  
+      var now=(new Date()).getTime();  
+      if(now-lastTouchEnd<=300){  
+          event.preventDefault();  
+      }  
+      lastTouchEnd=now;  
+    },false)  
   }
 
 </script>

@@ -1,23 +1,26 @@
 <section class='banner-container' id='home'>
+  <img src='/act/assets/mobile-logo.png' class='mobile-logo'/>
   <div class='banner-content'>
-    <img src=' <%= dir %>title(banner).png' class='banner-image'/>
-    <div class='countDown'>
+    <img src='<%= bannerImgPC %>' class='banner-image banner-image-pc'/>
+    <img src='<%= bannerImgMobile %>' class='banner-image banner-image-mobile'/>
+    <a href='<%=langTransfor%>' class='lang-transfor-mobile'><%= langText %></a>
+    <div class='countDown' id='bannerPanel'>
       <ul>
         <li class='days countDownItem'>
           <span> 00 </span>
-          days
+          <%= JSON.parse(spanText).day %>
         </li>
         <li class='hours countDownItem'>
           <span> 00 </span>
-          hours
+           <%= JSON.parse(spanText).hour %>
         </li>
         <li class='minutes countDownItem'>
           <span> 00 </span>
-          minutes
+           <%= JSON.parse(spanText).minute %>
         </li>
         <li class='seconds countDownItem'>
           <span> 00 </span>
-          seconds
+           <%= JSON.parse(spanText).second %>
         </li>
       </ul>
     </div>
@@ -26,7 +29,7 @@
 <section class="m0 banner-mask">
   <video
     autoplay= "autoplay"
-    poster=" <%= dir %>poster.jpeg"
+    poster="/act/assets/poster.jpeg"
     title="Big Buck Bunny"
     album="Blender"
     artist="Blender Foundation"
@@ -34,7 +37,7 @@
     loop
     id='banner-video'
   >
-    <source type="video/mp4" src=" <%= dir %>india_banner.mp4"></source>
-    <source type="video/ogg" src=" <%= dir %>india_banner.ogg"></source>
+    <source type="video/mp4" src="//mpaw-sinc1.muscdn.com/ops/upload/default/2018/01/10/13/3ff7bedf-db8e-4b13-875a-f210cf205c55.mp4"></source>
   </video>
+  <img src='//mpaw-sinc1.muscdn.com/ops/upload/default/2018/01/10/13/050e882e-f102-4862-80ab-ae933d5ae50d.png'/>
 </section>

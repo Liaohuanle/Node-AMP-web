@@ -1,22 +1,22 @@
 @font-face {
   font-family: 'musical-ly';
-  src: url(' <%= dir %>font/AvenirNextLTPro-Regular.eot');
-  src: url(' <%= dir %>font/AvenirNextLTPro-Regular.woff2') format('woff2'),
-       url(' <%= dir %>font/AvenirNextLTPro-Regular.woff') format('woff'),
-       url(' <%= dir %>font/AvenirNextLTPro-Regular.ttf') format('truetype'),
-       url(' <%= dir %>font/AvenirNextLTPro-Regular.svg#AvenirNextLTPro-Regular') format('svg'),
-       url(' <%= dir %>font/AvenirNextLTPro-Regular.eot?#iefix') format('embedded-opentype');
+  src: url('/act/assets/font/AvenirNextLTPro-Regular.eot');
+  src: url('/act/assets/font/AvenirNextLTPro-Regular.woff2') format('woff2'),
+       url('/act/assets/font/AvenirNextLTPro-Regular.woff') format('woff'),
+       url('/act/assets/font/AvenirNextLTPro-Regular.ttf') format('truetype'),
+       url('/act/assets/font/AvenirNextLTPro-Regular.svg#AvenirNextLTPro-Regular') format('svg'),
+       url('/act/assets/font/AvenirNextLTPro-Regular.eot?#iefix') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'din';
-  src: url(' <%= dir %>font/DINPro-CondensedBold.eot');
-  src: url(' <%= dir %>font/DINPro-CondensedBold.eot?#iefix') format('embedded-opentype'),
-      url(' <%= dir %>font/DINPro-CondensedBold.woff2') format('woff2'),
-      url(' <%= dir %>font/DINPro-CondensedBold.woff') format('woff'),
-      url(' <%= dir %>font/DINPro-CondensedBold.ttf') format('truetype');
+  src: url('/act/assets/font/DINPro-CondensedBold.eot');
+  src: url('/act/assets/font/DINPro-CondensedBold.eot?#iefix') format('embedded-opentype'),
+      url('/act/assets/font/DINPro-CondensedBold.woff2') format('woff2'),
+      url('/act/assets/font/DINPro-CondensedBold.woff') format('woff'),
+      url('/act/assets/font/DINPro-CondensedBold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
@@ -58,6 +58,9 @@ a{
   background-color:transparent;
   -webkit-text-decoration-skip:objects
 }
+ul{
+  padding: initial;
+}
 @media(min-height: 28.75rem){
   .main{
     height:100vh;
@@ -91,7 +94,7 @@ a{
 .partner-container,
 .meet-container,
 .banner-content{
-  padding-top: 7rem;
+  padding-top: 10vh;
 }
 .tab-item h1,
 .title-container h1,
@@ -108,7 +111,8 @@ a{
 
 .winner-container,
 .meet-container{
-  min-height: 680px;
+  height: 70vh;
+  min-height: 600px;
 }
 
 .tab-container,
@@ -123,10 +127,6 @@ a{
   display: block;
   max-width: 960px;
   margin: 0rem auto;
-}
-
-.m-t-lg{
-  margin-top: 5rem !important;
 }
 
 .m-t-sm{
@@ -147,9 +147,11 @@ a{
 }
 
 .width-84{
-  width: 84%;
+  width: 84% !important;
 }
-
+.width-49{
+  width: 49%;
+}
 .width-100{
   width: 100%;
 }
@@ -174,14 +176,13 @@ a{
   line-height: 39px;
 }
 
-@media(max-height: 812px){
+@media(max-width: 769px){
   .title-container{
-    padding-top: 3rem;
+    padding-top: 6vh;
   }
   .winner-container,
   .about-container,
   .partner-container,
-  .meet-container,
   .banner-content{
     min-height: 100vh;
   }
@@ -189,20 +190,24 @@ a{
   .title-container h1,
   .winner-container h1,
   .banner-content h1,
-  .partner-container h1{
+  .partner-container h1,
+  .tab-item h1{
     font-size: 3.3rem;
+  }
+  .img-160{
+    width: 109px;
   }
 }
 
-@media(max-height: 667px){
-  .title-container{
-    padding-top: 1.5rem;
-  }
-  .tab-item h1,
-  .title-container h1,
-  .winner-container h1,
-  .banner-content h1,
-  .partner-container h1{
-    font-size: 2.7rem;
-  }
+.ad-container,
+.ad-container-single-media-element-annotations,
+.html5-video-player .ad-overlay,
+.ad-overlay{
+  display: none !important;
+}
+#media{
+  margin-bottom: -10px;
+}
+.overflow-y-hidden{
+  overflow-y: hidden;
 }

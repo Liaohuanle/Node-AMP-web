@@ -12,3 +12,14 @@
   margin-top: 2rem;
   margin-right: 1.5rem;
 }
+@media(max-width: 769px){
+  .partner-content>div{
+    text-align: center;
+    margin-top: 13vh;
+  }
+  .partner-content img{
+    max-width: 170px;
+    display: initial;
+    float: initial;
+  }
+}

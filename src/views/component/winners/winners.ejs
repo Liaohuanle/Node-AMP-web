@@ -1,6 +1,6 @@
 <section id='winner'>
   <div class='winner-container'>
-    <h1> WINNERS </h1>
+    <h1>  <%= JSON.parse(titleList).winner %> </h1>
     <div class='winner-tag-cotainer'>
       <div class="ampTabContainer">
         <% for(var i in  winners) { %>
@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="nameList">
-      <p> will coming soon ...</p> 
+      <p>  <%= aboutSubList.comesoon %> </p> 
     </div>
   </div>
 </section>

@@ -2,6 +2,25 @@
 
 <html>
   <%- include('./header') %>
-  <%- include('./body', { winners, winnerNameList, meetUserList, videoid, setIntervalTimeNode, aboutTagList, dir }) %>
-  <%- include('./run', { dir }) %>
-</html>
+  <%- include('./body', {
+    setIntervalTimeNode,
+    aboutPanelTimeNode,
+    aboutTagList,
+    bannerImgPC,
+    bannerImgMobile,
+    langTransfor,
+    langText,
+    titleList,
+    navList,
+    rule,
+    aboutSubList
+  }) %>
+  <%- include('./run',  {
+      setIntervalTimeNode,
+      aboutPanelTimeNode,
+      YTvideoinfo,
+      ajaxUrl,
+      ruleAjaxUrl
+    })
+  %>
+</html> 
