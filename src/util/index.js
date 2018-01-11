@@ -83,7 +83,8 @@ const aboutSubList = {
     seeyou: 'see you in Mumbai',
     comesoon: 'Coming soon...',
     youcanmeetsub: 'at Celebration Party',
-    abouttab1Image: '/act/assets/about_tab_1.png'
+    abouttab1Image: '/act/assets/about_tab_1.png',
+    abouttab1Phone: '/act/assets/phone.png'
   },
   in: {
     cat: 'वर्ग',
@@ -92,7 +93,8 @@ const aboutSubList = {
     seeyou: 'Mumbai मे मिलते हैं।',
     comesoon: 'जBदआरहाहै',
     youcanmeetsub: 'उत्सव पार्टी में',
-    abouttab1Image: '/act/assets/about_tab_1_hindi.png'
+    abouttab1Image: '/act/assets/about_tab_1_hindi.png',
+    abouttab1Phone: '/act/assets/phone_hindi.png'
   }
 }
 
