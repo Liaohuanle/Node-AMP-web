@@ -39,7 +39,7 @@ const countDown = (lang, finnalTime) => {
   }
   const result = {
     restTime: [restD, restH, restM, restS],
-    currentStep: 0,
+    currentStep,
     spanText: JSON.stringify(spanText[lang])
   }
   return JSON.stringify(result)
