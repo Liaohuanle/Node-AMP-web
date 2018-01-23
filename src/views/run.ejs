@@ -15,6 +15,7 @@
   const winWidth = $(window).width()
   const winHeight = $(window).height()
   $(function(){
+    console.info(restTime, aboutTime)
     countDownTime(restTime, '#bannerPanel')
     countDownTime(aboutTime,  '#aboutPannel')
     slideInit()
@@ -95,18 +96,18 @@
     setInterval(function(){
       sec--
       if( sec <= 0 ){
-        sec = 59
         min--
+        min <= 0? ( sec =0 ) : (sec = 59)
       }
 
       if(min <= 0){
-        min = 59
         hour--
+        hour <= 0? ( min =0 ) : (min = 59)
       }
 
       if(hour <= 0){
-        hour = 23
         day--
+        day <= 0? ( hour =0 ) : (hour = 23)
       }
 
       if( day <= 0){
