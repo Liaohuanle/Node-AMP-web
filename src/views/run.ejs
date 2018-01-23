@@ -97,17 +97,20 @@
       if( sec <= 0 ){
         sec = 59
         min--
-        if(min <= 0){
-          min = 59
-          hour--
-          if(hour <= 0){
-            hour = 23
-            day--
-            if( day <= 0){
-              day = 0
-            }
-          }
-        }
+      }
+
+      if(min <= 0){
+        min = 59
+        hour--
+      }
+
+      if(hour <= 0){
+        hour = 23
+        day--
+      }
+
+      if( day <= 0){
+        day = 0
       }
       initTime(day, hour, min, sec, ele)
     }, 1000)
