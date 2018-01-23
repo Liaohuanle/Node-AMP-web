@@ -1,7 +1,7 @@
 const enOBj = require('../util/index')('en')
 const inOBj = require('../util/index')('in')
- inOBj.langText = 'English Vision'
- enOBj.langText = 'Hindi Vision'
+ inOBj.langText = 'English Version'
+ enOBj.langText = 'Hindi Version'
  inOBj.ajaxUrl = '/act/India/Hindi/getRest'
  enOBj.ajaxUrl = '/act/India/English/getRest'
  inOBj.ruleAjaxUrl = '/act/India/Hindi/rule'
