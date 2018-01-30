@@ -11,6 +11,26 @@
   width: 100%;
 }
 
+.winner-container a{
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+  color: #fff;
+}
+
+.ellipse{
+  display: block;
+}
+
+.nameList{
+  max-height: 72vh;
+  height: 72%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
 .winner-tag{
   padding: 6px 1.3rem;
   border-image-slice: 1;
@@ -42,13 +62,15 @@
   color: #fff;
   font-size: 2rem;
 }
-.nameList span{
+.nameList span,
+.winner-name-container span
+{
   padding: 5px 8px;
   text-align: left;
   width: 140px;
   margin-top: 1rem;
   text-overflow: ellipsis;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
@@ -83,4 +105,12 @@
     margin-right: .5rem;
     margin-top: .5rem;
   }
+}
+
+.winner-name-container{
+  width: 85%;
+  margin: 20px auto;
+}
+.winner-name-container span{
+  color: #e23054;
 }

@@ -9,6 +9,7 @@
             bannerImgMobile,
             langTransfor
           }) %>
+        <%- include('./component/winners/winners', { videoUrl }) %>
         <%- include('./component/about/about', {
             currentStep: JSON.parse(aboutPanelTimeNode).currentStep,
             spanText: JSON.parse(aboutPanelTimeNode).spanText,
@@ -16,7 +17,8 @@
             setIntervalTimeNode: aboutPanelTimeNode,
             titleList,
             rule,
-            aboutSubList
+            aboutSubList,
+            prizeArticle
           }) %>
         <%- include('./component/video/video', { videoUrl }) %>
         <%- include('./component/youcanmeet/youcanmeet', { meetUserList, titleList, aboutSubList }) %>

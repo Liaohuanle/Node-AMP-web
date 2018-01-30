@@ -29,7 +29,9 @@
       <div class='tab-item'>
         <div class='tab-item-img-container width-100'>
           <h1> <%= aboutSubList.prize %></h1>
-          <img src='/act/assets/about_tab_3_prize.png' class='img-vw m-t-md'/>
+          <article class="prize-content">
+            <%- prizeArticle %>
+          </article>
         </div>
       </div>
       <div class='tab-item'>
@@ -38,15 +40,15 @@
         </p>
         <div class='round-container'>
           <div class='round-card'>
-            <h2 class='line-height-55'><%= rule.round1 %></h2>
-            <p class='line-height-39'>
+            <h2><%= rule.round1 %></h2>
+            <p>
               <%= rule.round1Text %>
               <span>Jan 19th - Jan 27th</span>
             </p>
           </div>
           <div class='round-card'>
-            <h2 class='line-height-55'><%= rule.round2 %></h2>
-            <p class='line-height-39'>
+            <h2><%= rule.round2 %></h2>
+            <p>
               <%= rule.round2Text %>
               <span>Jan 31st - Feb 5th</span>
             </p>

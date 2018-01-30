@@ -15,7 +15,6 @@
   const winWidth = $(window).width()
   const winHeight = $(window).height()
   $(function(){
-    console.info(restTime, aboutTime)
     countDownTime(restTime, '#bannerPanel')
     countDownTime(aboutTime,  '#aboutPannel')
     slideInit()
@@ -27,6 +26,7 @@
     initVideo()
     getREST()
     SafariScable()
+    getAllWinnerList()
   })
 
   function initTermOfUse(){
@@ -42,6 +42,36 @@
       $.ajax({
         url: ruleAjaxUrl
       }).done(appendTerm)
+    })
+  }
+
+  function getAllWinnerList(){
+    $('#winnerList').on('click',function(){
+      $.ajax({
+        url: '/act/India/fetchWinnerList'
+      }).done(appendWinnerList)
+    })
+  }
+
+  function appendWinnerList(res){
+    if(!res || !res.length){
+      return
+    }
+    let result = `
+      <div class="winner-name-container">
+        <div class='close'>X</div>
+    `
+    res.forEach(function(item){
+      result= result + `<span>@${ item }</span>`
+    })
+    result = result + `</div>`
+    $('#section-container')
+    .addClass('section-container-show')
+    .html(result)
+    $('body').addClass('overflow-y-hidden')
+    $('.close').click(function(){
+      $('#section-container').removeClass('section-container-show')
+      $('body').removeClass('overflow-y-hidden')
     })
   }
 
