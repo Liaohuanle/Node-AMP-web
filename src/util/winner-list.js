@@ -222,7 +222,6 @@ module.exports = {
     'Avantikaxo_',
     'avinashpoojary',
     'awara_always',
-    'awezdarbar',
     'ayaazahmed3o',
     'ayushk937',
     'azarmohamed',
