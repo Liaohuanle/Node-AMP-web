@@ -15,8 +15,9 @@
   display: block;
   width: 100%;
   text-align: center;
-  margin-top: 15px;
   color: #fff;
+  margin-top: 20px;
+  font-size: 16px;
 }
 
 .ellipse{
@@ -25,7 +26,6 @@
 
 .nameList{
   max-height: 72vh;
-  height: 72%;
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: center;
@@ -77,6 +77,49 @@
   color: #fff;
 }
 
+.winner-name-container{
+  width: 85%;
+  margin: 20px auto;
+}
+.winner-name-container span{
+  color: #e23054;
+}
+.winner-top-container{
+  width: 960px;
+}
+.winner-item{
+  display: inline-block;
+  width: 18%;
+  max-width: 192px;
+  min-width: 173px;
+  padding: 8px;
+}
+.winner-item>img{
+  display: block;
+  max-width: 90%;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 2px solid #e23054;
+}
+.winner-item>span{
+  display: block;
+  text-align: center;
+  font-size: 22px;
+  width: 100%;
+  margin: initial;
+  margin-top: 12px;
+}
+.winner-item>p>img{
+  display: inline-block;
+  max-width: 24px;
+  margin-bottom: 4px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.winner-item>p{
+  font-size: 16px;
+  margin: initial;
+}
 @media (max-width:1282px) {
   .winner-container{
     background-size: 175%;
@@ -105,12 +148,21 @@
     margin-right: .5rem;
     margin-top: .5rem;
   }
-}
+  .winner-top-container{
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+  }
 
-.winner-name-container{
-  width: 85%;
-  margin: 20px auto;
-}
-.winner-name-container span{
-  color: #e23054;
+  .winner-item{
+    width: 28%;
+    max-width: initial;
+    min-width: initial;
+  }
+  .winner-item>p>img{
+    max-width: 20px;
+  }
+  .winner-item>span{
+    font-size: 14px;
+  }
 }

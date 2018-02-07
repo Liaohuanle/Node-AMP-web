@@ -3,9 +3,11 @@
   max-width: 230px;
   display: block;
   margin: 0px auto;
+  border-radius: 15px;
 }
 .slider-meet .slider-tab-item span{
   font-size: 1.7rem;
+  margin: 25px auto;
   display: block;
   text-align: center;
 }

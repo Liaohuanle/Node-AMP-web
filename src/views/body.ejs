@@ -9,7 +9,8 @@
             bannerImgMobile,
             langTransfor
           }) %>
-        <%- include('./component/winners/winners', { videoUrl }) %>
+        <%- include('./component/winners/winners', { topFiveWinners }) %>
+         <%- include('./component/prize/prize', { topFiveWinners }) %>
         <%- include('./component/about/about', {
             currentStep: JSON.parse(aboutPanelTimeNode).currentStep,
             spanText: JSON.parse(aboutPanelTimeNode).spanText,

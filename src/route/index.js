@@ -28,7 +28,7 @@ module.exports = (app) => {
     res.render('../views/component/rule')
   })
   app.get('/act/India/fetchWinnerList', function(req, res) {
-    res.send(winnerList.part2)
+    res.send(winnerList)
   })
   
 }

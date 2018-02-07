@@ -189,8 +189,28 @@
   font-weight: 100;
   margin-top: 14px;
 }
-
+.prize-steps{
+  max-width: 700px;
+  display: block;
+  margin: 20px auto;
+}
+.prize-text{
+  margin: 50px auto;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+}
+.prize-steps-phone{
+  display: none;
+}
 @media(max-width: 769px){
+  .prize-steps{
+   display: none;
+  }
+  .prize-steps-phone{
+    display: block;
+    margin: 0 auto;
+  }
   .title-container p{
     font-size: 16px;
   }

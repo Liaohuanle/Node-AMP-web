@@ -2,11 +2,20 @@
   <div class='winner-container'>
     <h1> <%= JSON.parse(titleList).winner %> </h1>
     <div class="nameList">
-      <% for(var i in  winnerNameList) { %>
-        <span>@<%= winnerNameList[i] %></span>
-      <%
-        }
-      %>
+      <ul class="winner-top-container">
+        <% for(var i=0; i< topFiveWinners.length; i ++ ) {%>
+          <li class="winner-item">
+            <img src="/act/assets/winners/<%=topFiveWinners[i].name%>.jpg"/>
+            <span>
+              <%=topFiveWinners[i].name%>
+            </span>
+            <p>
+              <img src="/act/assets/d-icon.png"/>
+              <%=topFiveWinners[i].dimonds%>
+            </p>
+          </li>
+        <% } %>
+      </ul>
     </div>
     <a href="javascript:;" id="winnerList">Get all the winners</a>
   </div>

@@ -14,7 +14,7 @@ const finnalTime = setIntervalTimeNode && setIntervalTimeNode[ setIntervalTimeNo
 const aboutFinalTime = '2018.2.10 12:00:00'
 
 const countDown = (lang, finnalTime) => {
-  let currentStep = 2
+  let currentStep = 3
   const restTime = [0, 0, 0, 0]
   const duration = moment.duration(moment(finnalTime).subtract(2.5, 'hours').diff(moment.now()))
   const allTime = duration.asDays()
@@ -62,37 +62,27 @@ const langTransfor = {
   en: '/act/India',
 }
 
-const winners = {
-  '#15sVinesAudition': [1,2,3,5],
-  '#DuetAudition': [1,2,3,5,5],
-  '#SpecialSkillsAudition': [1,2,3,5,7],
-  '#DanceIndiaAudition': [1,2,3,5],
-  '#SexyMovesAudition': [1,2,3,2,5],
-}
-
 const aboutTagList = {
-  en: ['#ShareAndWin ', 'Category', 'Prize', 'Rules', 'Celebration Party'],
-  in: ['#ShareAndWin ', 'वर्ग', 'इनाम', 'नियम', 'उत्सव पार्टी']
+  en: ['#ShareAndWin ', 'Category', 'Rules', 'Celebration Party'],
+  in: ['#ShareAndWin ', 'वर्ग', 'इनाम', 'उत्सव पार्टी']
 }
 
 const aboutSubList = {
   en: {
     cat: 'CATEGORIES',
-    prize: 'PRIZE',
     prizeWin: 'Win₹10,000,000',
-    seeyou: 'see you in Mumbai',
+    seeyou: ' Event Address: Westin Garden City, Mumbai Time: Start from 11:30 AM, 10th February 2018',
     comesoon: 'Coming soon...',
-    youcanmeetsub: 'at Celebration Party',
+    youcanmeetsub: '#1Millionmuser',
     abouttab1Image: '/act/assets/about_tab_1.png',
     abouttab1Phone: '/act/assets/phone.png'
   },
   in: {
     cat: 'वर्ग',
-    prize: 'इनाम',
     prizeWin: 'जीत₹10,000,000',
     seeyou: 'Mumbai मे मिलते हैं।',
     comesoon: 'जBदआरहाहै',
-    youcanmeetsub: 'उत्सव पार्टी में',
+    youcanmeetsub: '#1Millionmuser',
     abouttab1Image: '/act/assets/about_tab_1_hindi.png',
     abouttab1Phone: '/act/assets/phone_hindi.png'
   }
@@ -101,47 +91,53 @@ const aboutSubList = {
 const meetUserList = {
   en: [
     {
-      icon: 'person_icon.png',
-      title: 'Special Guest'
+      icon: '/million/nagmaa.jpg',
+      title: '@nagmaa'
     },
     {
-      icon: 'person_icon.png',
-      title: 'Special Guest'
+      icon: '/million/heer.naik.jpg',
+      title: '@heer.naik'
     },
     {
-      icon: 'person_icon.png',
-      title: 'Special Guest'
+      icon: '/million/aashikabhatia.jpg',
+      title: '@aashikabhatia'
+    },{
+      icon: '/million/nagmaa.jpg',
+      title: '@nagmaa'
     },
     {
-      icon: 'person_icon.png',
-      title: 'Special Guest'
+      icon: '/million/heer.naik.jpg',
+      title: '@heer.naik'
     },
     {
-      icon: 'person_icon.png',
-      title: 'Special Guest'
-    },
+      icon: '/million/aashikabhatia.jpg',
+      title: '@aashikabhatia'
+    }
   ],
   in: [
     {
-      icon: 'person_icon.png',
-      title: 'वशषे अ,त-थ'
+      icon: '/million/nagmaa.jpg',
+      title: '@nagmaa'
     },
     {
-      icon: 'person_icon.png',
-      title: 'वशषे अ,त-थ'
+      icon: '/million/heer.naik.jpg',
+      title: '@heer.naik'
     },
     {
-      icon: 'person_icon.png',
-      title: 'वशषे अ,त-थ'
+      icon: '/million/aashikabhatia.jpg',
+      title: '@aashikabhatia'
+    },{
+      icon: '/million/nagmaa.jpg',
+      title: '@nagmaa'
     },
     {
-      icon: 'person_icon.png',
-      title: 'वशषे अ,त-थ'
+      icon: '/million/heer.naik.jpg',
+      title: '@heer.naik'
     },
     {
-      icon: 'person_icon.png',
-      title: 'वशषे अ,त-थ'
-    },
+      icon: '/million/aashikabhatia.jpg',
+      title: '@aashikabhatia'
+    }
   ]
 }
 
@@ -224,11 +220,34 @@ const prizeArticle = {
   `
 }
 
+const  topFiveWinners = [
+  {
+    name: 'Mr_kalakaar',
+    dimonds: 83644
+  },
+  {
+    name: 'itx_kunwar',
+    dimonds: 82487
+  },
+  {
+    name: 'raksha.m.s',
+    dimonds: 82168
+  },
+  {
+    name: 'anamdarbar1',
+    dimonds: 81847
+  },
+  {
+    name: 'Sameeksha_Sud',
+    dimonds: 81730
+  }
+]
+
 module.exports =  (lang) => (
   {
-    winners,
+    topFiveWinners,
     prizeArticle: prizeArticle[lang],
-    winnerNameList: winnerList.part1,
+    winnerNameList: winnerList,
     aboutTagList: aboutTagList[lang],
     YTvideoinfo: JSON.stringify(YTvideoinfo),
     setIntervalTimeNode: `${countDown(lang, finnalTime)}`,
