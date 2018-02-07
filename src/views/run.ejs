@@ -180,6 +180,8 @@
       $('.banner-mask video,.banner-mask img').attr('style', 'display: block')
       if(window.scrollY >= winHeight + 100) {
         window.scrollY && winWidth > 769 && $('.ampstart-headerbar').addClass('theme-red-nav')
+      }
+      if(window.scrollY >= 1600) {
         $('.banner-mask video, .banner-mask img').attr('style', 'display: none')
       }
     }
