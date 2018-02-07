@@ -71,7 +71,7 @@ const aboutSubList = {
   en: {
     cat: 'CATEGORIES',
     prizeWin: 'Win₹10,000,000',
-    seeyou: ' Event Address: Westin Garden City, Mumbai Time: Start from 11:30 AM, 10th February 2018',
+    seeyou: ' <p>Event Address: Westin Garden City</p> <p>Mumbai Time: Start from 11:30 AM, 10th February 2018</p>',
     comesoon: 'Coming soon...',
     youcanmeetsub: '#1Millionmuser',
     abouttab1Image: '/act/assets/about_tab_1.png',
@@ -80,7 +80,7 @@ const aboutSubList = {
   in: {
     cat: 'वर्ग',
     prizeWin: 'जीत₹10,000,000',
-    seeyou: 'Mumbai मे मिलते हैं।',
+    seeyou: '<p>Event Address: Westin Garden City</p> <p>Mumbai Time: Start from 11:30 AM, 10th February 2018</p>',
     comesoon: 'जBदआरहाहै',
     youcanmeetsub: '#1Millionmuser',
     abouttab1Image: '/act/assets/about_tab_1_hindi.png',
@@ -101,32 +101,10 @@ const meetUserList = {
     {
       icon: '/million/aashikabhatia.jpg',
       title: '@aashikabhatia'
-    },{
-      icon: '/million/nagmaa.jpg',
-      title: '@nagmaa'
-    },
-    {
-      icon: '/million/heer.naik.jpg',
-      title: '@heer.naik'
-    },
-    {
-      icon: '/million/aashikabhatia.jpg',
-      title: '@aashikabhatia'
     }
   ],
   in: [
     {
-      icon: '/million/nagmaa.jpg',
-      title: '@nagmaa'
-    },
-    {
-      icon: '/million/heer.naik.jpg',
-      title: '@heer.naik'
-    },
-    {
-      icon: '/million/aashikabhatia.jpg',
-      title: '@aashikabhatia'
-    },{
       icon: '/million/nagmaa.jpg',
       title: '@nagmaa'
     },
