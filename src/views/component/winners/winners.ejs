@@ -1,21 +1,22 @@
-<section id='winner'>
+<section id='winners'>
   <div class='winner-container'>
-    <h1>  <%= JSON.parse(titleList).winner %> </h1>
-    <div class='winner-tag-cotainer'>
-      <div class="ampTabContainer">
-        <% for(var i in  winners) { %>
-            <button
-              class="tabButton winner-tag <%= i == '#15sVinesAudition' ? 'active' : ''%>"
-            >
-              <%= i %>
-            </button>
-        <%
-          }
-        %>
-      </div>
-    </div>
+    <h1> <%= JSON.parse(titleList).winner %> </h1>
     <div class="nameList">
-      <p>  <%= aboutSubList.comesoon %> </p> 
+      <ul class="winner-top-container">
+        <% for(var i=0; i< topFiveWinners.length; i ++ ) {%>
+          <li class="winner-item">
+            <img src="/act/assets/winners/<%=topFiveWinners[i].name%>.jpg"/>
+            <span>
+              <%=topFiveWinners[i].name%>
+            </span>
+            <p>
+              <img src="/act/assets/d-icon.png"/>
+              <%=topFiveWinners[i].dimonds%>
+            </p>
+          </li>
+        <% } %>
+      </ul>
     </div>
+    <a href="javascript:;" id="winnerList">Get all the winners</a>
   </div>
 </section>

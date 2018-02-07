@@ -1,6 +1,8 @@
+const winnerList = require('./winner-list')
+
 const moment = require('moment')
 
-const setIntervalTimeNode = ['2018.1.10 00:00:00', '2018.1.18 00:00:00', '2018.1.17 00:00:00', '2018.1.19 00:00:00']
+const setIntervalTimeNode = ['2018.1.10 00:00:00', '2018.1.18 00:00:00', '2018.1.17 00:00:00', '2018.02.05 00:00:00']
 
 const YTvideoinfo = {
   url: 'https://www.youtube.com/embed/ezSlUSmXecM?rel=0&amp;controls=0&amp;showinfo=0',
@@ -12,7 +14,7 @@ const finnalTime = setIntervalTimeNode && setIntervalTimeNode[ setIntervalTimeNo
 const aboutFinalTime = '2018.2.10 12:00:00'
 
 const countDown = (lang, finnalTime) => {
-  let currentStep = 1
+  let currentStep = 3
   const restTime = [0, 0, 0, 0]
   const duration = moment.duration(moment(finnalTime).subtract(2.5, 'hours').diff(moment.now()))
   const allTime = duration.asDays()
@@ -39,7 +41,7 @@ const countDown = (lang, finnalTime) => {
   }
   const result = {
     restTime: [restD, restH, restM, restS],
-    currentStep: 0,
+    currentStep,
     spanText: JSON.stringify(spanText[lang])
   }
   return JSON.stringify(result)
@@ -60,92 +62,89 @@ const langTransfor = {
   en: '/act/India',
 }
 
-const winners = {
-  '#15sVinesAudition': [1,2,3,5],
-  '#DuetAudition': [1,2,3,5,5],
-  '#SpecialSkillsAudition': [1,2,3,5,7],
-  '#DanceIndiaAudition': [1,2,3,5],
-  '#SexyMovesAudition': [1,2,3,2,5],
-}
-
-const winnerNameList = [ 'liaohuanle', 'nic', 'hhah', 'liaohuanle', 'nic', 'hhah','liaohuanle', 'nic', 'hhah' ]
-
 const aboutTagList = {
-  en: ['#ShareAndWin ', 'Category', 'Prize', 'Rules', 'Celebration Party'],
-  in: ['#ShareAndWin ', 'वर्ग', 'इनाम', 'नियम', 'उत्सव पार्टी']
+  en: ['#ShareAndWin ', 'Category', 'Rules', 'Celebration Party'],
+  in: ['#ShareAndWin ', 'वर्ग', 'इनाम', 'उत्सव पार्टी']
 }
 
 const aboutSubList = {
   en: {
     cat: 'CATEGORIES',
-    prize: 'PRIZE',
     prizeWin: 'Win₹10,000,000',
-    seeyou: 'see you in Mumbai',
+    seeyou: ' Event Address: Westin Garden City, Mumbai Time: Start from 11:30 AM, 10th February 2018',
     comesoon: 'Coming soon...',
-    youcanmeetsub: 'at Celebration Party',
-    abouttab1Image: '/act/assets/about_tab_1.png'
+    youcanmeetsub: '#1Millionmuser',
+    abouttab1Image: '/act/assets/about_tab_1.png',
+    abouttab1Phone: '/act/assets/phone.png'
   },
   in: {
     cat: 'वर्ग',
-    prize: 'इनाम',
     prizeWin: 'जीत₹10,000,000',
     seeyou: 'Mumbai मे मिलते हैं।',
     comesoon: 'जBदआरहाहै',
-    youcanmeetsub: 'उत्सव पार्टी में',
-    abouttab1Image: '/act/assets/about_tab_1_hindi.png'
+    youcanmeetsub: '#1Millionmuser',
+    abouttab1Image: '/act/assets/about_tab_1_hindi.png',
+    abouttab1Phone: '/act/assets/phone_hindi.png'
   }
 }
 
 const meetUserList = {
   en: [
     {
-      icon: 'person_icon.png',
-      title: 'Special Guest'
+      icon: '/million/nagmaa.jpg',
+      title: '@nagmaa'
     },
     {
-      icon: 'person_icon.png',
-      title: 'Special Guest'
+      icon: '/million/heer.naik.jpg',
+      title: '@heer.naik'
     },
     {
-      icon: 'person_icon.png',
-      title: 'Special Guest'
+      icon: '/million/aashikabhatia.jpg',
+      title: '@aashikabhatia'
+    },{
+      icon: '/million/nagmaa.jpg',
+      title: '@nagmaa'
     },
     {
-      icon: 'person_icon.png',
-      title: 'Special Guest'
+      icon: '/million/heer.naik.jpg',
+      title: '@heer.naik'
     },
     {
-      icon: 'person_icon.png',
-      title: 'Special Guest'
-    },
+      icon: '/million/aashikabhatia.jpg',
+      title: '@aashikabhatia'
+    }
   ],
   in: [
     {
-      icon: 'person_icon.png',
-      title: 'वशषे अ,त-थ'
+      icon: '/million/nagmaa.jpg',
+      title: '@nagmaa'
     },
     {
-      icon: 'person_icon.png',
-      title: 'वशषे अ,त-थ'
+      icon: '/million/heer.naik.jpg',
+      title: '@heer.naik'
     },
     {
-      icon: 'person_icon.png',
-      title: 'वशषे अ,त-थ'
+      icon: '/million/aashikabhatia.jpg',
+      title: '@aashikabhatia'
+    },{
+      icon: '/million/nagmaa.jpg',
+      title: '@nagmaa'
     },
     {
-      icon: 'person_icon.png',
-      title: 'वशषे अ,त-थ'
+      icon: '/million/heer.naik.jpg',
+      title: '@heer.naik'
     },
     {
-      icon: 'person_icon.png',
-      title: 'वशषे अ,त-थ'
-    },
+      icon: '/million/aashikabhatia.jpg',
+      title: '@aashikabhatia'
+    }
   ]
 }
 
 const navList = {
   en: {
     home: 'Home',
+    winners: 'Winners',
     about: 'About',
     media: 'Media',
     video: 'Video',
@@ -153,6 +152,7 @@ const navList = {
   },
   in: {
     home: 'होम',
+    winners: 'विजेताओं',
     about: 'के बारे में',
     media: 'मीडिया',
     video: '1 मिलियन ऑडिशन प्रतिभा से मिलें',
@@ -196,10 +196,58 @@ const rule = {
   }
 }
 
+const prizeArticle = {
+  en: `
+    <p>Round 1 winners can receive daily Diamonds according to previous day video performance on participating 1 Million Audition Round 2.  </p>
+    <p>On 7th, we will issue the Final Diamond Prize for winners which are based on the general performance during 1 Million Audition. </p>
+    
+    <p>How can I withdraw my Diamonds? </p>
+    <p>Step 1. Download Live.ly App (Android or IOS): Download and log in with your musical.ly account. </p>
+    <p>Step 2. Check your balance: Go to Profile page, press “My Wallet”, and then “My Rewards” and check your Diamonds Balance. </p>
+    <p>Step 3. Withdraw Diamonds: Agreed cash-out instruction and link your Paypal account with musical.ly account </p>
+    <p>  Step 4. Withdraw Successfully! </p>
+    <p>Step 5. You will receive the respective withdraw amount in your Paypal account within 15 days. </p>
+  `,
+  in: `
+    <p>एक  मिलियन ऑडिशन के प्रथम चरण के विजेता जो दूसरे चरण में प्रवेश करेंगे उन्हें हर दिन अपने पिछले दिन के वीडियो प्रदर्शन के अनुसार हीरे प्राप्त होंगे. </p>
+    <p>7 फरवरी को, हम 1 लाख ऑडिशन के दौरान सामान्य प्रदर्शन पर प्रत्येक विजेता के लिए अंतिम डायमंड पुरस्कार जारी करेंगे।</p>
+    
+    <p>चरण 1। लाइवली ऐप (एंड्रॉइड या आईओएस) डाउनलोड करें. अपने म्युज़िकली खाते से डाउनलोड और लॉगिन करें।</p>
+    <p>चरण 2. अपनी बैलेंस जांचें: प्रोफ़ाइल पृष्ठ पर जाएं, "मेरा वॉलेट" बटन दबाएं, और फिर "मेरा पुरस्कार" दबाएं और अपने हीरे के शेष राशि की जांच करें।</p>
+    <p>चरण 3. हीरे की निकासी : नकद आहरण की अनुज्ञा दें और म्युज़िकली खाते के साथ अपने पेपैल खाते को लिंक करें</p>
+    <p>चरण 4. सफलतापूर्वक वापस आएं. </p>
+    <p> चरण 5. आपको 15 दिनों के भीतर अपने पेपैल खाते में संबंधित निकासी राशि प्राप्त होगी।</p>
+  `
+}
+
+const  topFiveWinners = [
+  {
+    name: 'Mr_kalakaar',
+    dimonds: 83644
+  },
+  {
+    name: 'itx_kunwar',
+    dimonds: 82487
+  },
+  {
+    name: 'raksha.m.s',
+    dimonds: 82168
+  },
+  {
+    name: 'anamdarbar1',
+    dimonds: 81847
+  },
+  {
+    name: 'Sameeksha_Sud',
+    dimonds: 81730
+  }
+]
+
 module.exports =  (lang) => (
   {
-    winners,
-    winnerNameList,
+    topFiveWinners,
+    prizeArticle: prizeArticle[lang],
+    winnerNameList: winnerList,
     aboutTagList: aboutTagList[lang],
     YTvideoinfo: JSON.stringify(YTvideoinfo),
     setIntervalTimeNode: `${countDown(lang, finnalTime)}`,
@@ -214,6 +262,3 @@ module.exports =  (lang) => (
     titleList: JSON.stringify(titleList[lang])
   }
 )
-
-//hide winner
-//<-<%- include('./component/winners/winners', { winners, winnerNameList, titleList, aboutSubList }) %>->

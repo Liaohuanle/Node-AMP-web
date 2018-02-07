@@ -115,6 +115,8 @@
 .round-container{
   margin: 3rem auto;
   overflow: hidden;
+  display: flex;
+  justify-content:center;
   text-align: center;
 }
 
@@ -123,6 +125,7 @@
   border-radius: 8px;
   display: inline-block;
   width: 282px;
+  height: 250px;
   margin-right: 1rem;
 }
 
@@ -132,6 +135,10 @@
   color: #fff;
   text-align: center;
   font-size: 2rem;
+}
+
+.round-card span{
+  margin-top: 15px;
 }
 
 .round-card p{
@@ -173,7 +180,37 @@
   font-size: 12px;
 }
 
+.prize-content{
+  color: #fff;
+}
+
+.prize-content p {
+  text-align: left;
+  font-weight: 100;
+  margin-top: 14px;
+}
+.prize-steps{
+  max-width: 700px;
+  display: block;
+  margin: 20px auto;
+}
+.prize-text{
+  margin: 50px auto;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+}
+.prize-steps-phone{
+  display: none;
+}
 @media(max-width: 769px){
+  .prize-steps{
+   display: none;
+  }
+  .prize-steps-phone{
+    display: block;
+    margin: 0 auto;
+  }
   .title-container p{
     font-size: 16px;
   }
@@ -266,5 +303,9 @@
 
   .m-t-lg{
     margin-top: 1vh;
+  }
+  .prize-content p {
+    margin-top: 8px;
+    font-size: 12px;
   }
 }

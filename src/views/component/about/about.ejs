@@ -13,7 +13,7 @@
     </ul>
     <div class='slider'>
       <div class='tab-item mobile-layout'>
-        <img src='/act/assets/phone.png' class='about-tab-1 float-left'/>
+        <img src='<%= aboutSubList.abouttab1Phone %>' class='about-tab-1 float-left'/>
         <img src='<%= aboutSubList.abouttab1Image %>' class='m-t-lg about-tab-2 p-l-sm'/>
       </div>
       <div class='tab-item'>
@@ -27,26 +27,20 @@
         </div>
       </div>
       <div class='tab-item'>
-        <div class='tab-item-img-container width-100'>
-          <h1> <%= aboutSubList.prize %></h1>
-          <img src='/act/assets/about_tab_3_prize.png' class='img-vw m-t-md'/>
-        </div>
-      </div>
-      <div class='tab-item'>
         <p> 
           <%= rule.titleText %>
         </p>
         <div class='round-container'>
           <div class='round-card'>
-            <h2 class='line-height-55'><%= rule.round1 %></h2>
-            <p class='line-height-39'>
+            <h2><%= rule.round1 %></h2>
+            <p>
               <%= rule.round1Text %>
               <span>Jan 19th - Jan 27th</span>
             </p>
           </div>
           <div class='round-card'>
-            <h2 class='line-height-55'><%= rule.round2 %></h2>
-            <p class='line-height-39'>
+            <h2><%= rule.round2 %></h2>
+            <p>
               <%= rule.round2Text %>
               <span>Jan 31st - Feb 5th</span>
             </p>
