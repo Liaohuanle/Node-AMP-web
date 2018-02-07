@@ -124,6 +124,10 @@
   width: 60%;
   margin: 20px auto;
   color: #fff;
+  max-height: 11vh;
+  padding-left: 14vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .winner-small-container span{
   display: inline-block;
