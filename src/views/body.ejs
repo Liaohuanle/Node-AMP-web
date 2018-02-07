@@ -9,7 +9,7 @@
             bannerImgMobile,
             langTransfor
           }) %>
-        <%- include('./component/winners/winners', { topFiveWinners }) %>
+        <%- include('./component/winners/winners', { winnerList, topFiveWinners }) %>
          <%- include('./component/prize/prize', { topFiveWinners }) %>
         <%- include('./component/about/about', {
             currentStep: JSON.parse(aboutPanelTimeNode).currentStep,

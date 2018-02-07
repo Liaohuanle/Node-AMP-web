@@ -71,7 +71,7 @@ const aboutSubList = {
   en: {
     cat: 'CATEGORIES',
     prizeWin: 'Win₹10,000,000',
-    seeyou: ' <p>Event Address: Westin Garden City</p> <p>Mumbai Time: Start from 11:30 AM, 10th February 2018</p>',
+    seeyou: ' <p>Event Address: Westin Garden City Mumbai</p> <p>Time: Start from 11:30 AM, 10th February 2018</p>',
     comesoon: 'Coming soon...',
     youcanmeetsub: '#1Millionmuser',
     abouttab1Image: '/act/assets/about_tab_1.png',
@@ -80,7 +80,7 @@ const aboutSubList = {
   in: {
     cat: 'वर्ग',
     prizeWin: 'जीत₹10,000,000',
-    seeyou: '<p>Event Address: Westin Garden City</p> <p>Mumbai Time: Start from 11:30 AM, 10th February 2018</p>',
+    seeyou: '<p>Event Address: Westin Garden City Mumbai</p> <p>Time: Start from 11:30 AM, 10th February 2018</p>',
     comesoon: 'जBदआरहाहै',
     youcanmeetsub: '#1Millionmuser',
     abouttab1Image: '/act/assets/about_tab_1_hindi.png',
@@ -220,12 +220,10 @@ const  topFiveWinners = [
     dimonds: 81730
   }
 ]
-
 module.exports =  (lang) => (
   {
     topFiveWinners,
     prizeArticle: prizeArticle[lang],
-    winnerNameList: winnerList,
     aboutTagList: aboutTagList[lang],
     YTvideoinfo: JSON.stringify(YTvideoinfo),
     setIntervalTimeNode: `${countDown(lang, finnalTime)}`,
@@ -237,6 +235,7 @@ module.exports =  (lang) => (
     navList: navList[lang],
     rule: rule[lang],
     aboutSubList: aboutSubList[lang],
+    winnerList: winnerList,
     titleList: JSON.stringify(titleList[lang])
   }
 )
