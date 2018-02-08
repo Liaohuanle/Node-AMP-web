@@ -16,7 +16,7 @@
   width: 100%;
   text-align: center;
   color: #fff;
-  margin-top: 20px;
+  margin-top: 50px;
   font-size: 16px;
 }
 
@@ -120,6 +120,24 @@
   font-size: 16px;
   margin: initial;
 }
+.winner-small-container{
+  width: 60%;
+  margin: 20px auto;
+  color: #fff;
+  max-height: 11vh;
+  padding-left: 14vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.winner-small-container span{
+  display: inline-block;
+  font-size: 20px;
+  margin-right: 22px;
+  min-width: 194px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 10px;
+}
 @media (max-width:1282px) {
   .winner-container{
     background-size: 175%;
@@ -132,6 +150,24 @@
   }
 }
 @media (max-width:769px) {
+
+  .winner-container a{
+    margin-top: 20px;
+  }
+  .winner-small-container{
+    margin: 0 auto;
+    padding-left: 19vw;
+    width: 90%;
+    max-height: 14vh;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .winner-small-container span{
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 8px;
+    min-width: 124px;
+  }
   .winner-container{
     background-size: 330%;
   }

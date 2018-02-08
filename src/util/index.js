@@ -71,7 +71,7 @@ const aboutSubList = {
   en: {
     cat: 'CATEGORIES',
     prizeWin: 'Win₹10,000,000',
-    seeyou: ' Event Address: Westin Garden City, Mumbai Time: Start from 11:30 AM, 10th February 2018',
+    seeyou: ' <p>Event Address: Westin Garden City Mumbai</p> <p>Time: Start from 11:30 AM, 10th February 2018</p>',
     comesoon: 'Coming soon...',
     youcanmeetsub: '#1Millionmuser',
     abouttab1Image: '/act/assets/about_tab_1.png',
@@ -80,7 +80,7 @@ const aboutSubList = {
   in: {
     cat: 'वर्ग',
     prizeWin: 'जीत₹10,000,000',
-    seeyou: 'Mumbai मे मिलते हैं।',
+    seeyou: '<p>Event Address: Westin Garden City Mumbai</p> <p>Time: Start from 11:30 AM, 10th February 2018</p>',
     comesoon: 'जBदआरहाहै',
     youcanmeetsub: '#1Millionmuser',
     abouttab1Image: '/act/assets/about_tab_1_hindi.png',
@@ -101,32 +101,10 @@ const meetUserList = {
     {
       icon: '/million/aashikabhatia.jpg',
       title: '@aashikabhatia'
-    },{
-      icon: '/million/nagmaa.jpg',
-      title: '@nagmaa'
-    },
-    {
-      icon: '/million/heer.naik.jpg',
-      title: '@heer.naik'
-    },
-    {
-      icon: '/million/aashikabhatia.jpg',
-      title: '@aashikabhatia'
     }
   ],
   in: [
     {
-      icon: '/million/nagmaa.jpg',
-      title: '@nagmaa'
-    },
-    {
-      icon: '/million/heer.naik.jpg',
-      title: '@heer.naik'
-    },
-    {
-      icon: '/million/aashikabhatia.jpg',
-      title: '@aashikabhatia'
-    },{
       icon: '/million/nagmaa.jpg',
       title: '@nagmaa'
     },
@@ -216,13 +194,13 @@ const prizeArticle = {
     <p>चरण 2. अपनी बैलेंस जांचें: प्रोफ़ाइल पृष्ठ पर जाएं, "मेरा वॉलेट" बटन दबाएं, और फिर "मेरा पुरस्कार" दबाएं और अपने हीरे के शेष राशि की जांच करें।</p>
     <p>चरण 3. हीरे की निकासी : नकद आहरण की अनुज्ञा दें और म्युज़िकली खाते के साथ अपने पेपैल खाते को लिंक करें</p>
     <p>चरण 4. सफलतापूर्वक वापस आएं. </p>
-    <p> चरण 5. आपको 15 दिनों के भीतर अपने पेपैल खाते में संबंधित निकासी राशि प्राप्त होगी।</p>
+    <p>चरण 5. आपको 15 दिनों के भीतर अपने पेपैल खाते में संबंधित निकासी राशि प्राप्त होगी।</p>
   `
 }
 
 const  topFiveWinners = [
   {
-    name: 'Mr_kalakaar',
+    name: 'mr_kalakaar',
     dimonds: 83644
   },
   {
@@ -238,16 +216,14 @@ const  topFiveWinners = [
     dimonds: 81847
   },
   {
-    name: 'Sameeksha_Sud',
+    name: 'sameeksha_sud',
     dimonds: 81730
   }
 ]
-
 module.exports =  (lang) => (
   {
     topFiveWinners,
     prizeArticle: prizeArticle[lang],
-    winnerNameList: winnerList,
     aboutTagList: aboutTagList[lang],
     YTvideoinfo: JSON.stringify(YTvideoinfo),
     setIntervalTimeNode: `${countDown(lang, finnalTime)}`,
@@ -259,6 +235,7 @@ module.exports =  (lang) => (
     navList: navList[lang],
     rule: rule[lang],
     aboutSubList: aboutSubList[lang],
+    winnerList: winnerList,
     titleList: JSON.stringify(titleList[lang])
   }
 )
