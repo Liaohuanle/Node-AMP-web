@@ -138,6 +138,14 @@
   text-overflow: ellipsis;
   margin-top: 10px;
 }
+
+.ellpise{
+  width: 100%;
+  display: block;
+  text-align: center;
+  color: #fff;
+}
+
 @media (max-width:1282px) {
   .winner-container{
     background-size: 175%;
