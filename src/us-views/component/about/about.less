@@ -1,0 +1,311 @@
+
+.tabButton[selected] {
+  outline: none;
+  background: #ccc;
+}
+
+.tabButton {
+  list-style: none;
+  flex-grow: 1;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tabContent {
+  display: none;
+  width: 100%;
+  order: 1; /* must be greater than the order of the tab buttons to flex to the next line */
+  border: 1px solid #ccc;
+}
+
+.tabButton[selected]+.tabContent {
+  display: block;
+}
+
+/* For example below (not required) */
+.itemCustom {
+  border: 1px solid #000;
+  height: 280px;
+  width: 380px;
+  margin: 10px;
+  text-align: center;
+  padding-top: 140px;
+}
+.amp-selector {
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.about-container, .meet-container{
+  width: 100%;
+	background-image: linear-gradient(55deg, #e02f53, #ff386d 49%, #ff386e 49%, #ff22a7);
+}
+.title-container{
+  color: #fff;
+  padding-bottom: 1rem;
+}
+.title-container p, .tab-item p{
+  text-align: center;
+  font-size: 20px;
+	font-weight: 500;
+  letter-spacing: 1px;
+  margin: 0;
+  font-weight: 200;
+	color: #ffffff;
+}
+.tab-container ul{
+  text-align: center;
+  position: relative;
+}
+.tab-item-text{
+  list-style: none;
+  display: inline-block;
+  padding: .6rem 2rem;
+  cursor: pointer;
+  color: rgba(255,255,255,.7);
+  font-weight: 300;
+  font-size: 1.7rem;
+  letter-spacing: 1px;
+  margin: auto -2px;
+  border-bottom: 2px solid rgba(255,255,255,.4);
+}
+.tab-item-text.active{
+  font-weight: 500;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+}
+.tab-item{
+  margin-top: 7rem;
+  padding: 0 2rem;
+  text-align: center;
+}
+.tab-item-img-container{
+  display: inline-block;
+  text-align: center;
+}
+.tab-item-img-container img{
+  display: inline-block;
+  width: 100%;
+  vertical-align: bottom;
+}
+.tab-item h1{
+  text-align: center;
+  margin: 0;
+}
+.prize-card{
+  display: inline-block;
+}
+.prize-card h3, .prize-card p, .prize-card img{
+  text-align: center;
+  font-weight: 300;
+  color: #fff;
+  font-size: 2rem;
+}
+.prize-card h3{
+  margin-bottom: 2rem;
+}
+.prize-card p{
+  margin-top: 2rem;
+}
+.prize-card img{
+  display: block;
+  margin: 0 auto;
+}
+
+.round-container{
+  margin: 3rem auto;
+  overflow: hidden;
+  display: flex;
+  justify-content:center;
+  text-align: center;
+}
+
+.round-card{
+  border: 2px solid #fff;
+  border-radius: 8px;
+  display: inline-block;
+  width: 282px;
+  height: 250px;
+  margin-right: 1rem;
+}
+
+.round-card h2{
+  border-bottom: 2px solid #fff;
+  padding: 1.2rem 2rem;
+  color: #fff;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.round-card span{
+  margin-top: 15px;
+}
+
+.round-card p{
+  padding: 1rem;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.m-r-b{
+  margin-bottom: 20px !important;
+}
+
+.m-t-lg{
+  margin-top: 6vh;
+}
+.p-l-sm{
+  padding-left: 2vw;
+}
+
+.link{
+  color: #fff;
+  font-size: 12px;
+}
+
+.img-vw{
+  width: 45vw !important;
+  min-width: 300px;
+  max-width: 462px;
+}
+
+.tab-item .about-tab-1, .about-tab-2{
+  display: inline-block;
+  width: 45%;
+}
+
+.round-card span{
+  display: block;
+  color: #fff;
+  font-size: 12px;
+}
+
+.prize-content{
+  color: #fff;
+}
+
+.prize-content p {
+  text-align: left;
+  font-weight: 100;
+  margin-top: 14px;
+}
+.prize-steps{
+  max-width: 700px;
+  display: block;
+  margin: 20px auto 50px auto;
+}
+.prize-text{
+  margin: 20px auto;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+}
+.prize-steps-phone{
+  display: none;
+}
+@media(max-width: 769px){
+  .prize-steps{
+   display: none;
+  }
+  .prize-steps-phone{
+    display: block;
+    margin: 20px auto 50px auto;
+  }
+  .title-container p{
+    font-size: 16px;
+  }
+  .tab-item-text{
+    padding: 5px 15px;
+    font-size: 14px;
+    color:#fff;
+    border: 1px solid rgba(255,255,255,.5);
+    border-radius: 10px;
+    margin: 8px 5px;
+  }
+  .tab-item-text.active{
+    background-color: #fff;
+    color: #ff386d;
+  }
+  .tab-item{
+    margin-top: 3vh;
+  }
+  .mobile-layout{
+    text-align: center;
+  }
+  .m-t-sm{
+    margin-top: 1.5vh;
+  }
+  .m-t-md{
+    margin-top: 3vh;
+  }
+  .img-210{
+    max-width: 110px;
+  }
+  .tab-item-img-container .tmanual-width{
+    width: 27%;
+  }
+  .round-container{
+    margin: 3vh auto;
+    text-align: center;
+  }
+
+  .round-card{
+    border: 1px solid #fff;
+    border-radius: 6px;
+    width: 45%;
+    margin-right: 10px;
+    float: initial;
+    margin-bottom: 10px;
+    float: left;
+  }
+  .round-card:last-child{
+    float: right;
+    margin-bottom: initial;
+  }
+
+  .round-card h2{
+    border-bottom: 1px solid #fff;
+    padding: .2rem .6rem;
+    font-size: 1.2rem;
+  }
+  .tab-container ul{
+    margin: initial;
+  }
+
+  .round-card p{
+    padding: .5rem;
+    font-size: 1.2rem;
+  }
+  .line-height-55{
+    line-height: 4vh;
+  }
+  .line-height-39{
+    line-height: initial;
+  }
+  .title-container p, .tab-item p{
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .float-sm-init{
+    float: initial;
+  }
+  .p-l-sm{
+    padding-left: initial;
+  }
+  .tab-item .about-tab-1{
+    float: initial;
+  }
+  .tab-item .about-tab-2{
+    width: 57%;
+    display: initial;
+    margin: 1vh;
+  }
+
+  .m-t-lg{
+    margin-top: 1vh;
+  }
+  .prize-content p {
+    margin-top: 8px;
+    font-size: 12px;
+  }
+}

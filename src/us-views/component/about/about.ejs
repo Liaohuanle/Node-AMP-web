@@ -1,0 +1,81 @@
+<section id='about' class='about-container'>
+  <div class='title-container'>
+    <h1>  <%= JSON.parse(titleList).about %> </h1>
+    <p>1 Million Audition</p>
+  </div>
+  <div class='tab-container'>
+    <ul>
+      <% for(var i =0; i < aboutTagList.length; i++) { %>
+        <li class="<%= i == currentStep ? 'active' : null %> subItem tab-item-text"><%= aboutTagList[i] %></li>
+      <%
+        }
+      %>
+    </ul>
+    <div class='slider'>
+      <div class='tab-item mobile-layout'>
+        <img src='<%= aboutSubList.abouttab1Phone %>' class='about-tab-1 float-left'/>
+        <img src='<%= aboutSubList.abouttab1Image %>' class='m-t-lg about-tab-2 p-l-sm'/>
+      </div>
+      <div class='tab-item'>
+        <h1> <%= aboutSubList.cat %> </h1>
+        <div class='tab-item-img-container m-t-lg'>
+          <img src='/act/assets/about_tab_2_1.png' class='img-160 m-t-sm tmanual-width'/>
+          <img src='/act/assets/about_tab_2_2.png' class='img-160 m-t-sm tmanual-width'/>
+          <img src='/act/assets/about_tab_2_3.png' class='img-160 m-t-sm tmanual-width'/>
+          <img src='/act/assets/about_tab_2_4.png' class='img-160 m-t-sm tmanual-width'/>
+          <img src='/act/assets/about_tab_2_5.png' class='img-160 m-t-sm tmanual-width'/>
+        </div>
+      </div>
+      <div class='tab-item'>
+        <p> 
+          <%= rule.titleText %>
+        </p>
+        <div class='round-container'>
+          <div class='round-card'>
+            <h2><%= rule.round1 %></h2>
+            <p>
+              <%= rule.round1Text %>
+              <span>Jan 19th - Jan 27th</span>
+            </p>
+          </div>
+          <div class='round-card'>
+            <h2><%= rule.round2 %></h2>
+            <p>
+              <%= rule.round2Text %>
+              <span>Jan 31st - Feb 5th</span>
+            </p>
+          </div>
+        </div>
+        <p> 
+          <%= rule.subText %>
+        </p>
+        <p class='m-t-lg'> 
+          <a href='javascript:void(0)' id='ruleClick' class='link'> <%= rule.click %> </a>
+        </p>
+      </div>
+      <div class='tab-item'>
+        <%- aboutSubList.seeyou %>
+        <div class='countDown' id='aboutPannel'>
+          <ul>
+            <li class='days countDownItem'>
+              <span> 00 </span>
+              <%= JSON.parse(spanText).day %>
+            </li>
+            <li class='hours countDownItem'>
+              <span> 00 </span>
+              <%= JSON.parse(spanText).hour %>
+            </li>
+            <li class='minutes countDownItem'>
+              <span> 00 </span>
+              <%= JSON.parse(spanText).minute %>
+            </li>
+            <li class='seconds countDownItem'>
+              <span> 00 </span>
+              <%= JSON.parse(spanText).second %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -138,6 +138,18 @@ const navList = {
   }
 }
 
+const usBannerImgPC = '/act/assets/banner-title-pc-us.png'
+
+const usBannerImgMobile = '/act/assets/banner-title-mobile-us.png'
+
+const usNavList = {
+  about: 'About',
+  home: 'Home',
+  winners: 'Winners',
+  media: 'Media',
+  meetGreet: 'Meet & Greet'
+}
+
 const titleList = {
   en: {
     about: 'ABOUT',
@@ -220,22 +232,52 @@ const  topFiveWinners = [
     dimonds: 81730
   }
 ]
-module.exports =  (lang) => (
-  {
-    topFiveWinners,
-    prizeArticle: prizeArticle[lang],
-    aboutTagList: aboutTagList[lang],
-    YTvideoinfo: JSON.stringify(YTvideoinfo),
-    setIntervalTimeNode: `${countDown(lang, finnalTime)}`,
-    aboutPanelTimeNode: `${countDown(lang, aboutFinalTime)}`,
-    bannerImgPC: bannerImgPC[lang],
-    bannerImgMobile: bannerImgMobile[lang],
-    langTransfor: langTransfor[lang],
-    meetUserList: meetUserList[lang],
-    navList: navList[lang],
-    rule: rule[lang],
-    aboutSubList: aboutSubList[lang],
-    winnerList: winnerList,
-    titleList: JSON.stringify(titleList[lang])
+
+const india = (lang) => ({
+  noBannerVideo: false,
+  bannerBgUrl: '//mpaw-sinc1.muscdn.com/ops/upload/default/2018/01/10/13/050e882e-f102-4862-80ab-ae933d5ae50d.png',
+  cssUrl: `/act/assets/css/india/main.css`,
+  topFiveWinners,
+  prizeArticle: prizeArticle[lang],
+  aboutTagList: aboutTagList[lang],
+  YTvideoinfo: JSON.stringify(YTvideoinfo),
+  setIntervalTimeNode: `${countDown(lang, finnalTime)}`,
+  aboutPanelTimeNode: `${countDown(lang, aboutFinalTime)}`,
+  bannerImgPC: bannerImgPC[lang],
+  bannerImgMobile: bannerImgMobile[lang],
+  langTransfor: langTransfor[lang],
+  meetUserList: meetUserList[lang],
+  navList: navList[lang],
+  rule: rule[lang],
+  aboutSubList: aboutSubList[lang],
+  winnerList: winnerList,
+  titleList: JSON.stringify(titleList[lang])
+})
+
+const us = (lang) => ({
+  noBannerVideo: true,
+  bannerBgUrl: '/act/assets/bg-banner-pc-us.jpeg',
+  cssUrl: `/act/assets/css/us/main.css`,
+  topFiveWinners,
+  prizeArticle: prizeArticle[lang],
+  aboutTagList: aboutTagList[lang],
+  YTvideoinfo: JSON.stringify(YTvideoinfo),
+  setIntervalTimeNode: `${countDown(lang, finnalTime)}`,
+  aboutPanelTimeNode: `${countDown(lang, aboutFinalTime)}`,
+  bannerImgPC: usBannerImgPC,
+  bannerImgMobile: usBannerImgMobile,
+  langTransfor: langTransfor[lang],
+  meetUserList: meetUserList[lang],
+  navList: usNavList,
+  rule: rule[lang],
+  aboutSubList: aboutSubList[lang],
+  winnerList: winnerList,
+  titleList: JSON.stringify(titleList[lang])
+})
+
+module.exports =  (lang) => {
+  return {
+    india: india(lang),
+    us: us(lang)
   }
-)
+}

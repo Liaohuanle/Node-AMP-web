@@ -1,15 +1,17 @@
 <!doctype html>
 
 <html>
-  <%- include('./header') %>
+  <%- include('../components/header', {
+   cssUrl 
+  }) %>
   <%- include('./body', {
+    bannerBgUrl,
     setIntervalTimeNode,
     aboutPanelTimeNode,
     aboutTagList,
     bannerImgPC,
     bannerImgMobile,
     langTransfor,
-    langText,
     titleList,
     navList,
     topFiveWinners,
@@ -18,7 +20,7 @@
     aboutSubList,
     winnerList,
   }) %>
-  <%- include('./run',  {
+  <%- include('../components/run',  {
       setIntervalTimeNode,
       aboutPanelTimeNode,
       YTvideoinfo,

@@ -1,16 +1,16 @@
 
   <body>
-    <%- include('./component/nav/nav' , { langTransfor, langText, navList }) %>
+    <%- include('../components/nav/nav' , { langTransfor, navList }) %>
     <section class='main'>
       <div class='main-container'>
-        <%- include('./component/banner/banner', {
+        <%- include('../components/banner/banner', {
+            bannerBgUrl,
             spanText: JSON.parse(setIntervalTimeNode).spanText,
             bannerImgPC,
             bannerImgMobile,
             langTransfor
           }) %>
-        <%- include('./component/winners/winners', { winnerList, topFiveWinners }) %>
-         <%- include('./component/prize/prize', { topFiveWinners }) %>
+        <%- include('../components/winners/winners', { winnerList, topFiveWinners }) %>
         <%- include('./component/about/about', {
             currentStep: JSON.parse(aboutPanelTimeNode).currentStep,
             spanText: JSON.parse(aboutPanelTimeNode).spanText,
@@ -21,9 +21,9 @@
             aboutSubList,
             prizeArticle
           }) %>
-        <%- include('./component/video/video', { videoUrl }) %>
-        <%- include('./component/youcanmeet/youcanmeet', { meetUserList, titleList, aboutSubList }) %>
-        <%- include('./component/termofuser/termofuse') %>
+        <%- include('../components/video/video', { videoUrl }) %>
+        <%- include('../components/youcanmeet/youcanmeet', { meetUserList, titleList, aboutSubList }) %>
+        <%- include('../components/termofuser/termofuse') %>
       </div>
     </section>
   </body>

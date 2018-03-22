@@ -1,0 +1,32 @@
+
+  <body>
+    <%- include('../components/nav/nav' , { langTransfor, langText, navList }) %>
+    <section class='main'>
+      <div class='main-container'>
+        <%- include('../components/banner/banner', {
+            noBannerVideo,
+            spanText: JSON.parse(setIntervalTimeNode).spanText,
+            bannerImgPC,
+            bannerImgMobile,
+            langTransfor
+          }) %>
+        <%- include('../components/winners/winners', { winnerList, topFiveWinners }) %>
+         <%- include('./component/prize/prize', { topFiveWinners }) %>
+        <%- include('./component/about/about', {
+            currentStep: JSON.parse(aboutPanelTimeNode).currentStep,
+            spanText: JSON.parse(aboutPanelTimeNode).spanText,
+            aboutTagList,
+            setIntervalTimeNode: aboutPanelTimeNode,
+            titleList,
+            rule,
+            aboutSubList,
+            prizeArticle
+          }) %>
+        <%- include('../components/video/video', { videoUrl }) %>
+        <%- include('../components/youcanmeet/youcanmeet', { meetUserList, titleList, aboutSubList }) %>
+        <%- include('../components/termofuser/termofuse') %>
+      </div>
+    </section>
+  </body>
+
+  
