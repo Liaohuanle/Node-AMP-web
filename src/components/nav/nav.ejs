@@ -1,0 +1,20 @@
+
+<header class="ampstart-headerbar">
+  <div class='header-title'>
+    <div class='icon'>
+      <img src="/act/assets/musically logo@2x.png" />
+    </div>
+  </div>
+  <nav class="ampstart-headerbar-nav ampstart-nav">
+    <ul class="list-reset">
+      <%for(const key in navList){%>
+        <li class="ampstart-nav-item relative lune-underline-strike">
+          <a href="#<%=key%>" class="text-decoration-none block"><%= navList[key] %></a>
+        </li>
+      <%}%>
+    </ul>
+  </nav>
+  <%if(typeof langText == 'string'){%>
+    <a href='<%=langTransfor%>' class='lang-transfor'><%= langText %></a>
+  <% }%>
+</header>
