@@ -1,0 +1,70 @@
+#introduction-container{
+  position: relative;
+  background-color: #fff;
+  height: 70vh;
+  overflow: hidden;
+  .wrapper{
+    margin: 20vh auto;
+    height: 30vh;
+    width: 1200px;
+    figure{
+      width: 30%;
+      margin: initial;
+      margin-top: 60px;
+      float: left;
+      display: inline-block;
+      img{
+        max-width: 350px;
+      }
+    }
+    article{
+      width: 70%;
+      float: right;
+      display: inline-block;
+      h2{
+        font-size: 2.4rem;
+      }
+      p{
+        line-height: 2rem;
+        font-size: 1.65rem;
+        margin-top: 1rem;
+      }
+    }
+  }
+  @media(max-width: 1280px) {
+    height: initial;
+    padding: 5vh 0 8vh 0;
+    .wrapper{
+      width: 100%;
+      margin: 20px auto;
+      height: initial;
+      overflow: hidden;
+      figure{
+        width: 100%;
+        float: initial;
+        text-align: center;
+        img{
+          max-width: 300px;
+        }
+      }
+      article{
+        width: 80%;
+        float: initial;
+        display: block;
+        margin: 20px auto;
+        h2{
+          text-align: center;
+          font-size: 1.78rem;
+        }
+        p{
+          text-align:justify;
+          text-justify:distribute-all-lines;/*ie6-8*/
+          text-align-last:justify;/* ie9*/
+          -moz-text-align-last:justify;/*ff*/
+          -webkit-text-align-last:justify;/*chrome 20+*/
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}

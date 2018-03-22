@@ -28,19 +28,19 @@
     </div>
   </div>
 </section>
-<section class="m0 banner-mask" style="background-image: url('<%=bannerBgUrl%>')">
-<%if(typeof noBannerVideo == 'boolean' && !noBannerVideo){%>
-  <video
-    autoplay= "autoplay"
-    poster="/act/assets/poster.jpeg"
-    title="Big Buck Bunny"
-    album="Blender"
-    artist="Blender Foundation"
-    layout="responsive"
-    loop
-    id='banner-video'
-  >
-    <source type="video/mp4" src="//mpaw-sinc1.muscdn.com/ops/upload/default/2018/01/10/13/3ff7bedf-db8e-4b13-875a-f210cf205c55.mp4"></source>
-  </video>
-<%}%>
+<section class="m0 banner-mask">
+  <%if(typeof noBannerVideo == 'boolean' && !noBannerVideo){%>
+    <video
+      autoplay= "autoplay"
+      poster="<%=bannerVideoPoster%>"
+      title="Big Buck Bunny"
+      album="Blender"
+      artist="Blender Foundation"
+      layout="responsive"
+      loop
+      src="<%=bannerVideoUrl%>"
+      id='banner-video'
+    >
+    </video>
+  <%}%>
 </section>

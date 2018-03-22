@@ -5,7 +5,7 @@
       <ul class="winner-top-container">
         <% for(var i=0; i< topFiveWinners.length; i ++ ) {%>
           <li class="winner-item">
-            <img src="/act/assets/winners/<%=topFiveWinners[i].name%>.jpg"/>
+            <img src="/act/assets/<%=topFiveWinners[i].name%>.png"/>
             <span>
               <%=topFiveWinners[i].name%>
             </span>
@@ -17,11 +17,5 @@
         <% } %>
       </ul>
     </div>
-     <div class="winner-small-container">
-     <% for(var i=0; i< 15; i++ ){ %>
-      <span>@<%=winnerList[i]%></span>
-      <% } %>
-     </div>
-    <a href="javascript:;" id="winnerList">......get all the winners</a>
   </div>
 </section>
