@@ -633,14 +633,22 @@ ul {
   top: 0px;
   height: 100vh;
   z-index: -1;
-  background-size: 100%;
   background-repeat: no-repeat;
+  background-color: bisque;
 }
 .banner-mask video {
   min-height: 100%;
   min-width: 100%;
   width: auto;
   height: auto;
+}
+.banner-mask.mobile {
+  background-size: 115%;
+  background-image: url('/act/assets/banner-video-mobile.gif');
+}
+.banner-mask.pc {
+  background-size: 110%;
+  background-image: url('/act/assets/banner-video.gif');
 }
 .countDown {
   margin: 2rem auto 4rem auto;
@@ -854,29 +862,29 @@ ul {
 }
 .winner-item > img {
   display: block;
-  max-width: 90%;
+  max-width: 50%;
   margin: 0 auto;
   border-radius: 50%;
-  border: 2px solid #e23054;
+  background-color: #eee;
 }
-.winner-item > span {
+.winner-item span {
   display: block;
   text-align: center;
-  font-size: 22px;
+  font-size: 1.35rem;
   width: 100%;
   margin: initial;
   margin-top: 12px;
 }
-.winner-item > p > img {
+.winner-item p {
+  font-size: 1.35rem;
+  margin: initial;
+}
+.winner-item p img {
   display: inline-block;
   max-width: 24px;
   margin-bottom: 4px;
   margin-right: 6px;
   vertical-align: middle;
-}
-.winner-item > p {
-  font-size: 16px;
-  margin: initial;
 }
 .winner-small-container {
   width: 60%;
@@ -889,8 +897,8 @@ ul {
 }
 .winner-small-container span {
   display: inline-block;
-  font-size: 20px;
-  margin-right: 22px;
+  font-size: 1.35rem;
+  margin-right: 1.35rem;
   min-width: 194px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1134,7 +1142,7 @@ ul {
   color: #fff;
 }
 .tab-item {
-  margin-top: 7rem;
+  margin-top: 1rem;
   padding: 0 2rem;
   text-align: center;
 }
@@ -1184,7 +1192,7 @@ ul {
   border-radius: 8px;
   display: inline-block;
   width: 282px;
-  height: 250px;
+  height: 175px;
   margin-right: 1rem;
 }
 .round-card h2 {
@@ -1193,9 +1201,6 @@ ul {
   color: #fff;
   text-align: center;
   font-size: 2rem;
-}
-.round-card span {
-  margin-top: 15px;
 }
 .round-card p {
   padding: 1rem;
@@ -1230,36 +1235,37 @@ ul {
   color: #fff;
   font-size: 12px;
 }
-.prize-content {
-  color: #fff;
+.prize-container img {
+  display: inline-block;
 }
-.prize-content p {
-  text-align: left;
-  font-weight: 100;
-  margin-top: 14px;
+.prize-container img:first-child {
+  margin-top: 30px;
+  max-width: 230px;
+  float: left;
 }
-.prize-steps {
-  max-width: 700px;
-  display: block;
-  margin: 20px auto 50px auto;
-}
-.prize-text {
-  margin: 20px auto;
-  text-align: center;
-  color: #fff;
-  font-size: 20px;
-}
-.prize-steps-phone {
-  display: none;
+.prize-container img:last-child {
+  max-width: 410px;
+  float: right;
+  margin-left: 47px;
 }
 @media (max-width: 769px) {
-  .prize-steps {
-    display: none;
+  .prize-container {
+    text-align: center;
   }
-  .prize-steps-phone {
-    display: block;
-    margin: 20px auto 50px auto;
+  .prize-container img:first-child {
+    max-width: 150px;
+    margin-top: initial;
   }
+  .prize-container img:last-child {
+    margin-left: initial;
+    margin-top: 20px;
+  }
+  .prize-container img:first-child,
+  .prize-container img:last-child {
+    float: initial;
+  }
+}
+@media (max-width: 769px) {
   .title-container p {
     font-size: 16px;
   }
@@ -1350,8 +1356,80 @@ ul {
   .m-t-lg {
     margin-top: 1vh;
   }
-  .prize-content p {
-    margin-top: 8px;
-    font-size: 12px;
+}
+#introduction-container {
+  position: relative;
+  background-color: #fff;
+  height: 70vh;
+  overflow: hidden;
+}
+#introduction-container .wrapper {
+  margin: 20vh auto;
+  height: 30vh;
+  width: 1200px;
+}
+#introduction-container .wrapper figure {
+  width: 30%;
+  margin: initial;
+  margin-top: 60px;
+  float: left;
+  display: inline-block;
+}
+#introduction-container .wrapper figure img {
+  max-width: 350px;
+}
+#introduction-container .wrapper article {
+  width: 70%;
+  float: right;
+  display: inline-block;
+}
+#introduction-container .wrapper article h2 {
+  font-size: 2.4rem;
+}
+#introduction-container .wrapper article p {
+  line-height: 2rem;
+  font-size: 1.65rem;
+  margin-top: 1rem;
+}
+@media (max-width: 1280px) {
+  #introduction-container {
+    height: initial;
+    padding: 5vh 0 8vh 0;
+  }
+  #introduction-container .wrapper {
+    width: 100%;
+    margin: 20px auto;
+    height: initial;
+    overflow: hidden;
+  }
+  #introduction-container .wrapper figure {
+    width: 100%;
+    float: initial;
+    text-align: center;
+  }
+  #introduction-container .wrapper figure img {
+    max-width: 300px;
+  }
+  #introduction-container .wrapper article {
+    width: 80%;
+    float: initial;
+    display: block;
+    margin: 20px auto;
+  }
+  #introduction-container .wrapper article h2 {
+    text-align: center;
+    font-size: 1.78rem;
+  }
+  #introduction-container .wrapper article p {
+    text-align: justify;
+    text-justify: distribute-all-lines;
+    /*ie6-8*/
+    text-align-last: justify;
+    /* ie9*/
+    -moz-text-align-last: justify;
+    /*ff*/
+    -webkit-text-align-last: justify;
+    /*chrome 20+*/
+    font-size: 1.4rem;
   }
 }

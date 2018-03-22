@@ -67,6 +67,8 @@ const aboutTagList = {
   in: ['#ShareAndWin ', 'वर्ग', 'इनाम', 'उत्सव पार्टी']
 }
 
+const aboutUsTagList = ['#ShareAndWin ', 'Category', 'Prize', 'Rules']
+
 const aboutSubList = {
   en: {
     cat: 'CATEGORIES',
@@ -143,8 +145,8 @@ const usBannerImgPC = '/act/assets/banner-title-pc-us.png'
 const usBannerImgMobile = '/act/assets/banner-title-mobile-us.png'
 
 const usNavList = {
-  about: 'About',
   home: 'Home',
+  about: 'About',
   winners: 'Winners',
   media: 'Media',
   meetGreet: 'Meet & Greet'
@@ -233,10 +235,17 @@ const  topFiveWinners = [
   }
 ]
 
+const usTopFiveWinners = new Array(20).fill({
+  name: 'undifined',
+  dimonds: 0.00
+})
+
 const india = (lang) => ({
   noBannerVideo: false,
   bannerBgUrl: '//mpaw-sinc1.muscdn.com/ops/upload/default/2018/01/10/13/050e882e-f102-4862-80ab-ae933d5ae50d.png',
   cssUrl: `/act/assets/css/india/main.css`,
+  bannerVideoUrl: '//mpaw-sinc1.muscdn.com/ops/upload/default/2018/01/10/13/3ff7bedf-db8e-4b13-875a-f210cf205c55.mp4',
+  bannerVideoPoster: '/act/assets/poster.jpeg',
   topFiveWinners,
   prizeArticle: prizeArticle[lang],
   aboutTagList: aboutTagList[lang],
@@ -254,15 +263,19 @@ const india = (lang) => ({
   titleList: JSON.stringify(titleList[lang])
 })
 
+const usSetIntervalTimeNode = JSON.parse(countDown('en', '2018.3.30'))
+usSetIntervalTimeNode['currentStep'] = 1
 const us = (lang) => ({
-  noBannerVideo: true,
-  bannerBgUrl: '/act/assets/bg-banner-pc-us.jpeg',
+  noBannerVideo: false,
+  bannerBgUrl: '/act/assets/banner-video.gif',
   cssUrl: `/act/assets/css/us/main.css`,
-  topFiveWinners,
+  bannerVideoUrl: '/act/assets/musically-faces.mp4',
+  bannerVideoPoster: '/act/assets/bg-banner-pc-us.jpeg',
+  topFiveWinners: usTopFiveWinners,
   prizeArticle: prizeArticle[lang],
-  aboutTagList: aboutTagList[lang],
+  aboutTagList: aboutUsTagList,
   YTvideoinfo: JSON.stringify(YTvideoinfo),
-  setIntervalTimeNode: `${countDown(lang, finnalTime)}`,
+  setIntervalTimeNode: `${JSON.stringify(usSetIntervalTimeNode)}`,
   aboutPanelTimeNode: `${countDown(lang, aboutFinalTime)}`,
   bannerImgPC: usBannerImgPC,
   bannerImgMobile: usBannerImgMobile,

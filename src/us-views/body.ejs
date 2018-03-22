@@ -4,13 +4,15 @@
     <section class='main'>
       <div class='main-container'>
         <%- include('../components/banner/banner', {
+            bannerVideoPoster,
+            bannerVideoUrl,
             bannerBgUrl,
             spanText: JSON.parse(setIntervalTimeNode).spanText,
             bannerImgPC,
             bannerImgMobile,
             langTransfor
           }) %>
-        <%- include('../components/winners/winners', { winnerList, topFiveWinners }) %>
+        <%- include('./component/oneMIllionResume/oneMillionresume') %>
         <%- include('./component/about/about', {
             currentStep: JSON.parse(aboutPanelTimeNode).currentStep,
             spanText: JSON.parse(aboutPanelTimeNode).spanText,
@@ -21,8 +23,8 @@
             aboutSubList,
             prizeArticle
           }) %>
+        <%- include('../components/winners/winners', { winnerList, topFiveWinners }) %>
         <%- include('../components/video/video', { videoUrl }) %>
-        <%- include('../components/youcanmeet/youcanmeet', { meetUserList, titleList, aboutSubList }) %>
         <%- include('../components/termofuser/termofuse') %>
       </div>
     </section>

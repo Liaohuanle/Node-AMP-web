@@ -188,17 +188,18 @@
   }
 
   function transformBanner(){
-    if(justifiy.IsSafari()){
+    const isMOBILE = winWidth < 769
+    const IsSafari = justifiy.IsSafari()
+    if( isMOBILE ){
       $('.banner-mask video').remove();
-      $('.banner-mask img')
-      .attr('src', '//mpaw-sinc1.muscdn.com/ops/upload/default/2018/01/10/15/7d13bfc5-3c96-4891-adc4-c43d9bab8ce7.png')
-      .attr('style', 'display: block');
-    }
-    if( winWidth < 769 ){
-      $('.banner-mask video').remove();
-      $('.banner-mask img')
-        .attr('src', '//mpaw-sinc1.muscdn.com/ops/upload/default/2018/01/10/15/660c03e2-af16-48fa-b78f-7169e2157a4a.png')
-        .attr('style', 'display: block');
+      $('.banner-mask').addClass('mobile')
+    }else {
+      if( IsSafari ){
+        $('.banner-mask').addClass('pc')
+        $('.banner-mask video').remove();
+      }else{
+        $('.banner-mask').attr('style', 'background-image: null;');
+      }
     }
   }
 
