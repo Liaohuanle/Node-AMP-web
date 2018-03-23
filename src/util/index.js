@@ -244,7 +244,7 @@ const india = (lang) => ({
   title: 'Musical.ly - India',
   noBannerVideo: false,
   bannerBgUrl: '//mpaw-sinc1.muscdn.com/ops/upload/default/2018/01/10/13/050e882e-f102-4862-80ab-ae933d5ae50d.png',
-  cssUrl: `/act/assets/css/india/main`,
+  cssUrl: `../assets/css/india/main.ejs`,
   bannerVideoUrl: '//mpaw-sinc1.muscdn.com/ops/upload/default/2018/01/10/13/3ff7bedf-db8e-4b13-875a-f210cf205c55.mp4',
   bannerVideoPoster: '/act/assets/poster.jpeg',
   topFiveWinners,

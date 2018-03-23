@@ -47,4 +47,9 @@ module.exports = (app) => {
   app.get('/act/India/fetchWinnerList', function(req, res) {
     res.send(winnerList)
   })
+
+  app.get('/*', function(req, res, next){
+    res.status(404);
+    res.render('../views/notfound.ejs', { url: req.url });
+  });
 }
