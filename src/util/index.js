@@ -235,7 +235,7 @@ const  topFiveWinners = [
   }
 ]
 
-const usTopFiveWinners = new Array(20).fill({
+const usTopFiveWinners = new Array(18).fill({
   name: 'undifined',
   dimonds: 0.00
 })
@@ -264,8 +264,8 @@ const india = (lang) => ({
   titleList: JSON.stringify(titleList[lang])
 })
 
-const usSetIntervalTimeNode = JSON.parse(countDown('en', '2018.3.30'))
-usSetIntervalTimeNode['currentStep'] = 1
+let usSetIntervalTimeNode = JSON.parse(countDown('en', '2018.3.30'))
+usSetIntervalTimeNode['currentStep'] = 0
 const us = (lang) => ({
   title: 'Musical.ly - Unitd State',
   noBannerVideo: false,
