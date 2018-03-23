@@ -17,7 +17,15 @@ const winnerList = require('../util/winner-list')
  enOBj.ruleAjaxUrl = '/act/India/English/rule'
  usOBj.ruleAjaxUrl = enOBj.ruleAjaxUrl
  usOBj.ajaxUrl = enOBj.ajaxUrl
+
+
 module.exports = (app) => {
+  app.get('/act/US', function(req, res) {
+    console.log('====> /act/us, render')
+    const yt = usOBj.YTvideoinfo
+    usOBj.videoUrl = JSON.parse(yt).url
+    res.render('../us-views/layout', usOBj)
+  }),
   app.get('/act/India', function(req, res) {
     const yt = enOBj.YTvideoinfo
     inOBj.videoUrl = JSON.parse(yt).url
@@ -33,17 +41,11 @@ module.exports = (app) => {
   }),
   app.get(inOBj.ruleAjaxUrl, function(req, res) {
     res.render('../india-views/component/rule/rule-hindi')
-  })
+  }),
   app.get(enOBj.ruleAjaxUrl, function(req, res) {
     res.render('../india-views/component/rule/rule')
-  })
+  }),
   app.get('/act/India/fetchWinnerList', function(req, res) {
     res.send(winnerList)
-  })
-  app.get('/act/us', function(req, res) {
-    console.log('====> /act/us, render')
-    const yt = usOBj.YTvideoinfo
-    usOBj.videoUrl = JSON.parse(yt).url
-    res.render('../us-views/layout', usOBj)
-  })
+  }),
 }
