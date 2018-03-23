@@ -6,7 +6,7 @@
   <div class='tab-container'>
     <ul>
       <% for(var i =0; i < aboutTagList.length; i++) { %>
-        <li class="<%= i == currentStep ? 'active' : null %> subItem tab-item-text"><%= aboutTagList[i] %></li>
+        <li class="<%= i == 0 ? 'active' : null %> subItem tab-item-text"><%= aboutTagList[i] %></li>
       <%
         }
       %>
