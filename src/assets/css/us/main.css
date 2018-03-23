@@ -960,14 +960,15 @@ ul {
     text-align: center;
   }
   .winner-item {
-    width: 28%;
+    width: 115px;
+    height: 65px;
     max-width: initial;
     min-width: initial;
   }
-  .winner-item > p > img {
+  .winner-item p img {
     max-width: 20px;
   }
-  .winner-item > span {
+  .winner-item span {
     font-size: 14px;
   }
 }
@@ -1088,7 +1089,6 @@ ul {
 .tabButton[selected] + .tabContent {
   display: block;
 }
-/* For example below (not required) */
 .itemCustom {
   border: 1px solid #000;
   height: 280px;

@@ -8,7 +8,8 @@ module.exports = {
   appId,
   [`${usCountry}-less`]: {
     from: './us-views/main.less',
-    dest: './assets/css/us/main.css'
+    dest: './assets/css/us/main.css',
+    ejs: './assets/css/us/main.ejs'
   },
   [`${indCountry}-less`]: {
     from: './india-views/main.less',
