@@ -63,14 +63,12 @@ function readFile(){
 
 function compileLess(path){
   const isLess = /.less$/.test(path)
-  console.info(path, isLess)
   isLess && cp.exec(`lessc ${lessUrl.from} ${lessUrl.dest};`)
+  isLess && fs.readFile(lessUrl.dest, (err, data) => !err && fs.writeFile(lessUrl.ejs, data))
 }
 
 function reload(appIns) {
+    appIns.kill('SIGINT');
 
-      appIns.kill('SIGINT');
-
-      return cp.fork(require('path').join(__dirname, './index.js'));
-
+    return cp.fork(require('path').join(__dirname, './index.js'));
 }
