@@ -610,6 +610,7 @@ ul {
   width: 100%;
   min-height: 100vh;
   position: relative;
+  overflow: hidden;
 }
 .banner-content {
   width: 100%;
@@ -726,6 +727,7 @@ ul {
   .banner-content {
     margin: initial;
     padding: initial;
+    min-height: initial;
   }
   .banner-image-pc {
     display: none;
@@ -736,6 +738,7 @@ ul {
   .banner-image-show {
     max-width: 85%;
     margin: 6vh auto 5vh auto;
+    padding-top: 16vh;
   }
   .banner-mask video {
     display: none;
@@ -747,6 +750,7 @@ ul {
     max-width: 47%;
     display: block;
     margin: 1.7rem auto auto 1.7rem;
+    position: absolute;
   }
   .countDown {
     margin: 4vh auto;
@@ -794,7 +798,7 @@ ul {
   display: block;
 }
 .nameList {
-  max-height: 72vh;
+  max-height: 74vh;
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: center;
@@ -939,7 +943,7 @@ ul {
     min-width: 124px;
   }
   .winner-container {
-    background-size: 220%;
+    background-size: 260%;
   }
   .slider-meet .slider-tab-item img {
     max-width: 150px !important;
@@ -1424,7 +1428,6 @@ ul {
   #introduction-container .wrapper article p {
     text-align: justify;
     text-justify: distribute-all-lines;
-    /*ie6-8*/
     text-align-last: justify;
     /* ie9*/
     -moz-text-align-last: justify;

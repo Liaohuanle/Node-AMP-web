@@ -63,8 +63,12 @@ function readFile(){
 
 function compileLess(path){
   const isLess = /.less$/.test(path)
-  isLess && cp.exec(`lessc ${lessUrl.from} ${lessUrl.dest};`)
-  isLess && fs.readFile(lessUrl.dest, (err, data) => !err && fs.writeFile(lessUrl.ejs, data))
+  console.info(isLess, path)
+  if(isLess){
+    cp.exec(`lessc ${lessUrl.from} ${lessUrl.dest}`)
+    cp.exec(`css-minify -f ${lessUrl.dest}`)
+    fs.readFile(`../css-dist/main.min.css`, (err, data) => !err && fs.writeFile(lessUrl.ejs, data))
+  }
 }
 
 function reload(appIns) {
