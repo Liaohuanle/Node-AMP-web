@@ -270,7 +270,7 @@ const us = (lang) => ({
   title: 'Musical.ly - Unitd State',
   noBannerVideo: false,
   bannerBgUrl: '//musically.muscdn.com/ops/upload/default/2018/03/23/10/4b6b5a27-bb40-4b1c-8ef5-6dc9aed867c2.gif',
-  cssUrl: `//musically.muscdn.com/ops/upload/default/2018/03/23/11/7c053336-72c3-4185-b7b9-19d8d1b89771.css`,
+  cssUrl: `/act/assets/css/us/main.css`,
   bannerVideoUrl: '//musically.muscdn.com/ops/upload/musical/2018/03/23/10/4108dd1b-cfcf-42ff-a920-bfd28a7170b1.mp4',
   bannerVideoPoster: '/act/assets/bg-banner-pc-us.jpeg',
   topFiveWinners: usTopFiveWinners,
