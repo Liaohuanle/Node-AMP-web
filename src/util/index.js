@@ -241,6 +241,7 @@ const usTopFiveWinners = new Array(20).fill({
 })
 
 const india = (lang) => ({
+  title: 'Musical.ly - India',
   noBannerVideo: false,
   bannerBgUrl: '//mpaw-sinc1.muscdn.com/ops/upload/default/2018/01/10/13/050e882e-f102-4862-80ab-ae933d5ae50d.png',
   cssUrl: `/act/assets/css/india/main.css`,
@@ -266,10 +267,11 @@ const india = (lang) => ({
 const usSetIntervalTimeNode = JSON.parse(countDown('en', '2018.3.30'))
 usSetIntervalTimeNode['currentStep'] = 1
 const us = (lang) => ({
+  title: 'Musical.ly - Unitd State',
   noBannerVideo: false,
-  bannerBgUrl: '/act/assets/banner-video.gif',
+  bannerBgUrl: '//musically.muscdn.com/ops/upload/default/2018/03/23/10/4b6b5a27-bb40-4b1c-8ef5-6dc9aed867c2.gif',
   cssUrl: `/act/assets/css/us/main.css`,
-  bannerVideoUrl: '/act/assets/musically-faces.mp4',
+  bannerVideoUrl: '//musically.muscdn.com/ops/upload/musical/2018/03/23/10/4108dd1b-cfcf-42ff-a920-bfd28a7170b1.mp4',
   bannerVideoPoster: '/act/assets/bg-banner-pc-us.jpeg',
   topFiveWinners: usTopFiveWinners,
   prizeArticle: prizeArticle[lang],
