@@ -140,9 +140,9 @@ const navList = {
   }
 }
 
-const usBannerImgPC = '/act/assets/banner-title-pc-us.png'
+const usBannerImgMobile = '//musically.muscdn.com/ops/upload/default/2018/03/23/11/0581274d-a564-4ed2-a270-23528d362c4a.png'
 
-const usBannerImgMobile = '/act/assets/banner-title-mobile-us.png'
+const usBannerImgPC = '//musically.muscdn.com/ops/upload/default/2018/03/23/11/cc9517a0-d06e-4df6-81b1-b91ab040247d.png'
 
 const usNavList = {
   home: 'Home',
@@ -270,7 +270,7 @@ const us = (lang) => ({
   title: 'Musical.ly - Unitd State',
   noBannerVideo: false,
   bannerBgUrl: '//musically.muscdn.com/ops/upload/default/2018/03/23/10/4b6b5a27-bb40-4b1c-8ef5-6dc9aed867c2.gif',
-  cssUrl: `/act/assets/css/us/main.css`,
+  cssUrl: `//musically.muscdn.com/ops/upload/default/2018/03/23/11/7c053336-72c3-4185-b7b9-19d8d1b89771.css`,
   bannerVideoUrl: '//musically.muscdn.com/ops/upload/musical/2018/03/23/10/4108dd1b-cfcf-42ff-a920-bfd28a7170b1.mp4',
   bannerVideoPoster: '/act/assets/bg-banner-pc-us.jpeg',
   topFiveWinners: usTopFiveWinners,
