@@ -41,6 +41,7 @@ module.exports = (app) => {
     res.send(winnerList)
   })
   app.get('/act/us', function(req, res) {
+    console.log('====> /act/us, render')
     const yt = usOBj.YTvideoinfo
     usOBj.videoUrl = JSON.parse(yt).url
     res.render('../us-views/layout', usOBj)
