@@ -20,7 +20,7 @@ const winnerList = require('../util/winner-list')
 
 
 module.exports = (app) => {
-  app.get('/act/US', function(req, res) {
+  app.get('/act/us', function(req, res) { 
     console.log('====> /act/us, render')
     const yt = usOBj.YTvideoinfo
     usOBj.videoUrl = JSON.parse(yt).url
