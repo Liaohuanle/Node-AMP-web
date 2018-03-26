@@ -65,9 +65,7 @@ function compileLess(path){
   const isLess = /.less$/.test(path)
   console.info(isLess, path)
   if(isLess){
-    cp.exec(`lessc ${lessUrl.from} ${lessUrl.dest}`)
-    cp.exec(`css-minify -f ${lessUrl.dest}`)
-    fs.readFile(`../css-dist/main.min.css`, (err, data) => !err && fs.writeFile(lessUrl.ejs, data))
+    cp.exec(`lessc -clean-css ${lessUrl.from} ${lessUrl.ejs}`)
   }
 }
 

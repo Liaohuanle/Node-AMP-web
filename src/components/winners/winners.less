@@ -9,15 +9,25 @@
 .winner-container{
   background-size: 100%;
   width: 100%;
-}
-
-.winner-container a{
-  display: block;
-  width: 100%;
-  text-align: center;
-  color: #fff;
-  margin-top: 50px;
-  font-size: 16px;
+  height: 100%;
+  p{
+    text-align: center;
+    font-size: 1.25rem;
+    display: block;
+    margin: .4rem auto;
+    line-height: 2rem;
+    color: #fff;
+    max-width: 960px;
+  }
+  a{
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    margin-top: 50px;
+    font-size: 16px;
+  }
+  
 }
 
 .ellipse{
@@ -47,20 +57,20 @@
 .winner-tag.active{
   background: linear-gradient(to bottom, #e23054, #ff24a3);
 }
-.winner-tag-cotainer, .nameList{
-  margin: 10px auto;
-}
 .ampTabContainer {
   text-align: center;
 }
 .nameList{
-  margin-top: 3rem;
-}
-.nameList p{
-  text-align: center;
-  opacity: .8;
-  color: #fff;
-  font-size: 2rem;
+  margin: 3rem auto;
+  @media (max-width:769px) {
+    margin: 0 auto 3rem;
+  }
+  p{
+    text-align: center;
+    opacity: .8;
+    color: #fff;
+    font-size: 2rem;
+  }
 }
 .nameList span,
 .winner-name-container span
@@ -92,7 +102,7 @@
   width: 18%;
   max-width: 192px;
   min-width: 173px;
-  padding: 8px;
+  padding: 20px 8px;
   >img{
     display: block;
     max-width: 50%;
@@ -117,6 +127,22 @@
       margin-bottom: 4px;
       margin-right: 6px;
       vertical-align: middle;
+    }
+  }
+
+  @media (max-width:769px) {
+    width: 115px;
+    height: 65px;
+    max-width: initial;
+    min-width: initial;
+    padding: 15px 8px;
+    p{
+      img{
+        max-width: 20px;
+      }
+    }
+    span{
+      font-size: 14px;
     }
   }
 }
@@ -196,20 +222,5 @@
     width: 100%;
     overflow: hidden;
     text-align: center;
-  }
-
-  .winner-item{
-    width: 115px;
-    height: 65px;
-    max-width: initial;
-    min-width: initial;
-    p{
-      img{
-        max-width: 20px;
-      }
-    }
-    span{
-      font-size: 14px;
-    }
   }
 }
