@@ -20,9 +20,9 @@
   text-align: center;
 }
 #section-container.section-container-show{
-  height: 92vh;
+  height: 100vh;
   overflow-y: scroll;
-  top: 63px;
+  top: 0px;
   transform: translateY(0vh);
 }
 #section-container{
@@ -30,10 +30,10 @@
   position: fixed;
   width: 100vw;
   min-width: 100%;
-  z-index: 100;
+  z-index: 1000;
   background: #fbf8f8;
   transition: all .3s;
-  transform: translateY(95vh);
+  transform: translateY(100vh);
   padding: 2vh 2vw 2vh 2vw;
 }
 #section-container h2{
@@ -55,23 +55,29 @@
   line-height: 2.5;
   white-space: pre-wrap;
 }
-.close{
-  position: fixed;
-  top: 3vh;
-  right: 8vw;
-  font-size: 2rem;
-  background-color: #ff0f50;
-  padding: 10px;
-  border-radius: 50%;
-  width: 30px;
-  opacity: .5;
-  height: 30px;
-  color: #fff;
-  line-height: 33px;
-  box-shadow: 0px 1px 4px 5px rgba(0,0,0,.15);
-  cursor: pointer;
+.close-area{
   text-align: center;
-}
-.close:hover{
-  opacity: 1;
+  width: 97vw;
+  margin: 10px auto;
+  text-align: center;
+  height: 60px auto;
+  padding: 5px;
+  .close{
+    max-width: 350px;
+    min-width: 150px;
+    margin-bottom: 15px;
+    width: 30%;
+    height: 40px;
+    cursor: pointer;
+    background-color: #35e774;
+    font-size: 16px;
+    outline: none;
+    text-align: center;
+    border-radius: 5px;
+    color: #fff;
+  }
+  .close:hover{
+    opacity: 1;
+  }
+
 }
