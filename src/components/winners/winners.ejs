@@ -1,11 +1,15 @@
 <section id='winners'>
   <div class='winner-container'>
     <h1> <%= JSON.parse(titleList).winner %> </h1>
+    <p>How do we determine the winners of the audition?</p>
+    <p>
+      Creator Score. It is from an algorithm score combining video quality, engagement, creativity, originality and which more fits the proposed themes. The score is calculated by musical.ly data team. We will announce the winners list with score to everyone here.
+    </p>
     <div class="nameList">
       <ul class="winner-top-container">
         <% for(var i=0; i< topFiveWinners.length; i ++ ) {%>
           <li class="winner-item">
-            <img src="//musically.muscdn.com/ops/upload/default/2018/03/23/15/20fbbf95-5111-4167-ae18-452f0a4816f6.png"/>
+            <img src="/act/assets/undifined.png"/>
           </li>
         <% } %>
       </ul>

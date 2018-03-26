@@ -30,18 +30,26 @@
   background-repeat: no-repeat;
   background-color: bisque;
   video{
-    min-height: 100%;
-    min-width: 100%;
-    width: auto;
-    height: auto;
+    max-width: 100vw;
   }
   &.mobile{
-    background-size: 115%;
-    background-image: url('//musically.muscdn.com/ops/upload/default/2018/03/23/10/7cb65b3b-3200-4b9f-b279-9a9a9c357133.gif');
+    background-size: 123%;
+    background-image: url('/act/assets/banner-mobile-us.gif');
   }
   &.pc{
     background-size: 110%;
-    background-image: url('//musically.muscdn.com/ops/upload/default/2018/03/23/10/4b6b5a27-bb40-4b1c-8ef5-6dc9aed867c2.gif');
+    background-image: url('/act/assets/banner-pc-us.gif');
+  }
+  @media(min-width: 1450px){
+    video{
+      max-width: initial;
+      height: 102vh;
+    }
+  }
+  @media(max-height: 667px){
+    &.mobile{
+      background-size: 110%;
+    }
   }
 }
 .countDown{
@@ -93,6 +101,9 @@
 }
 .mobile-logo{
   display: none;
+}
+.banner-content{
+  padding-top: 16vh;
 }
 @media(max-width: 1816px){
   .banner-image{

@@ -140,9 +140,9 @@ const navList = {
   }
 }
 
-const usBannerImgMobile = '//musically.muscdn.com/ops/upload/default/2018/03/23/11/0581274d-a564-4ed2-a270-23528d362c4a.png'
+const usBannerImgMobile = '/act/assets/banner-title-mobile-us.png'
 
-const usBannerImgPC = '//musically.muscdn.com/ops/upload/default/2018/03/23/11/cc9517a0-d06e-4df6-81b1-b91ab040247d.png'
+const usBannerImgPC = '/act/assets/banner-title-pc-us.png'
 
 const usNavList = {
   home: 'Home',
@@ -266,17 +266,21 @@ const india = (lang) => ({
 
 let usSetIntervalTimeNode = JSON.parse(countDown('en', '2018.3.30'))
 usSetIntervalTimeNode['currentStep'] = 0
+const usYT = {
+  url: ' https://www.youtube.com/embed/zAtmXIfqeAs?rel=0&amp;controls=0&amp;showinfo=0',
+  proportion: 315 / 560
+}
 const us = (lang) => ({
   title: 'Musical.ly - Unitd State',
   noBannerVideo: false,
   bannerBgUrl: '//musically.muscdn.com/ops/upload/default/2018/03/23/10/4b6b5a27-bb40-4b1c-8ef5-6dc9aed867c2.gif',
   cssUrl: `../assets/css/us/main`,
-  bannerVideoUrl: '//musically.muscdn.com/ops/upload/musical/2018/03/23/10/4108dd1b-cfcf-42ff-a920-bfd28a7170b1.mp4',
+  bannerVideoUrl: '/act/assets/banner-pc-us.mp4',
   bannerVideoPoster: '/act/assets/bg-banner-pc-us.jpeg',
   topFiveWinners: usTopFiveWinners,
   prizeArticle: prizeArticle[lang],
   aboutTagList: aboutUsTagList,
-  YTvideoinfo: JSON.stringify(YTvideoinfo),
+  YTvideoinfo: JSON.stringify(usYT),
   setIntervalTimeNode: `${JSON.stringify(usSetIntervalTimeNode)}`,
   aboutPanelTimeNode: `${countDown(lang, aboutFinalTime)}`,
   bannerImgPC: usBannerImgPC,
