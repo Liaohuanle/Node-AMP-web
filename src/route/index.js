@@ -25,28 +25,28 @@ module.exports = (app) => {
     usOBj.videoUrl = JSON.parse(yt).url
     res.render('../us-views/layout', usOBj)
   })
-  app.get('/act/India', function(req, res) {
-    const yt = enOBj.YTvideoinfo
-    inOBj.videoUrl = JSON.parse(yt).url
-    res.render('../india-views/layout', inOBj)
-  })
-  app.get('/act/India/English', function(req, res) {
-    const yt = inOBj.YTvideoinfo
-    enOBj.videoUrl = JSON.parse(yt).url
-    res.render('../india-views/layout', enOBj)
-  })
+  // app.get('/act/India', function(req, res) {
+  //   const yt = enOBj.YTvideoinfo
+  //   inOBj.videoUrl = JSON.parse(yt).url
+  //   res.render('../india-views/layout', inOBj)
+  // })
+  // app.get('/act/India/English', function(req, res) {
+  //   const yt = inOBj.YTvideoinfo
+  //   enOBj.videoUrl = JSON.parse(yt).url
+  //   res.render('../india-views/layout', enOBj)
+  // })
   app.get('/act/India/termofuse', function(req, res) {
     res.render('../components/termofuser/termofuse-content')
   })
-  app.get(inOBj.ruleAjaxUrl, function(req, res) {
-    res.render('../india-views/component/rule/rule-hindi')
-  })
-  app.get(enOBj.ruleAjaxUrl, function(req, res) {
-    res.render('../india-views/component/rule/rule')
-  })
-  app.get('/act/India/fetchWinnerList', function(req, res) {
-    res.send(winnerList)
-  })
+  // app.get(inOBj.ruleAjaxUrl, function(req, res) {
+  //   res.render('../india-views/component/rule/rule-hindi')
+  // })
+  // app.get(enOBj.ruleAjaxUrl, function(req, res) {
+  //   res.render('../india-views/component/rule/rule')
+  // })
+  // app.get('/act/India/fetchWinnerList', function(req, res) {
+  //   res.send(winnerList)
+  // })
 
   app.get('/*', function(req, res, next){
     res.status(404);
