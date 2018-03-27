@@ -148,8 +148,7 @@ const usNavList = {
   home: 'Home',
   about: 'About',
   winners: 'Winners',
-  media: 'Media',
-  meetGreet: 'Meet & Greet'
+  media: 'Media'
 }
 
 const titleList = {
