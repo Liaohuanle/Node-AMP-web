@@ -140,10 +140,6 @@ const navList = {
   }
 }
 
-const usBannerImgMobile = '/act/assets/banner-title-mobile-us.png'
-
-const usBannerImgPC = '/act/assets/banner-title-pc-us.png'
-
 const usNavList = {
   home: 'Home',
   about: 'About',
