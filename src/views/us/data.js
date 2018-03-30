@@ -39,6 +39,7 @@ const aboutSubList = {
   abouttab1Phone: '/act/assets/phone.png'
 }
 
+const setIntervalTimeNode = util.countDown('en', '2018.3.30 23:59:59')
 const data = {
   noBannerVideo: false,
   bannerBgUrl: '//musically.muscdn.com/ops/upload/default/2018/03/23/10/4b6b5a27-bb40-4b1c-8ef5-6dc9aed867c2.gif',
@@ -46,7 +47,7 @@ const data = {
   bannerVideoPoster: '/act/assets/bg-banner-pc-us.jpeg',
   aboutTagList: aboutUsTagList,
   YTvideoinfo: usYT,
-  setIntervalTimeNode: util.countDown('en', '2018.3.30'),
+  setIntervalTimeNode,
   bannerImgPC: usBannerImgPC,
   bannerImgMobile: usBannerImgMobile,
   navList: usNavList,

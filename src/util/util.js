@@ -2,7 +2,7 @@ const moment = require('moment')
 const countDown = (lang, finnalTime) => {
   let currentStep = 3
   const restTime = [0, 0, 0, 0]
-  const duration = moment.duration(moment(finnalTime).subtract(2.5, 'hours').diff(moment.now()))
+  const duration = moment.duration(moment(finnalTime).subtract('hours').diff(moment.now()))
   const allTime = duration.asDays()
   const restD = Math.floor(allTime)
   const allHour = allTime % 1 * 24
