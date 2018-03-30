@@ -22,8 +22,7 @@ nvm use stable
 echo '#######'
 ls
 echo '#######'
-mv ./src/* ./*
+mv ./src/* ../*
 npm install
 
-mv ./*  ../output_resource
 node index.js
