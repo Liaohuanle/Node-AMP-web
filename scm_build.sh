@@ -19,13 +19,7 @@ fi
 # 使用node8构建
 nvm use stable
 
-echo '####### start move 1 *******'
-ls
-echo '#######'
-
 cp -r ./src/* ./
-
-rm -rf src
 
 echo '####### start move 2 *******'
 ls
