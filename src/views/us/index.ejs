@@ -1,0 +1,26 @@
+ <body>
+    <%- include('../components/nav/nav' , { navList }) %>
+    <section class='main'>
+      <div class='main-container'>
+        <%- include('../components/banner/banner', {
+            bannerVideoPoster,
+            bannerVideoUrl,
+            bannerBgUrl,
+            spanText: setIntervalTimeNode.spanText,
+            bannerImgPC,
+            bannerImgMobile
+          }) %>
+        <%- include('./component/oneMIllionResume/oneMillionresume') %>
+        <%- include('./component/about/about', {
+            aboutTagList,
+            rule,
+            aboutSubList
+          }) %>
+        <%- include('../components/winners/winners') %>
+        <%- include('../components/video/video', YTvideoinfo) %>
+        <%- include('../components/termofuser/termofuse') %>
+      </div>
+    </section>
+  </body>
+
+  
