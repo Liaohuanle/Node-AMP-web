@@ -21,6 +21,8 @@ nvm use stable
 
 cp -r ./src/* ./
 
+rm -rf ./node_modules/*
+
 echo '####### start move 2 *******'
 ls
 echo '#######'
