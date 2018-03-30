@@ -21,15 +21,20 @@ nvm use stable
 
 echo '#######'
 ls
-echo '####### start move *******'
+echo '####### start move1 *******'
 
 mv ./src/* ./output/*
 
-echo '####### start move *******'
+echo '####### start move2 *******'
 ls
 echo '#######'
 
 rm -rf ./src
 
 cd ./output
+
+echo '####### start move3 *******'
+ls
+echo '#######'
+
 npm install
