@@ -29,6 +29,7 @@ echo '####### start move *******'
 ls
 echo '#######'
 
-cd ./output
+rm -rf ./src
 
+cd ./output
 npm install
