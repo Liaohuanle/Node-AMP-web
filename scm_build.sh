@@ -22,5 +22,6 @@ nvm use stable
 ./build.sh
 
 mv output output_resource
-cd $OUTPUT
+ls
+cd ./output
 node index.js
