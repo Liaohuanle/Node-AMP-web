@@ -23,7 +23,7 @@ echo '####### start move 1 *******'
 ls
 echo '#######'
 
-cp -r src/* output/*
+cp -r ./src/* ./output
 
 rm -rf src
 
