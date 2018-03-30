@@ -23,11 +23,9 @@ echo '####### start move 1 *******'
 ls
 echo '#######'
 
-cp -r ./src/* ./output
+cp -r ./src/* ./
 
 rm -rf src
-
-cd output
 
 echo '####### start move 2 *******'
 ls
