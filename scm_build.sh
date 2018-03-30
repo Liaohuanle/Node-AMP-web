@@ -20,11 +20,10 @@ fi
 nvm use stable
 
 echo '#######'
-echo ls
+ls
 echo '#######'
 
-cp -r ./* ./output
 npm install
 
-mv output output_resource
+mv ./*  ../output_resource
 node index.js
