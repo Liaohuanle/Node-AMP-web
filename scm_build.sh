@@ -8,6 +8,8 @@ RESOURCE="$DIR/output_resource"
 rm -rf $OUTPUT
 rm -rf $RESOURCE
 
+mkdir OUTPUT
+mkdir RESOURCE
 
 if [ -f '/etc/profile' ]
 then
