@@ -4,7 +4,7 @@ const usBannerImgMobile = '/act/assets/banner-title-mobile-us.png'
 
 const usBannerImgPC = '/act/assets/banner-title-pc-us.png'
 
-const aboutUsTagList = ['#ShareAndWin ', 'Category', 'Prize', 'Rules']
+const aboutUsTagList = ['#ShareAndWin', 'Category', 'Prize', 'Rules']
 
 const usNavList = {
   home: 'Home',
