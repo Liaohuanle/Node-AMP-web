@@ -23,9 +23,9 @@ echo '#######'
 ls
 echo '####### start move *******'
 
-mv ./src/* ../output/*
+mv ./src/* ./output/*
 
-echo '####### end move *******'
+echo '####### start move *******'
 ls
 echo '#######'
 
