@@ -23,10 +23,12 @@ echo '#######'
 ls
 echo '####### start move *******'
 
-mv ./src/* ../*
-
-npm install
+mv ./src/* ../output/*
 
 echo '####### end move *******'
 ls
 echo '#######'
+
+cd ./output
+
+npm install
