@@ -8,8 +8,8 @@ RESOURCE="$DIR/output_resource"
 rm -rf $OUTPUT
 rm -rf $RESOURCE
 
-mkdir $OUTPUT
-mkdir $RESOURCE
+mkdir ./output
+mkdir ./output_resource
 
 if [ -f '/etc/profile' ]
 then
@@ -19,9 +19,12 @@ fi
 # 使用node8构建
 nvm use stable
  
-./build.sh
+cd src
+
+cp -r ./* ./output
+npm install
+
+cd ../output
 
 mv output output_resource
-ls
-cd ./output
 node index.js
