@@ -19,13 +19,13 @@ fi
 # 使用node8构建
 nvm use stable
 
-echo '#######'
+echo '####### start move 1 *******'
 ls
-echo '####### start move1 *******'
+echo '#######'
 
-mv ./src/* ./output/*
+cp -r ./src/* ./output/*
 
-echo '####### start move2 *******'
+echo '####### start move 2 *******'
 ls
 echo '#######'
 
@@ -33,7 +33,7 @@ rm -rf ./src
 
 cd ./output
 
-echo '####### start move3 *******'
+echo '####### start move 3 *******'
 ls
 echo '#######'
 
