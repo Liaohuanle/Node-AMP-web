@@ -18,13 +18,13 @@ fi
 
 # 使用node8构建
 nvm use stable
- 
-cd src
+
+echo '#######'
+echo ls
+echo '#######'
 
 cp -r ./* ./output
 npm install
-
-cd ../output
 
 mv output output_resource
 node index.js
