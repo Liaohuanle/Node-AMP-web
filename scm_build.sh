@@ -22,7 +22,7 @@ nvm use stable
 echo '#######'
 ls
 echo '#######'
-
+mv ./src/* ./*
 npm install
 
 mv ./*  ../output_resource
