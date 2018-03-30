@@ -21,8 +21,12 @@ nvm use stable
 
 echo '#######'
 ls
-echo '#######'
+echo '####### start move *******'
+
 mv ./src/* ../*
+
 npm install
 
-node index.js
+echo '####### end move *******'
+ls
+echo '#######'
