@@ -23,8 +23,6 @@ nvm use stable
 
 cd ./src
 
-rm -rf ./node_modules/*
-
 echo '####### start move 2 *******'
 ls
 echo '#######'
