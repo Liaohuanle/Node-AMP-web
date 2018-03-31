@@ -19,7 +19,9 @@ fi
 # 使用node8构建
 nvm use stable
 
-cp -r ./src/* ./
+# cp -r ./src/* ./
+
+cd ./src
 
 rm -rf ./node_modules/*
 
