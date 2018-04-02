@@ -10,7 +10,8 @@ const usNavList = {
   home: 'Home',
   about: 'About',
   winners: 'Winners',
-  media: 'Media'
+  media: 'Media',
+  officalRules: 'Offical Rules'
 }
 
 const rule = {

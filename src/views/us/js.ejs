@@ -23,7 +23,7 @@
   })
 
   function initTermOfUse(){
-    $('#getTermOfUse').on('click',function(){
+    $('#officalRules, #getTermOfUse').on('click',function(){
       $.ajax({
         url: '/act/India/termofuse'
       }).done(appendTerm)
@@ -185,16 +185,16 @@
   }
 
   function clickScroll(){
-    $('.ampstart-headerbar-nav li a').click(function(){
-      $('html, body')
-      .animate(
-        { scrollTop: $($(this.hash).selector).offset().top },
-        900,
-        function(){
-          $($(this.hash).selector).addClass('active').siblings().removeClass('active')
-        }
-      )
-    })
+    // $('.ampstart-headerbar-nav li a').click(function(){
+    //   $('html, body')
+    //   .animate(
+    //     { scrollTop: $($(this.hash).selector).offset().top },
+    //     900,
+    //     function(){
+    //       $($(this.hash).selector).addClass('active').siblings().removeClass('active')
+    //     }
+    //   )
+    // })
   }
 
   var justifiy = {
