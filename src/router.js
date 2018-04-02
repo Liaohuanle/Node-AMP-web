@@ -1,6 +1,5 @@
 const usRoute = require('./views/us/route')
 const indiaRouteList = require('./views/india/route')
-const pako = require('pako');
 
 const routerList = [
   usRoute,
@@ -12,7 +11,6 @@ module.exports = (app) => {
   .filter(item => item.isOnline)
   .map(item => {
     app.get(`/act/${item.path}`, (req, res) => {
-      console.info(pako.deflate(res.render('./components/layout/oneMilloneLayout.ejs', item), { to: 'string' }))
       if(item.isApi){
         res.render(item.containerSrc)
       }else{
