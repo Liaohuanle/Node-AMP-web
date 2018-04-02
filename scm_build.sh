@@ -19,9 +19,9 @@ fi
 # 使用node8构建
 nvm use stable
 
-cp -r ./src/* ./
+# cp -r ./src/* ./
 
-rm -rf ./node_modules/*
+cd ./src
 
 echo '####### start move 2 *******'
 ls
