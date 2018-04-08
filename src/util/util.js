@@ -33,6 +33,33 @@ const countDown = (lang, finnalTime) => {
   return result
 }
 
+const europeLanglist = {
+  en: {
+    title: 'English',
+    link: '/England'
+  },
+  german: {
+    title: 'German',
+    link: '/German'
+  },
+  spain:{
+    title: 'Spanish',
+    link: '/Spain'
+  },
+  french: {
+    title: 'French',
+    link: '/French'
+  },
+  italy: {
+    title: 'Italian',
+    link: '/Italy'
+  },
+  poland: {
+    title: 'Polish',
+    link: '/Poland'
+  }
+}
 module.exports = {
-  countDown
+  countDown,
+  europeLanglist
 }

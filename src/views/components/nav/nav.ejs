@@ -6,6 +6,27 @@
     </div>
   </div>
   <nav class="ampstart-headerbar-nav ampstart-nav">
+
+    <%if(typeof langText == 'string'){%>
+      <a href='<%=langTransfor%>' class='lang-transfor'><%= langText %></a>
+    <% }%>
+     <%if(!!showLanguageBtn){%>
+      <div class='langBtnDrop'>
+        <button>
+          <%= langList.curr %>
+          <img src="/act/assets/drop-down.svg" alt="musical.ly one million"/>
+        </button>
+        <ul class="dropdown-container">
+          <%for(var item in langList.list){%>
+            <li>
+              <a href="<%=langList.list[item].link%>">
+                <%= langList.list[item].title %>
+              </a>
+            </li>
+          <%}%>
+        </ul>
+      </div>
+    <% }%>
     <ul class="list-reset">
       <%for(const key in navList){%>
         <li class="ampstart-nav-item relative lune-underline-strike">
@@ -14,7 +35,4 @@
       <%}%>
     </ul>
   </nav>
-  <%if(typeof langText == 'string'){%>
-    <a href='<%=langTransfor%>' class='lang-transfor'><%= langText %></a>
-  <% }%>
 </header>

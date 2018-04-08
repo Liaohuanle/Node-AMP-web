@@ -1,0 +1,37 @@
+<section id='about' class='about-section'>
+  <div class="about-container">
+    <div class='title-container'>
+      <h1> About </h1>
+      <p>1 Million Audition</p>
+    </div>
+    <section class="badge-container">
+      <ul>
+        <% for(var i =0; i < aboutObject.length; i++) { %>
+          <li>
+            <figure>
+              <img src="<%=aboutObject[i].src%>"/>
+            </figure>
+            <p><%=aboutObject[i].title%></p>
+          </li>
+        <%
+          }
+        %>
+      </ul>
+    </section>
+    <section class="tab-container">
+      <ul>
+        <li class="subItem tab-item-text">#ShareAndWinEU</li>
+        <li class="subItem tab-item-text">Prize & Rules</li>
+      </ul>
+      <div class='slider'>
+        <div class='tab-item mobile-layout'>
+          <img src='<%=aboutContainerFile.phone%>' class="phone"/>
+          <img src='<%=aboutContainerFile.description%>' class="description"/>
+        </div>
+        <div class='tab-item'>
+          
+        </div>
+      </div>
+    </section>
+  </div>
+</section>

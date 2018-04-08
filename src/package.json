@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w",
+    "dev": "node _dev.js"
   },
   "author": "",
   "license": "ISC",
@@ -12,10 +15,14 @@
     "chokidar": "^2.0.2",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
+    "geoip-lite": "^1.2.1",
     "imagemin": "^5.3.1",
     "imagemin-jpegtran": "^5.0.2",
     "imagemin-pngquant": "^5.0.1",
     "moment": "^2.20.1",
-    "pako": "^1.0.6"
-  }
+    "mongodb": "^3.0.5",
+    "pako": "^1.0.6",
+    "request-ip": "^2.0.2"
+  },
+  "devDependencies": {}
 }
