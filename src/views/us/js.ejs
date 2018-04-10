@@ -22,7 +22,7 @@
   })
 
   function initTermOfUse(){
-    $('#officalRules, #getTermOfUse').on('click',function(){
+    $(".ampstart-nav a[href$='officalRules'], #getTermOfUse").on('click',function(){
       $.ajax({
         url: '/act/India/termofuse'
       }).done(appendTerm)
@@ -183,17 +183,21 @@
     }
   }
 
-  function clickScroll(){
-    // $('.ampstart-headerbar-nav li a').click(function(){
-    //   $('html, body')
-    //   .animate(
-    //     { scrollTop: $($(this.hash).selector).offset().top },
-    //     900,
-    //     function(){
-    //       $($(this.hash).selector).addClass('active').siblings().removeClass('active')
-    //     }
-    //   )
-    // })
+   function clickScroll(){
+    $('.ampstart-headerbar-nav li a').click(function(e){
+      const obj = $(`${this.hash}`).offset()
+      if(!obj || typeof obj != 'object'){
+        return
+      }
+      $('html, body')
+      .animate(
+        { scrollTop: obj.top },
+        900,
+        function(){
+          $($(this.hash).selector).addClass('active').siblings().removeClass('active')
+        }
+      )
+    })
   }
 
   var justifiy = {

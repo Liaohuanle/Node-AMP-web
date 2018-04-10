@@ -80,7 +80,7 @@
       border-bottom: 1px solid #898989;
       padding: 1rem 0;
       align-items: center;
-      margin-top: 10rem;
+      margin-top: 15rem;
       flex-wrap: wrap;
       justify-content: center;
       li{
@@ -125,7 +125,7 @@
       }
     }
     .prize-layout{
-      padding-bottom: 5vh;
+      padding-bottom: 5vh;;
       >p{
         display: block;
         margin-top: 2rem;
@@ -134,7 +134,7 @@
         border: 1px solid #979797;
         width: 100%;
         border-radius: 4px;
-        padding: 0 2rem;
+        padding: 1rem 2rem;
         display: flex;
         margin-top: 2rem;
         align-items: center;
@@ -143,7 +143,7 @@
         }
       }
       .title-area{
-        width: 35%;
+        width: 40%;
         h2{
           margin-top: initial;
           font-weight: bolder;
@@ -154,12 +154,26 @@
         }
       }
       .desc-area{
-        width: 45%;
+        width: 60%;
         span{
           margin-top: .5rem;
           display: block;
           font-size: 1.3rem;
           margin-bottom: .6rem;
+        }
+      }
+      @media(max-width: 769px){
+        .prize-item{
+          display: block;
+          width: 100%;
+          text-align: center;
+        }
+        .title-area{
+          width: 100%;
+        }
+        .desc-area{
+          line-height: 1.5rem;
+          width: 100%;
         }
       }
     }

@@ -4,7 +4,7 @@ const data_1 = require("./data");
 module.exports = {
     title: 'Musical.ly - German',
     path: 'German',
-    isOnline: true,
+    isOnline: false,
     data: data_1.default,
     cssSrc: '../german/css',
     containerSrc: '../../german/index',

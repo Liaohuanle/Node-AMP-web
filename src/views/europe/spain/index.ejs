@@ -10,11 +10,12 @@
           bannerImgPC,
           bannerImgMobile
         }) %>
-      <%- include('../component/about/about', {
+      <%- include('./component/about/about', {
           aboutObject,
-          aboutContainerFile
+          aboutContainerFile,
+          prizeList
         }) %>
-      <%- include('../../components/winners/winners') %>
+      <%- include('../../components/winners/winners', winnerObj) %>
       <%- include('../../components/video/video', YTvideoinfo) %>
       <%- include('../../components/termofuser/termofuse') %>
     </div>

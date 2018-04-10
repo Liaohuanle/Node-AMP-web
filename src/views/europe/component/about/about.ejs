@@ -28,8 +28,32 @@
           <img src='<%=aboutContainerFile.phone%>' class="phone"/>
           <img src='<%=aboutContainerFile.description%>' class="description"/>
         </div>
-        <div class='tab-item'>
-          
+        <div class='tab-item prize-layout'>
+          <% for(var i in prizeList) { %>
+            <div class="prize-item">
+              <div class="title-area">
+                <h2>
+                  <%=prizeList[i].title%>
+                </h2>
+                <span>
+                  <%=prizeList[i].subtitle%>
+                </span>
+              </div>
+              <div class="desc-area">
+                <% for(var j =0; j < prizeList[i].desc.length; j++) { %>
+                  <span> <%=prizeList[i].desc[j]%> </span>
+                <%}%>
+              </div>
+              <figure>
+                <img src="<%=prizeList[i].src%>"/>
+              </figure>
+            </div>
+          <%
+            }
+          %>
+          <p>
+            Rules:Winner selection is based on creator score. <a href="#">Check out the rules here.</a>
+          </p>
         </div>
       </div>
     </section>

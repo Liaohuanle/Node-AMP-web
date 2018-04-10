@@ -2,12 +2,13 @@
 const route_1 = require("./views/us/route");
 const route_2 = require("./views/india/route");
 const route_3 = require('./views/europe/router')
+const api = require('./views/europe/rule-api')
 const _config_1 = require("./_config");
 // const setTable = require('./db/db-connect');
 const geoip = require('geoip-lite')
 const etag = require('etag')
 
-const routerList = [route_1.default, ...route_2.default, ...route_3];
+const routerList = [api, route_1.default, ...route_2.default, ...route_3];
 
 // const set = (DATA) => new Promise((resolve, reject) => {
 //   const tIP = setTable('isInfo')
@@ -38,6 +39,7 @@ const routerList = [route_1.default, ...route_2.default, ...route_3];
 const distuributePath = (item) => (req, res) => {
   res.setHeader('ETag', etag(''))
   if (item.isApi) {
+    console.info(item, '*************')
     res.render(item.containerSrc);
   }else {
     res.render(_config_1.layoutDir, item);

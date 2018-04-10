@@ -11,6 +11,7 @@ const usNavList = {
     media: 'Media',
     officalRules: 'Offical Rules'
 };
+
 const rule = {
     titleText: 'Winner selection is based on creator score which will be announced after the end of each round.',
     round1: 'Round 1',
@@ -20,10 +21,12 @@ const rule = {
     subText: 'Also, winners will be invited to musical.ly Celebration Party',
     click: 'Click here for more details'
 };
+
 const usYT = {
     videoUrl: ' https://www.youtube.com/embed/zAtmXIfqeAs?rel=0&amp;controls=0&amp;showinfo=0',
     proportion: 315 / 560
 };
+
 const aboutSubList = {
     cat: 'CATEGORIES',
     prizeWin: 'Win₹10,000,000',
@@ -33,7 +36,15 @@ const aboutSubList = {
     abouttab1Image: '/act/assets/about_tab_1.png',
     abouttab1Phone: '/act/assets/phone.png'
 };
+
 const setIntervalTimeNode = util.countDown('en', '2018.3.30 23:59:59');
+
+const winnerObj = {
+  title: 'Winners',
+  desc: 'How do we determine the winners of the audition?',
+  content: 'Creator Score. It is from an algorithm score combining video quality, engagement, creativity, originality and which more fits the proposed themes. The score is calculated by musical.ly data team. We will announce the winners list with score to everyone here.'
+}
+
 const data = {
     noBannerVideo: false,
     bannerBgUrl: '/act/assets/banner-pc-us.gif',
@@ -46,6 +57,7 @@ const data = {
     bannerImgMobile: usBannerImgMobile,
     navList: usNavList,
     rule,
+    winnerObj,
     aboutSubList,
     showLanguageBtn: false
 };

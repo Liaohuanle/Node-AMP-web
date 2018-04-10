@@ -9,6 +9,19 @@
   const restTime = timeNode.restTime
   const winWidth = $(window).width()
   const winHeight = $(window).height()
+
+  const justifiy = {
+    isWeixinBrowser: function(){
+      return /micromessenger/.test(navigator.userAgent.toLowerCase())
+    },
+    isAndroid: function(){
+      return (/android/i).test(navigator.userAgent)
+    },
+    IsSafari: function() {
+      return navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1
+    }
+  }
+
   $(function(){
     countDownTime(restTime, '#bannerPanel')
     slideInit()
@@ -17,43 +30,19 @@
     initBanner()
     getREST()
     SafariScable()
+    clickScroll()
   })
 
   function initTermOfUse(){
-    $('#officalRules, #getTermOfUse').on('click',function(){
+    $(".ampstart-nav a[href$='officalRules'], #getTermOfUse").on('click',function(){
       $.ajax({
         url: '/act/India/termofuse'
       }).done(appendTerm)
     })
-  }
-
-  function getAllWinnerList(){
-    $('#winnerList').on('click',function(){
+    $('#rule').on('click',function(){
       $.ajax({
-        url: '/act/India/fetchWinnerList'
-      }).done(appendWinnerList)
-    })
-  }
-
-  function appendWinnerList(res){
-    if(!res || !res.length){
-      return
-    }
-    let result = `
-      <div class="winner-name-container">
-        <div class='close'>X</div>
-    `
-    res.forEach(function(item){
-      result= result + `<span>@${ item }</span>`
-    })
-    result = result + `</div>`
-    $('#section-container')
-    .addClass('section-container-show')
-    .html(result)
-    $('body').addClass('overflow-y-hidden')
-    $('.close').click(function(){
-      $('#section-container').removeClass('section-container-show')
-      $('body').removeClass('overflow-y-hidden')
+        url: '/act/prize/rules'
+      }).done(appendTerm)
     })
   }
 
@@ -181,16 +170,21 @@
     }
   }
 
-  var justifiy = {
-    isWeixinBrowser: function(){
-      return /micromessenger/.test(navigator.userAgent.toLowerCase())
-    },
-    isAndroid: function(){
-      return (/android/i).test(navigator.userAgent)
-    },
-    IsSafari: function() {
-      return navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1
-    }
+  function clickScroll(){
+    $('.ampstart-headerbar-nav li a').click(function(e){
+      const obj = $(`${this.hash}`).offset()
+      if(!obj || typeof obj != 'object'){
+        return
+      }
+      $('html, body')
+      .animate(
+        { scrollTop: obj.top },
+        900,
+        function(){
+          $($(this.hash).selector).addClass('active').siblings().removeClass('active')
+        }
+      )
+    })
   }
 
   function SafariScable(){

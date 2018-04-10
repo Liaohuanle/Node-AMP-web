@@ -23,6 +23,12 @@ const countDown = (lang, finnalTime) => {
       hour: 'घंटे',
       minute: 'मिनट',
       second: 'सेकंड'
+    },
+    spainish: {
+      day: 'Días',
+      hour: 'Horas',
+      minute: 'Minutos',
+      second: 'Segundos'
     }
   }
   const result = {
