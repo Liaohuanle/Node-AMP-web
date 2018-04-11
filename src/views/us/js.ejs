@@ -167,8 +167,10 @@
     const isMOBILE = winWidth < 769
     const IsSafari = justifiy.IsSafari()
     if( isMOBILE ){
-      $('.banner-mask video').remove();
-      $('.banner-mask').addClass('mobile')
+       if(isAndroid){
+        $('.banner-mask video').remove();
+        $('.banner-mask').addClass('mobile')
+      }
     }else {
       $('.banner-mask').attr('style', 'background-image: null;');
     }
