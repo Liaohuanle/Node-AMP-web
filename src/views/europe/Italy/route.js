@@ -5,7 +5,7 @@ module.exports = {
     path: 'Italy',
     isOnline: false,
     data: data_1.default,
-    cssSrc: '../italy/css',
-    containerSrc: '../../italy/index',
-    jsSrc: '../../italy/js'
+    cssSrc: '../Italy/css',
+    containerSrc: '../../Italy/index',
+    jsSrc: '../../Italy/js'
 };
