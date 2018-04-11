@@ -157,19 +157,15 @@
   function transformBanner(){
     const isMOBILE = winWidth < 769
     const isAndroid = justifiy.isAndroid()
-    const videoEle = $('.banner-mask video')[0]
+    const videoEle = $('.banner-mask video source')[0]
     if(isMOBILE){
       if(isAndroid){
-        alert('isAndroid')
         videoEle.remove();
         $('.banner-mask').addClass('mobile')
       }else{
-        alert('is mobile',videoEle.src)
         videoEle.src = bannermobileVideo
-        alert(videoEle.src)
       }
     }else{
-      alert('is pc')
       $('.banner-mask').attr('style', 'background-image: null;');
     }
   }
