@@ -157,12 +157,8 @@
   function initScroll(){
     window.onscroll = function(e) {
       $('.ampstart-headerbar').removeClass('theme-red-nav')
-      $('.banner-mask video,.banner-mask img').attr('style', 'display: block')
       if(window.scrollY >= winHeight + 100) {
         window.scrollY && winWidth > 769 && $('.ampstart-headerbar').addClass('theme-red-nav')
-      }
-      if(window.scrollY >= 1600) {
-        $('.banner-mask video, .banner-mask img').attr('style', 'display: none')
       }
     }
   }
@@ -174,12 +170,7 @@
       $('.banner-mask video').remove();
       $('.banner-mask').addClass('mobile')
     }else {
-      if( IsSafari ){
-        $('.banner-mask').addClass('pc')
-        $('.banner-mask video').remove();
-      }else{
-        $('.banner-mask').attr('style', 'background-image: null;');
-      }
+      $('.banner-mask').attr('style', 'background-image: null;');
     }
   }
 
