@@ -45,6 +45,8 @@ const winnerObj = {
   content: 'Creator Score. It is from an algorithm score combining video quality, engagement, creativity, originality and which more fits the proposed themes. The score is calculated by musical.ly data team. We will announce the winners list with score to everyone here.'
 }
 
+const bannerVideoMobile = '/act/assets/banner-video-mobile-us.mp4'
+
 const data = {
     noBannerVideo: false,
     bannerBgUrl: '/act/assets/banner-pc-us.gif',
@@ -54,6 +56,7 @@ const data = {
     YTvideoinfo: usYT,
     setIntervalTimeNode,
     bannerImgPC: usBannerImgPC,
+    bannerVideoMobile,
     bannerImgMobile: usBannerImgMobile,
     navList: usNavList,
     rule,
