@@ -30,13 +30,13 @@ const aboutSubList = {
 };
 const setIntervalTimeNode = util.countDown('spainish', '2018.5.03 23:59:59');
 
+const bannerMobileVideoPoster = '/act/assets/banner-mobile-poster-europe.png'
+
 const bannerVideoPoster = '/act/assets/europe-banner-image.jpg'
 
 const bannerVideoUrl = '/act/assets/europe-banner-video-pc.mp4'
 
 const bannerVideoMobile = `/act/assets/europe-banner-video-mobile.mp4`
-
-const bannerBgUrl = '/act/assets/banner-pc-us.gif'
 
 const bannerImgPC = '/act/assets/spain-pc-banner-text.png'
 
@@ -99,6 +99,9 @@ const winnerObj = {
   content: 'Creator Score. It is from an algorithm score combining video quality, engagement, creativity, originality and which more fits the proposed themes. The score is calculated by musical.ly data team. We will announce the winners list with score to everyone here.'
 }
 
+
+
+const bannerMobileVideoGif = '/act/assets/banner-mobile-europe.gif'
 module.exports = {
   showLanguageBtn: false,
   langList: {
@@ -106,12 +109,13 @@ module.exports = {
     list: util.europeLanglist
   },
   prizeList,
+  bannerMobileVideoGif,
+  bannerMobileVideoPoster,
   aboutContainerFile,
   navList,
   bannerVideoPoster,
   bannerVideoUrl,
   bannerVideoMobile,
-  bannerBgUrl,
   setIntervalTimeNode,
   spanText: setIntervalTimeNode.spanText,
   bannerImgPC,

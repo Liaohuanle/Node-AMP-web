@@ -39,7 +39,6 @@ const routerList = [api, route_1.default, ...route_2.default, ...route_3];
 const distuributePath = (item) => (req, res) => {
   res.setHeader('ETag', etag(''))
   if (item.isApi) {
-    console.info(item, '*************')
     res.render(item.containerSrc);
   }else {
     res.render(_config_1.layoutDir, item);

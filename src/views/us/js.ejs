@@ -2,10 +2,12 @@
 <script>
   <%- include('../../assets/js/jquery.js') %>
   <%- include('../../assets/js/slider.js') %>
+  <%- include('../../assets/js/playinline.js') %>
 </script>
 <script>
   const timeNode = <%- JSON.stringify(setIntervalTimeNode) %>
   const YTP= <%- JSON.stringify(YTvideoinfo) %>
+  const bannerGif =<%- JSON.stringify(bannerMobileVideoGif) %>
   const restTime = timeNode.restTime
   const winWidth = $(window).width()
   const winHeight = $(window).height()
@@ -165,12 +167,15 @@
 
   function transformBanner(){
     const isMOBILE = winWidth < 769
-    const IsSafari = justifiy.IsSafari()
-    if( isMOBILE ){
-       if(isAndroid){
-        $('.banner-mask video').remove();
-        $('.banner-mask').addClass('mobile')
-      }
+    const isAndroid = justifiy.isAndroid()
+    $('.banner-mask video').each(function () {
+      enableInlineVideo(this);
+    });
+    if( isMOBILE && isAndroid ){
+      $('.banner-mask')
+      .addClass('mobile')
+      .attr('style', `background-image: url(${bannerGif});`);
+      $('.banner-mask video').remove();
     }else {
       $('.banner-mask').attr('style', 'background-image: null;');
     }

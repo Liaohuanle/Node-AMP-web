@@ -10,4 +10,4 @@ app.use('/act/assets/', express.static(__dirname + '/assets/'));
 app.set('view engine', 'ejs');
 
 router_1(app);
-app.listen(3000);
+app.listen(3000, '0.0.0.0');

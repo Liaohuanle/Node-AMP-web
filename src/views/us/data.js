@@ -47,9 +47,14 @@ const winnerObj = {
 
 const bannerVideoMobile = '/act/assets/banner-video-mobile-us.mp4'
 
+const bannerMobileVideoPoster = '/act/assets/banner-mobile-poster-us.png'
+
+const bannerMobileVideoGif = '/act/assets/banner-mobile-us.gif'
+
 const data = {
     noBannerVideo: false,
-    bannerBgUrl: '/act/assets/banner-pc-us.gif',
+    bannerMobileVideoPoster,
+    bannerMobileVideoGif,
     bannerVideoUrl: '/act/assets/banner-pc-us.mp4',
     bannerVideoPoster: '/act/assets/bg-banner-pc-us.jpeg',
     aboutTagList: aboutUsTagList,
