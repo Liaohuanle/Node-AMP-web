@@ -5,7 +5,6 @@
 <script>
   const timeNode = <%- JSON.stringify(setIntervalTimeNode) %>
   const YTP= <%- JSON.stringify(YTvideoinfo) %>
-  const bannermobileVideo = <%-JSON.stringify(bannerVideoMobile)%>
   const restTime = timeNode.restTime
   const winWidth = $(window).width()
   const winHeight = $(window).height()
@@ -29,7 +28,6 @@
     transformBanner()
     initBanner()
     getREST()
-    SafariScable()
     clickScroll()
   })
 
@@ -144,12 +142,8 @@
   function initScroll(){
     window.onscroll = function(e) {
       $('.ampstart-headerbar').removeClass('theme-red-nav')
-      $('.banner-mask video,.banner-mask img').attr('style', 'display: block')
       if(window.scrollY >= winHeight + 100) {
         window.scrollY && winWidth > 769 && $('.ampstart-headerbar').addClass('theme-red-nav')
-      }
-      if(window.scrollY >= 1600) {
-        $('.banner-mask video, .banner-mask img').attr('style', 'display: none')
       }
     }
   }
@@ -157,13 +151,10 @@
   function transformBanner(){
     const isMOBILE = winWidth < 769
     const isAndroid = justifiy.isAndroid()
-    const videoEle = $('.banner-mask video')[0]
     if(isMOBILE){
       if(isAndroid){
-        videoEle.remove();
+        $('.banner-mask video').remove();
         $('.banner-mask').addClass('mobile')
-      }else{
-        videoEle.src = bannermobileVideo
       }
     }else{
       $('.banner-mask').attr('style', 'background-image: null;');
@@ -202,5 +193,6 @@
       lastTouchEnd=now;  
     },false)  
   }
+  window.onload = SafariScable()
 
 </script>
