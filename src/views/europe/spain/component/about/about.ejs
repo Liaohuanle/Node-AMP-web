@@ -1,0 +1,52 @@
+<section id='about' class='about-section'>
+  <div class="about-container">
+    <div class='title-container'>
+      <h1> Acerca de </h1>
+      <p>1 Million Audition Español</p>
+    </div>
+    <section class="badge-container">
+      <ul>
+        <% for(var i =0; i < aboutObject.length; i++) { %>
+          <li>
+            <figure>
+              <img src="<%=aboutObject[i].src%>"/>
+            </figure>
+            <p><%=aboutObject[i].title%></p>
+          </li>
+        <%
+          }
+        %>
+      </ul>
+    </section>
+    <section class="tab-container">
+      <ul>
+        <li class="subItem tab-item-text active">Reglas y Premio</li>
+      </ul>
+      <div class='tab-item prize-layout'>
+        <% for(var i in prizeList) { %>
+          <div class="prize-item">
+            <div class="title-area">
+              <h2>
+                <%=prizeList[i].title%>
+              </h2>
+              <span>
+                <%=prizeList[i].subtitle%>
+              </span>
+            </div>
+            <div class="desc-area">
+              <% for(var j =0; j < prizeList[i].desc.length; j++) { %>
+                <span> <%=prizeList[i].desc[j]%> </span>
+              <%}%>
+            </div>
+          </div>
+        <%
+          }
+        %>
+        <p>
+          *La selección de ganadores se basará en el puntaje del creador.
+          <a id="rule" href="javascript:void(0)"> Conoce el reglamento aquí.</a>
+        </p>
+      </div>
+    </section>
+  </div>
+</section>

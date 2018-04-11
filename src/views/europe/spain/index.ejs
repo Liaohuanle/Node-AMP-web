@@ -1,0 +1,23 @@
+ <body>
+  <%- include('../../components/nav/nav' , { navList }) %>
+  <section class='main'>
+    <div class='main-container'>
+      <%- include('../../components/banner/banner', {
+          bannerVideoPoster,
+          bannerVideoUrl,
+          bannerBgUrl,
+          spanText,
+          bannerImgPC,
+          bannerImgMobile
+        }) %>
+      <%- include('./component/about/about', {
+          aboutObject,
+          aboutContainerFile,
+          prizeList
+        }) %>
+      <%- include('../../components/winners/winners', winnerObj) %>
+      <%- include('../../components/video/video', YTvideoinfo) %>
+      <%- include('../../components/termofuser/termofuse') %>
+    </div>
+  </section>
+</body>

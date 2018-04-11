@@ -4,6 +4,8 @@
   min-height: 100vh;
   position: relative;
   overflow: hidden;
+  top: 0;
+  left: 0;
 }
 .banner-content{
   width: 100%;
@@ -22,30 +24,37 @@
   opacity: 1;
 }
 .banner-mask{
-  position: fixed;
+  position: absolute;
   width: 100vw;
-  top: 0px;
+  min-width: 177.777778vh;
   height: 100vh;
+  max-height: 200vw;
+  min-height: 60vw;
   z-index: -1;
+  top: 0;
   background-repeat: no-repeat;
   background-color: bisque;
   video{
     min-height: 100%;
     min-width: 100%;
-    width: auto;
-    height: auto;
+    display: block;
   }
   &.mobile{
     background-size: 123%;
     background-image: url('/act/assets/banner-mobile-us.gif');
   }
-  &.pc{
-    background-size: 110%;
-    background-image: url('/act/assets/banner-pc-us.gif');
-  }
   @media(max-height: 667px){
     &.mobile{
       background-size: 110%;
+    }
+  }
+  @media(max-width: 769px){
+    min-width: initial;
+    max-height: 217vw;
+    video{
+      min-height: initial;
+      height: 100%;
+      min-width: initial;;
     }
   }
 }
@@ -80,7 +89,7 @@
 .countDownItem::before{
   content: '';
   background: #fff;
-  filter: blur(2px);
+  filter: blur(1px);
   position: absolute;
   top: 0px;
   right: 0px;
@@ -140,9 +149,6 @@
     max-width: 85%;
     margin: 6vh auto 5vh auto;
     padding-top: 16vh;
-  }
-  .banner-mask video{
-    display: none;
   }
   .banner-mask img{
     display: block;

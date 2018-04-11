@@ -1,10 +1,13 @@
-const express = require('express')
-const routes = require('./router')
-const app = new express()
-app.use( '/act/assets/', express.static(__dirname + '/assets/'))
+"use strict";
+const express = require("express");
+const router_1 = require("./router");
+const requestIp = require('request-ip');
 
-app.set('view engine', 'ejs')
-routes(app)
-app.listen(3000,(err) => {
-  console.info(err || 'success')
-})
+const app = express();
+
+app.use(requestIp.mw())
+app.use('/act/assets/', express.static(__dirname + '/assets/'));
+app.set('view engine', 'ejs');
+
+router_1(app);
+app.listen(8009, '127.0.0.1');

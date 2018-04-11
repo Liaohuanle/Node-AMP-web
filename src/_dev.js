@@ -8,26 +8,19 @@ const cp = require('child_process');
 
 const chokidar = require('chokidar');
 
-const watcher = chokidar.watch(path.join(__dirname, '../'));
+const watcher = chokidar.watch(path.join(__dirname, './views'));
 
 let appIns = cp.fork(path.join(__dirname, './index.js'));
 
 let lessFileList = []
 
-const currentApp = config.appId['us']
-
-const lessUrl = config[`${currentApp}-less`]
-
 lessFileList = fetchAllFIleList(config.rootDir)
 
-watcher.on('ready', () => {
+watcher.on('ready', (val) => {
 
   watcher.on('change', (path) => {
-
-    console.log('** change: watched file change, do something', lessUrl);
-
+    console.info(path)
     compileLess(path)
-
     appIns = reload(appIns);
 
   });
@@ -58,7 +51,6 @@ function compileLess(path){
     const temp =  item.split('/main.less')[0]
     const dest = `${temp}/css.ejs`
     cp.exec(`lessc -clean-css ${item} ${dest}`)
-    console.info('lessc compile => ', item, dest)
   })
 }
 
