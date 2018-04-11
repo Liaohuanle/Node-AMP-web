@@ -39,7 +39,20 @@
       layout="responsive"
       loop
       muted
-      id='banner-video'
+      class="mobile-video"
+    >
+      <source src="<%=bannerVideoMobile%>" type="video/mp4">
+    </video>
+    <video
+      autoplay= "autoplay"
+      poster="<%=bannerVideoPoster%>"
+      title="Big Buck Bunny"
+      album="Blender"
+      artist="Blender Foundation"
+      layout="responsive"
+      loop
+      muted
+      class="pc-video"
     >
       <source src="<%=bannerVideoUrl%>" type="video/mp4">
     </video>
