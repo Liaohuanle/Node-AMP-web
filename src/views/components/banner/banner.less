@@ -34,16 +34,17 @@
   top: 0;
   background-repeat: no-repeat;
   background-color: bisque;
+  overflow: hidden;
   video{
     min-height: 100%;
     min-width: 100%;
+    object-fit: cover;
   }
   .mobile-video{
     display: none;
   }
   &.mobile{
     background-size: 123%;
-    background-image: url('/act/assets/banner-mobile-us.gif');
   }
   @media(max-height: 667px){
     &.mobile{
@@ -62,6 +63,7 @@
       display: none;
     }
     .mobile-video{
+      min-width: 100vw;
       display: block;
     }
   }

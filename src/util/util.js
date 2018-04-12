@@ -1,4 +1,6 @@
-const moment = require('moment')
+const moment = require('moment') 
+const winnerListUs = require('../views/us/component/winnerData/index')
+
 const countDown = (lang, finnalTime) => {
   let currentStep = 3
   const restTime = [0, 0, 0, 0]
@@ -65,7 +67,22 @@ const europeLanglist = {
     link: '/Poland'
   }
 }
+
+const solveWinnerData = function(source, length){
+  let result = []
+  switch (source) {
+    case 'us':
+    result =  winnerListUs.slice(0, length)
+      break;
+  
+    default:
+      break;
+  }
+  return result
+}
+
 module.exports = {
   countDown,
-  europeLanglist
+  europeLanglist,
+  solveWinnerData
 }

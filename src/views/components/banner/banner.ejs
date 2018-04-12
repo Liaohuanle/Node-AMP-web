@@ -32,14 +32,16 @@
   <%if(typeof noBannerVideo == 'boolean' && !noBannerVideo){%>
     <video
       autoplay= "autoplay"
-      poster="<%=bannerVideoPoster%>"
+      poster="<%=bannerMobileVideoPoster%>"
       title="Big Buck Bunny"
       album="Blender"
       artist="Blender Foundation"
       layout="responsive"
       loop
       muted
+      x5-video-player-fullscreen="false"
       class="mobile-video"
+      playsinline
     >
       <source src="<%=bannerVideoMobile%>" type="video/mp4">
     </video>
@@ -51,8 +53,10 @@
       artist="Blender Foundation"
       layout="responsive"
       loop
+      x5-video-player-fullscreen="false"
       muted
       class="pc-video"
+      playsinline
     >
       <source src="<%=bannerVideoUrl%>" type="video/mp4">
     </video>
