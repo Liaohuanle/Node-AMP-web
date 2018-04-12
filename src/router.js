@@ -5,9 +5,8 @@ const route_3 = require('./views/europe/router')
 const api = require('./views/europe/rule-api')
 const _config_1 = require("./_config");
 const util = require('./util/util')
-const setTable = require('./db/db-connect');
-const geoip = require('geoip-lite')
-const etag = require('etag')
+// const setTable = require('./db/db-connect');
+// const geoip = require('geoip-lite')
 
 const routerList = [...api, route_1.default, ...route_2.default, ...route_3];
 
@@ -39,7 +38,6 @@ const routerList = [...api, route_1.default, ...route_2.default, ...route_3];
 // };
 
 const distuributePath = (item) => (req, res) => {
-  res.setHeader('ETag', etag(''))
   if (item.isApi) {
     res.render(item.containerSrc);
   }else if(item.isRest){
