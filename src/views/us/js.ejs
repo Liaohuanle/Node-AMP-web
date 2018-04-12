@@ -205,9 +205,34 @@
     $('#media iframe').height(winWidth * YTP.proportion)
   }
 
+  function sliderInit(){
+    $('.subItem').click(function(){
+      $(".slider")
+      .slick('slickGoTo', $(this).index())
+      $(this)
+      .addClass('active')
+      .siblings()
+      .removeClass('active')
+    })
+    $("#slick-meet").slick({
+      pauseOnHover: true,
+      pauseOnFocus: true,
+      autoplay: true,
+      infinite: true,
+      dots: true,
+      slidesToShow: window.outerHeight <= 812 ? 1 : 3,
+      autoplaySpeed: 2000,
+      slidesToScroll: window.outerHeight <= 812 ? 1 : 3,
+      pauseOnDotsHover: true,
+      appendArrows: false,
+      mobileFirst: true
+    })
+  }
+
 
   $(function(){
     countDownTime(restTime, '#bannerPanel')
+    sliderInit()
     slideInit()
     initScroll()
     transformBanner()

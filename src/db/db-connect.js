@@ -10,10 +10,10 @@ let _DB = MongoClient.connect(url, (err, db) => {
 const setTable = (tName) => (dataObj) => {
   if(!!_DB){
     const _T = _DB.collection(tName)
-    return _T.insertOne(dataObj, (err, result)=>{
+    return _T.insert(dataObj, (err, result)=>{
         if (err) throw err;
+        console.info('data set database success')
         _DB && _DB.close && _DB.close();
-      return result
     })
   }
 }
