@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+
 const util = require('../../util/util');
 const usBannerImgMobile = '/act/assets/banner-title-mobile-us.png';
 const usBannerImgPC = '/act/assets/banner-title-pc-us.png';
@@ -40,6 +41,7 @@ const aboutSubList = {
 const setIntervalTimeNode = util.countDown('en', '2018.3.30 23:59:59');
 
 const winnerObj = {
+  hasWinnerList: true,
   title: 'Winners',
   desc: 'How do we determine the winners of the audition?',
   content: 'Creator Score. It is from an algorithm score combining video quality, engagement, creativity, originality and which more fits the proposed themes. The score is calculated by musical.ly data team. We will announce the winners list with score to everyone here.'

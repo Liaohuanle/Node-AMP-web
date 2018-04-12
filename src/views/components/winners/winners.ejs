@@ -1,18 +1,19 @@
 <section id='winners'>
   <div class='winner-container'>
     <h1> <%=title%> </h1>
-    <p><%=desc%></p>
-    <p>
-      <%=content%>
-    </p>
     <div class="nameList">
       <ul class="winner-top-container">
-        <% for(var i=0; i< 18; i ++ ) {%>
-          <li class="winner-item">
-            <img src="/act/assets/undifined.png"/>
-          </li>
-        <% } %>
+        <%if(!hasWinnerList){%>
+          <% for(var i=0; i< 18; i ++ ) {%>
+            <li class="winner-item">
+              <img src="/act/assets/undifined.png"/>
+            </li>
+          <% } %>
+        <%}%>
       </ul>
     </div>
+    <%if(hasWinnerList){%>
+      <a id="fetchAllWinnerList" href="javascript:void(0)">loading all winners</a>
+    <%}%>
   </div>
 </section>

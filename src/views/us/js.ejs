@@ -11,54 +11,36 @@
   const restTime = timeNode.restTime
   const winWidth = $(window).width()
   const winHeight = $(window).height()
-  $(function(){
-    countDownTime(restTime, '#bannerPanel')
-    slideInit()
-    initScroll()
-    transformBanner()
-    initBanner()
-    clickScroll()
-    getREST()
-    SafariScable()
-    getAllWinnerList()
-  })
 
   function initTermOfUse(){
-    $(".ampstart-nav a[href$='officalRules'], #getTermOfUse").on('click',function(){
+    $(".ampstart-nav a[href$='officalRules'], #getTermOfUse")
+    .on('click',function(){
+      $('#section-container').removeClass('text-center')
       $.ajax({
         url: '/act/India/termofuse'
       }).done(appendTerm)
     })
   }
 
-  function getAllWinnerList(){
-    $('#winnerList').on('click',function(){
-      $.ajax({
-        url: '/act/India/fetchWinnerList'
-      }).done(appendWinnerList)
+  function generateWinners(res){
+    let result='';
+    res.forEach(function(item){
+      result=`${result}
+        <li class="winner-item">
+          <span>${ item }</span>
+        </li>`
     })
+    return result
   }
 
   function appendWinnerList(res){
     if(!res || !res.length){
+      $('.winner-top-container')
+      .html('waiting...')
       return
     }
-    let result = `
-      <div class="winner-name-container">
-        <div class='close'>X</div>
-    `
-    res.forEach(function(item){
-      result= result + `<span>@${ item }</span>`
-    })
-    result = result + `</div>`
-    $('#section-container')
-    .addClass('section-container-show')
-    .html(result)
-    $('body').addClass('overflow-y-hidden')
-    $('.close').click(function(){
-      $('#section-container').removeClass('section-container-show')
-      $('body').removeClass('overflow-y-hidden')
-    })
+    $('.winner-top-container')
+    .html(generateWinners(res))
   }
 
   function appendTerm(res){
@@ -66,10 +48,6 @@
     .addClass('section-container-show')
     .html(res)
     $('body').addClass('overflow-y-hidden')
-    $(".close").click(function(){
-      $('#section-container').removeClass('section-container-show')
-      $('body').removeClass('overflow-y-hidden')
-    })
   }
 
   function initBanner(){
@@ -127,33 +105,6 @@
       }
       initTime(day, hour, min, sec, ele)
     }, 1000)
-  }
-
-  function getREST(){
-    $('.subItem').click(function(){
-      $(".slider")
-      .slick('slickGoTo', $(this).index())
-      $(this)
-      .addClass('active')
-      .siblings()
-      .removeClass('active')
-    })
-    $("#slick-meet").slick({
-      pauseOnHover: true,
-      pauseOnFocus: true,
-      autoplay: true,
-      infinite: true,
-      dots: true,
-      slidesToShow: window.outerHeight <= 812 ? 1 : 3,
-      autoplaySpeed: 2000,
-      slidesToScroll: window.outerHeight <= 812 ? 1 : 3,
-      pauseOnDotsHover: true,
-      appendArrows: false,
-      mobileFirst: true
-    })
-    $('#media iframe').width(winWidth)
-    $('#media iframe').height(winWidth * YTP.proportion)
-    initTermOfUse()
   }
 
   function initScroll(){
@@ -225,5 +176,48 @@
       lastTouchEnd=now;  
     },false)  
   }
+
+  function getAllWinnerList(size, callback){
+    var allHeight = winHeight * 0.8
+    var allWidth = $('.nameList').width()
+    var itemHeight = 48;
+    var itemWidth = 189;
+    var heightLength = allHeight / itemHeight
+    var widthLength = allWidth / itemWidth
+    var allLength = size > 0 ? size : Math.ceil(heightLength * widthLength)
+    $.ajax({
+      url: '/act/fetchWinnerList?source=us&length='+allLength
+    }).done(callback)
+  }
+
+  function initLoadingAllWinnerList(){
+    $('#fetchAllWinnerList').click(function(){
+      $('#section-container').addClass('text-center')
+      getAllWinnerList(10000, function(res){appendTerm(generateWinners(res))})
+    })
+
+    $('#section-container').click(function(){
+      $('#section-container').removeClass('section-container-show text-center')
+      $('body').removeClass('overflow-y-hidden')
+    })
+
+    $('#media iframe').width(winWidth)
+    $('#media iframe').height(winWidth * YTP.proportion)
+  }
+
+
+  $(function(){
+    countDownTime(restTime, '#bannerPanel')
+    slideInit()
+    initScroll()
+    transformBanner()
+    initBanner()
+    clickScroll()
+    SafariScable()
+    getAllWinnerList(-1, appendWinnerList)
+    initLoadingAllWinnerList()
+    initTermOfUse()
+  })
+
 
 </script>

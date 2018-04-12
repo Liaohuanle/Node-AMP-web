@@ -1,6 +1,8 @@
+
 <script>
   <%- include('../../assets/js/jquery.js') %>
   <%- include('../../assets/js/slider.js') %>
+  <%- include('../../assets/js/playinline.js') %>
 </script>
 <script>
   const timeNode = <%- JSON.stringify(setIntervalTimeNode) %>
@@ -10,39 +12,41 @@
   const winWidth = $(window).width()
   const winHeight = $(window).height()
 
-  const justifiy = {
-    isWeixinBrowser: function(){
-      return /micromessenger/.test(navigator.userAgent.toLowerCase())
-    },
-    isAndroid: function(){
-      return (/android/i).test(navigator.userAgent)
-    },
-    IsSafari: function() {
-      return navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1
-    }
-  }
-
-  $(function(){
-    countDownTime(restTime, '#bannerPanel')
-    slideInit()
-    initScroll()
-    transformBanner()
-    initBanner()
-    getREST()
-    clickScroll()
-  })
-
   function initTermOfUse(){
-    $(".ampstart-nav a[href$='officalRules'], #getTermOfUse").on('click',function(){
+    $(".ampstart-nav a[href$='officalRules'], #getTermOfUse")
+    .on('click',function(){
+      $('#section-container').removeClass('text-center')
       $.ajax({
         url: '/act/India/termofuse'
       }).done(appendTerm)
     })
-    $('#rule').on('click',function(){
-      $.ajax({
-        url: '/act/prize/rules'
-      }).done(appendTerm)
+
+
+    $('#section-container').click(function(){
+      $('#section-container').removeClass('section-container-show text-center')
+      $('body').removeClass('overflow-y-hidden')
     })
+  }
+
+  function generateWinners(res){
+    let result='';
+    res.forEach(function(item){
+      result=`${result}
+        <li class="winner-item">
+          <span>${ item }</span>
+        </li>`
+    })
+    return result
+  }
+
+  function appendWinnerList(res){
+    if(!res || !res.length){
+      $('.winner-top-container')
+      .html('waiting...')
+      return
+    }
+    $('.winner-top-container')
+    .html(generateWinners(res))
   }
 
   function appendTerm(res){
@@ -50,16 +54,15 @@
     .addClass('section-container-show')
     .html(res)
     $('body').addClass('overflow-y-hidden')
-    $(".close").click(function(){
-      $('#section-container').removeClass('section-container-show')
-      $('body').removeClass('overflow-y-hidden')
-    })
   }
 
   function initBanner(){
     setTimeout(function(){
       $('.banner-image').addClass('banner-image-show')
     }, 800)
+
+    $('#media iframe').width(winWidth)
+    $('#media iframe').height(winWidth * YTP.proportion)
   }
 
   function slideInit(){
@@ -113,33 +116,6 @@
     }, 1000)
   }
 
-  function getREST(){
-    $('.subItem').click(function(){
-      $(".slider")
-      .slick('slickGoTo', $(this).index())
-      $(this)
-      .addClass('active')
-      .siblings()
-      .removeClass('active')
-    })
-    $("#slick-meet").slick({
-      pauseOnHover: true,
-      pauseOnFocus: true,
-      autoplay: true,
-      infinite: true,
-      dots: true,
-      slidesToShow: window.outerHeight <= 812 ? 1 : 3,
-      autoplaySpeed: 2000,
-      slidesToScroll: window.outerHeight <= 812 ? 1 : 3,
-      pauseOnDotsHover: true,
-      appendArrows: false,
-      mobileFirst: true
-    })
-    $('#media iframe').width(winWidth)
-    $('#media iframe').height(winWidth * YTP.proportion)
-    initTermOfUse()
-  }
-
   function initScroll(){
     window.onscroll = function(e) {
       $('.ampstart-headerbar').removeClass('theme-red-nav')
@@ -152,17 +128,20 @@
   function transformBanner(){
     const isMOBILE = winWidth < 769
     const isAndroid = justifiy.isAndroid()
-    if(isMOBILE && isAndroid){
+    $('.banner-mask video').each(function () {
+      enableInlineVideo(this);
+    });
+    if( isMOBILE && isAndroid ){
       $('.banner-mask')
       .addClass('mobile')
       .attr('style', `background-image: url(${bannerGif});`);
       $('.banner-mask video').remove();
-    }else{
+    }else {
       $('.banner-mask').attr('style', 'background-image: null;');
     }
   }
 
-  function clickScroll(){
+   function clickScroll(){
     $('.ampstart-headerbar-nav li a').click(function(e){
       const obj = $(`${this.hash}`).offset()
       if(!obj || typeof obj != 'object'){
@@ -177,6 +156,18 @@
         }
       )
     })
+  }
+
+  var justifiy = {
+    isWeixinBrowser: function(){
+      return /micromessenger/.test(navigator.userAgent.toLowerCase())
+    },
+    isAndroid: function(){
+      return (/android/i).test(navigator.userAgent)
+    },
+    IsSafari: function() {
+      return navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1
+    }
   }
 
   function SafariScable(){
@@ -194,6 +185,40 @@
       lastTouchEnd=now;  
     },false)  
   }
-  window.onload = SafariScable()
+
+  function getAllWinnerList(size, callback){
+    var allHeight = winHeight * 0.8
+    var allWidth = $('.nameList').width()
+    var itemHeight = 48;
+    var itemWidth = 189;
+    var heightLength = allHeight / itemHeight
+    var widthLength = allWidth / itemWidth
+    var allLength = size > 0 ? size : Math.ceil(heightLength * widthLength)
+    $.ajax({
+      url: '/act/fetchWinnerList?source=us&length='+allLength
+    }).done(callback)
+  }
+
+  function initLoadingAllWinnerList(){
+    $('#fetchAllWinnerList').click(function(){
+      $('#section-container').addClass('text-center')
+      getAllWinnerList(10000, function(res){appendTerm(generateWinners(res))})
+    })
+  }
+
+
+  $(function(){
+    countDownTime(restTime, '#bannerPanel')
+    slideInit()
+    initScroll()
+    transformBanner()
+    initBanner()
+    clickScroll()
+    SafariScable()
+    // getAllWinnerList(-1, appendWinnerList)
+    // initLoadingAllWinnerList()
+    initTermOfUse()
+  })
+
 
 </script>
