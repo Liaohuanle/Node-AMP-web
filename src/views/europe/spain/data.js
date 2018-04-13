@@ -76,7 +76,7 @@ const prizeList = {
     ]
   },
   two: {
-    title: 'Round 2 - EU Level',
+    title: 'Round 2',
     subtitle: 'Del 29 de abril al 3 de mayo',
     src: '/act/assets/europe-prize-canna.png',
     desc: [
