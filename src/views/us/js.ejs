@@ -22,14 +22,49 @@
     })
   }
 
+  function getWinnersRank(res) {
+    const winnersRank = [{
+      title: 'TOP 5',
+      list: []
+    }, {
+      title: 'TOP 6-30',
+      list: []
+    }, {
+      title: 'TOP 31-100',
+      list: []
+    }, {
+      title: 'TOP 101-200',
+      list: []
+    }];
+    for(let i = 0,len = res.length; i < len; i++){
+      if(i <= 4){
+        winnersRank[0]['list'].push(res[i]);
+      }else if(5 <= i && i <= 29){
+        winnersRank[1]['list'].push(res[i]);
+      }else if(30 <= i && i <= 99){
+        winnersRank[2]['list'].push(res[i]);
+      }else if(i >= 100){
+        winnersRank[3]['list'].push(res[i]);
+      }
+    };
+    return winnersRank;
+  }
+
   function generateWinners(res){
     let result='';
-    res.forEach(function(item){
-      result=`${result}
-        <li class="winner-item">
-          <span>${ item }</span>
-        </li>`
-    })
+    const winnersRank = getWinnersRank(res);
+    for(let i = 0,len = 4; i < len; i++){
+      const { list, title } = winnersRank[i];
+      if(list.length !== 0){
+        result = `${result}<div class="winner-item-title" style="text-align:center; font-size: 1.35rem;margin: .8rem 0;"><span style="text-align:center;">${ title }</span></div>`;
+        for(let i = 0,len = list.length; i < len; i++){
+          result = `${result}
+            <li class="winner-item">
+              <span>${ list[i] }</span>
+            </li>`
+        };
+      };
+    };
     return result
   }
 
@@ -162,19 +197,19 @@
   }
 
   function SafariScable(){
-    document.addEventListener('touchstart',function (event) {  
-      if(event.touches.length>1){  
-        event.preventDefault();  
-      }  
-    })  
-    var lastTouchEnd=0;  
-    document.addEventListener('touchend',function (event) {  
-      var now=(new Date()).getTime();  
-      if(now-lastTouchEnd<=300){  
-          event.preventDefault();  
-      }  
-      lastTouchEnd=now;  
-    },false)  
+    document.addEventListener('touchstart',function (event) {
+      if(event.touches.length>1){
+        event.preventDefault();
+      }
+    })
+    var lastTouchEnd=0;
+    document.addEventListener('touchend',function (event) {
+      var now=(new Date()).getTime();
+      if(now-lastTouchEnd<=300){
+          event.preventDefault();
+      }
+      lastTouchEnd=now;
+    },false)
   }
 
   function getAllWinnerList(size, callback){
