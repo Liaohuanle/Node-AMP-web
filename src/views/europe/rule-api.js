@@ -1,4 +1,7 @@
 "use strict";
+const util = require('../../util/util')
+const DB = require('../../db/db-connect')
+
 module.exports = [
   {
     path: 'prize/rules',
@@ -17,6 +20,34 @@ module.exports = [
     data: './util/util',
     cssSrc: '',
     containerSrc: '',
+    jsSrc: '',
+    title: '',
+    callback: (query) => {
+      const { source, length } = query
+      return new Promise((resolve, reject) => {
+        resolve(util.solveWinnerData(source, length))
+      })
+    }
+  },{
+    path: 'fetchIpAddressList',
+    isOnline: true,
+    isApi: false,
+    isRest: true,
+    data: [],
+    cssSrc: '',
+    containerSrc: '',
+    jsSrc: '',
+    title: '',
+    callback: (query) => {
+      return DB.queryAllIP(query)
+    }
+  }, {
+    path: 'es/termofuse',
+    isOnline: true,
+    isApi: true,
+    data: {},
+    cssSrc: '',
+    containerSrc: './components/termofuser/es-termofus',
     jsSrc: '',
     title: ''
   }

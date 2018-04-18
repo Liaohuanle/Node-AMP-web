@@ -13,18 +13,24 @@
   const winHeight = $(window).height()
 
   function initTermOfUse(){
-    $(".ampstart-nav a[href$='officalRules'], #getTermOfUse")
+    $(".ampstart-nav a[href$='officalRules'], #getTermOfUse, #rule")
     .on('click',function(){
       $('#section-container').removeClass('text-center')
       $.ajax({
-        url: '/act/India/termofuse'
+        url: '/act/es/termofuse'
       }).done(appendTerm)
     })
 
 
     $('#section-container').click(function(){
-      $('#section-container').removeClass('section-container-show text-center')
-      $('body').removeClass('overflow-y-hidden')
+      $('#section-container.section-container-show').animate({
+          top: '100vh'
+        },500, function(){
+        $('#section-container')
+        .css("top",0)
+        .removeClass('section-container-show text-center')
+        $('body').removeClass('overflow-y-hidden')
+      })
     })
   }
 

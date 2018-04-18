@@ -196,9 +196,15 @@
       getAllWinnerList(10000, function(res){appendTerm(generateWinners(res))})
     })
 
-    $('#section-container').click(function(){
-      $('#section-container').removeClass('section-container-show text-center')
-      $('body').removeClass('overflow-y-hidden')
+    $('#section-container, #close').click(function(){
+      $('#section-container.section-container-show').animate({
+          top: '100vh'
+        },500, function(){
+        $('#section-container')
+        .css("top",0)
+        .removeClass('section-container-show text-center')
+        $('body').removeClass('overflow-y-hidden')
+      })
     })
 
     $('#media iframe').width(winWidth)
