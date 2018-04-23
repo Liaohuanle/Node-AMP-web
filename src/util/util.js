@@ -2,7 +2,7 @@ var moment = require('moment')
 var winnerListUs = require('../views/us/component/winnerData/index')
 
 var countDown = function(lang, finnalTime){
-  let currentStep = 3
+  var currentStep = 3
   var restTime = [0, 0, 0, 0]
   var duration = moment.duration(moment(finnalTime).subtract('hours').diff(moment.now()))
   var allTime = duration.asDays()
@@ -69,7 +69,7 @@ var europeLanglist = {
 }
 
 var solveWinnerData = function(source, length){
-  let result = []
+  var result = []
   switch (source) {
     case 'us':
     result =  winnerListUs.slice(0, length)
