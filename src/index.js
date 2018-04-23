@@ -1,15 +1,17 @@
 "use strict";
-const express = require("express");
-const router_1 = require("./router");
-const requestIp = require('request-ip');
 
-const app = express();
+var express = require("express");
+var router_1 = require("./router");
+var requestIp = require('request-ip');
 
-app.use(requestIp.mw())
+var app = express();
+
+app.use(requestIp.mw());
 app.use('/act/assets/', express.static(__dirname + '/assets/'));
 app.set('view engine', 'ejs');
 
 router_1(app);
-app.listen(3000, function(){
-  console.info('node server success...')
+app.listen(3000, function () {
+  console.info('node server success...');
 });
+//# sourceMappingURL=index.js.map

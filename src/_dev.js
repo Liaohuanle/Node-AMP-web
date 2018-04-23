@@ -1,57 +1,55 @@
-const path = require('path');
+'use strict';
 
-const fs = require('fs')
+var path = require('path');
 
-const config = require('./_config')
+var fs = require('fs');
 
-const cp = require('child_process');
+var config = require('./_config');
 
-const chokidar = require('chokidar');
+var cp = require('child_process');
 
-const watcher = chokidar.watch(path.join(__dirname, './views'));
+var chokidar = require('chokidar');
 
-let appIns = cp.fork(path.join(__dirname, './index.js'));
+var watcher = chokidar.watch(path.join(__dirname, './views'));
 
-let lessFileList = []
+var appIns = cp.fork(path.join(__dirname, './index.js'));
 
-lessFileList = fetchAllFIleList(config.rootDir)
+var lessFileList = [];
 
-watcher.on('ready', (val) => {
+lessFileList = fetchAllFIleList(config.rootDir);
 
-  watcher.on('change', (path) => {
-    console.info(path)
-    compileLess(path)
+watcher.on('ready', function (val) {
+
+  watcher.on('change', function (path) {
+    console.info(path);
+    compileLess(path);
     appIns = reload(appIns);
-
   });
 
-  watcher.on('add', (path) => {
+  watcher.on('add', function (path) {
 
-    lessFileList = fetchAllFIleList(config.rootDir)
+    lessFileList = fetchAllFIleList(config.rootDir);
     appIns = reload(appIns);
-
   });
 
-  watcher.on('unlink', (path) => {
+  watcher.on('unlink', function (path) {
 
-    lessFileList = fetchAllFIleList(config.rootDir)
+    lessFileList = fetchAllFIleList(config.rootDir);
     appIns = reload(appIns);
-
   });
-
 });
 
-process.on('SIGINT', () => {
+process.on('SIGINT', function () {
   process.exit(0);
 });
 
-function compileLess(path){
-  const isLessFile = /.less/.test(path)
-  isLessFile && lessFileList && lessFileList.length && lessFileList.forEach(item => {
-    const temp =  item.split('/main.less')[0]
-    const dest = `${temp}/css.ejs`
-    cp.exec(`lessc -clean-css ${item} ${dest}`)
-  })
+function compileLess(path) {
+  var isLessFile = /.less/.test(path);
+  isLessFile && lessFileList && lessFileList.length && lessFileList.forEach(function (item) {
+    var temp = item.split('/main.less')[0];
+    var dest = temp + '/css.ejs';
+    cp.exec('lessc -clean-css ' + item + ' ' + dest);
+  });
 }
 
 function reload(appIns) {
@@ -59,16 +57,17 @@ function reload(appIns) {
   return cp.fork(require('path').join(__dirname, './index.js'));
 }
 
-function fetchAllFIleList(root){
-  const allFiles = fs.readdirSync(root)
-  let res = []
-  allFiles && allFiles.length && allFiles.forEach(item => {
-    const stat = fs.lstatSync(path.join(root, '/',item))
-    if (!stat.isDirectory()){
-      /main.less/.test(item) && res.push(path.join(root,'/',item));
+function fetchAllFIleList(root) {
+  var allFiles = fs.readdirSync(root);
+  var res = [];
+  allFiles && allFiles.length && allFiles.forEach(function (item) {
+    var stat = fs.lstatSync(path.join(root, '/', item));
+    if (!stat.isDirectory()) {
+      /main.less/.test(item) && res.push(path.join(root, '/', item));
     } else {
-      res = res.concat(fetchAllFIleList(path.join(root,'/',item)));
+      res = res.concat(fetchAllFIleList(path.join(root, '/', item)));
     }
-  })
-  return res
+  });
+  return res;
 }
+//# sourceMappingURL=_dev.js.map

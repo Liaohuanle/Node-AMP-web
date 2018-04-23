@@ -1,13 +1,20 @@
 "use strict";
-const route_1 = require("./views/us/route");
-const route_2 = require("./views/india/route");
-const route_3 = require('./views/europe/router')
-const api = require('./views/europe/rule-api')
-const _config_1 = require("./_config");
-const DB = require('./db/db-connect');
-const geoip = require('geoip-lite')
 
-const routerList = [...api, route_1.default, ...route_2.default, ...route_3];
+var _toConsumableArray2 = require("babel-runtime/helpers/toConsumableArray");
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var route_1 = require("./views/us/route");
+var route_2 = require("./views/india/route");
+var route_3 = require('./views/europe/router');
+var api = require('./views/europe/rule-api');
+var _config_1 = require("./_config");
+var DB = require('./db/db-connect');
+var geoip = require('geoip-lite');
+
+var routerList = [].concat((0, _toConsumableArray3.default)(api), [route_1.default], (0, _toConsumableArray3.default)(route_2.default), (0, _toConsumableArray3.default)(route_3));
 
 // const set = (DATA) => new Promise((resolve, reject) => {
 //   try {
@@ -37,26 +44,30 @@ const routerList = [...api, route_1.default, ...route_2.default, ...route_3];
 //   })
 // };
 
-const distuributePath = (item) => (req, res) => {
-  if (item.isApi) {
-    res.render(item.containerSrc);
-  }else if(item.isRest){
-    item.callback &&
-    item
-    .callback(req.query)
-    .then(r => res.send(r))
-  }else {
-    res.render(_config_1.layoutDir, item);
-  }
+var distuributePath = function distuributePath(item) {
+  return function (req, res) {
+    if (item.isApi) {
+      res.render(item.containerSrc);
+    } else if (item.isRest) {
+      item.callback && item.callback(req.query).then(function (r) {
+        return res.send(r);
+      });
+    } else {
+      res.render(_config_1.layoutDir, item);
+    }
+  };
 };
 
-module.exports = (app) => {
-    routerList
-      .filter((item) => item.isOnline)
-      .map((item) => app.get(`/act/${item.path}`, distuributePath(item)));
+module.exports = function (app) {
+  routerList.filter(function (item) {
+    return item.isOnline;
+  }).map(function (item) {
+    return app.get("/act/" + item.path, distuributePath(item));
+  });
 
-    app.get('/*', (req, res, next) => {
-      res.status(404);
-      res.render(_config_1.notFoundDir, { url: req.url });
-    });
+  app.get('/*', function (req, res, next) {
+    res.status(404);
+    res.render(_config_1.notFoundDir, { url: req.url });
+  });
 };
+//# sourceMappingURL=router.js.map
