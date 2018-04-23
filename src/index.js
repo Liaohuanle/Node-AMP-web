@@ -11,7 +11,7 @@ app.use('/act/assets/', express.static(__dirname + '/assets/'));
 app.set('view engine', 'ejs');
 
 router_1(app);
-app.listen(3000, function () {
+app.listen(process.env.PORT || 3000, function () {
   console.info('node server success...');
 });
 //# sourceMappingURL=index.js.map

@@ -11,10 +11,12 @@ cd $CURRENT_DIR
 # 服务默认端口号
 PORT=3000
 
-# 如果Docker容器的网络模式为Host，则从环境变量获取可用端口号
-# if [ "$IS_HOST_NETWORK" == "1" ]; then
-#      PORT=$PORT0
-# fi
+#如果Docker容器的网络模式为Host，则从环境变量获取可用端口号
+if [ "$IS_HOST_NETWORK" == "1" ]; then
+     PORT=$PORT0
+fi
+
+echo "*****current port: "+PORT
 
 # 启动服务
 sudo -u tiger -H sh -c "cd $CURRENT_DIR"
