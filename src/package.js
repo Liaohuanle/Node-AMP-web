@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel *.js -d build/ --source-maps",
     "watch-ts": "tsc -w",
     "dev": "node _dev.js"
   },

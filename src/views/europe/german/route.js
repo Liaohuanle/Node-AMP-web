@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const data_1 = require("./data");
+var data_1 = require("./data");
 module.exports = {
     title: 'Musical.ly - German',
     path: 'German',

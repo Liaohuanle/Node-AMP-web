@@ -5,12 +5,12 @@
   <%- include('../../assets/js/playinline.js') %>
 </script>
 <script>
-  const timeNode = <%- JSON.stringify(setIntervalTimeNode) %>
-  const YTP= <%- JSON.stringify(YTvideoinfo) %>
-  const bannerGif =<%- JSON.stringify(bannerMobileVideoGif) %>
-  const restTime = timeNode.restTime
-  const winWidth = $(window).width()
-  const winHeight = $(window).height()
+  var timeNode = <%- JSON.stringify(setIntervalTimeNode) %>
+  var YTP= <%- JSON.stringify(YTvideoinfo) %>
+  var bannerGif =<%- JSON.stringify(bannerMobileVideoGif) %>
+  var restTime = timeNode.restTime
+  var winWidth = $(window).width()
+  var winHeight = $(window).height()
 
   function initTermOfUse(){
     $(".ampstart-nav a[href$='officalRules'], #getTermOfUse")
@@ -23,7 +23,7 @@
   }
 
   function getWinnersRank(res) {
-    const winnersRank = [{
+    var winnersRank = [{
       title: 'TOP 5',
       list: []
     }, {
@@ -52,9 +52,9 @@
 
   function generateWinners(res){
     let result='';
-    const winnersRank = getWinnersRank(res);
+    var winnersRank = getWinnersRank(res);
     for(let i = 0,len = 4; i < len; i++){
-      const { list, title } = winnersRank[i];
+      var { list, title } = winnersRank[i];
       if(list.length !== 0){
         result = `${result}<div class="winner-item-title" style="text-align:center; font-size: 1.35rem;margin: .8rem 0;"><span style="text-align:center;">${ title }</span></div>`;
         for(let i = 0,len = list.length; i < len; i++){
@@ -152,8 +152,8 @@
   }
 
   function transformBanner(){
-    const isMOBILE = winWidth < 769
-    const isAndroid = justifiy.isAndroid()
+    var isMOBILE = winWidth < 769
+    var isAndroid = justifiy.isAndroid()
     $('.banner-mask video').each(function () {
       enableInlineVideo(this);
     });
@@ -169,7 +169,7 @@
 
    function clickScroll(){
     $('.ampstart-headerbar-nav li a').click(function(e){
-      const obj = $(`${this.hash}`).offset()
+      var obj = $(`${this.hash}`).offset()
       if(!obj || typeof obj != 'object'){
         return
       }

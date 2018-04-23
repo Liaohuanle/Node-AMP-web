@@ -1,19 +1,19 @@
-const moment = require('moment') 
-const winnerListUs = require('../views/us/component/winnerData/index')
+var moment = require('moment') 
+var winnerListUs = require('../views/us/component/winnerData/index')
 
-const countDown = (lang, finnalTime) => {
+var countDown = function(lang, finnalTime){
   let currentStep = 3
-  const restTime = [0, 0, 0, 0]
-  const duration = moment.duration(moment(finnalTime).subtract('hours').diff(moment.now()))
-  const allTime = duration.asDays()
-  const restD = Math.floor(allTime)
-  const allHour = allTime % 1 * 24
-  const restH = Math.floor(allHour)
-  const allMinute = allHour % 1 * 60
-  const restM = Math.floor(allMinute)
-  const allSecounds = allMinute % 1 * 60
-  const restS = Math.floor(allSecounds)
-  const spanText = {
+  var restTime = [0, 0, 0, 0]
+  var duration = moment.duration(moment(finnalTime).subtract('hours').diff(moment.now()))
+  var allTime = duration.asDays()
+  var restD = Math.floor(allTime)
+  var allHour = allTime % 1 * 24
+  var restH = Math.floor(allHour)
+  var allMinute = allHour % 1 * 60
+  var restM = Math.floor(allMinute)
+  var allSecounds = allMinute % 1 * 60
+  var restS = Math.floor(allSecounds)
+  var spanText = {
     en: {
       day: 'Days',
       hour: 'Hours',
@@ -33,7 +33,7 @@ const countDown = (lang, finnalTime) => {
       second: 'Segundos'
     }
   }
-  const result = {
+  var result = {
     restTime: [restD, restH, restM, restS],
     currentStep,
     spanText: JSON.stringify(spanText[lang])
@@ -41,7 +41,7 @@ const countDown = (lang, finnalTime) => {
   return result
 }
 
-const europeLanglist = {
+var europeLanglist = {
   en: {
     title: 'English',
     link: '/England'
@@ -68,7 +68,7 @@ const europeLanglist = {
   }
 }
 
-const solveWinnerData = function(source, length){
+var solveWinnerData = function(source, length){
   let result = []
   switch (source) {
     case 'us':

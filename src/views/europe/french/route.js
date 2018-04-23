@@ -1,5 +1,5 @@
 "use strict";
-const data_1 = require("./data");
+var data_1 = require("./data");
 module.exports = {
     title: 'Musical.ly - French',
     path: 'French',

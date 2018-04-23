@@ -1,6 +1,6 @@
 "use strict";
-const util = require('../../util/util')
-const DB = require('../../db/db-connect')
+var util = require('../../util/util')
+var DB = require('../../db/db-connect')
 
 module.exports = [
   {
@@ -23,7 +23,7 @@ module.exports = [
     jsSrc: '',
     title: '',
     callback: (query) => {
-      const { source, length } = query
+      var { source, length } = query
       return new Promise((resolve, reject) => {
         resolve(util.solveWinnerData(source, length))
       })
