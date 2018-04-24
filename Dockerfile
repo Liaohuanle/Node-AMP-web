@@ -6,7 +6,7 @@ ENV LD_LIBRARY_PATH=
 RUN mkdir -p /app/node-h5/
 COPY * /app/node-h5/
 
-WORKDIR /app/node-h5/src
+WORKDIR /app/node-h5/dist
 RUN npm install
 WORKDIR /app/node-h5
 

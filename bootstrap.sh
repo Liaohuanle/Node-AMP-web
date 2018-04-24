@@ -13,7 +13,7 @@ PORT=3000
 
 #如果Docker容器的网络模式为Host，则从环境变量获取可用端口号
 if [ "$IS_HOST_NETWORK" == "1" ]; then
-     PORT=$PORT0
+  PORT=$PORT0
 fi
 
 echo "*****current port: "+PORT
