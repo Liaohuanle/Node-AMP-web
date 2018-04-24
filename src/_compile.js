@@ -32,7 +32,6 @@ var compileLength = 0;
       var isJs = /\.js$/.test(item)
       
       const targetSrc = root.replace('/src', config.buildRoot)
-
       cp.exec(`test -d ${targetSrc} || mkdir -p ${targetSrc} && cp ${currentFileRoot} ${targetSrc}`);
       
       if(isJs){
