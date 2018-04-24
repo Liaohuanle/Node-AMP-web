@@ -8,6 +8,5 @@ cd ../
 echo " =====> ls1:"
 ls
 rm -rf src
-cp -r ./dist/* ./
 echo " =====> ls2:"
 ls

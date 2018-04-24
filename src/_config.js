@@ -27,7 +27,6 @@ var buildRoot = '/'
 var buildFilterPath = [
   '_compile.js',
   '_dev.js',
-  'node_modules',
   '.babelrc',
   '.less'
 ]
