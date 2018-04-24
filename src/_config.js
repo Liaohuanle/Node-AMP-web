@@ -22,11 +22,12 @@ var notFoundDir = './components/common/notfound';
 
 var rootDir = path.join(__dirname + '/views');
 
-var buildRoot = '/'
+var buildRoot = 'dist'
 
 var buildFilterPath = [
   '_compile.js',
   '_dev.js',
+  'node_modules',
   '.babelrc',
   '.less'
 ]
