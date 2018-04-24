@@ -34,8 +34,12 @@ cp.exec(`rm -rf ../${config.buildRoot}`);
       var isJs = /\.js$/.test(item)
       
       const targetSrc = root.replace('src', config.buildRoot)
-      
-      cp.exec(`test -d ${targetSrc} || mkdir -p ${targetSrc} && cp ${currentFileRoot} ${path.join(targetSrc, '/', item)}`);
+
+      if(/\.png$/.test(item)){
+        console.info('!!!!!!!=>',currentFileRoot, targetSrc,item)
+      }
+
+      cp.exec(`test -d ${targetSrc} || mkdir -p ${targetSrc} && cp ${currentFileRoot} ${targetSrc}`);
       
       if(isJs){
 
