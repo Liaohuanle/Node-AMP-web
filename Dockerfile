@@ -7,7 +7,6 @@ RUN mkdir -p /app/node-h5/
 COPY * /app/node-h5/
 
 WORKDIR /app/node-h5/
-RUN npm install
 WORKDIR /app/node-h5
 
 COPY program.supervisord.conf /etc/supervisor/conf.d/program.supervisord.conf

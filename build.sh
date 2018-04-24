@@ -17,11 +17,10 @@ npm install --registry=http://npm.byted.org
 echo '====> compile'
 node ./_compile.js
 
+cp ./node_modules ../
+
 echo '====> outside root'
 cd ../
-
-#将代码移出
-cp -r ./dist/* ./
 
 rm -rf src
 
