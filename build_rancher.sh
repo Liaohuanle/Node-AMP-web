@@ -3,7 +3,7 @@
 cd src
 npm install
 node ./_compile.js
-cp ./node_modules ../
+cp -r ./node_modules ../
 cd ../
 rm -rf src
 echo " =====> ls2:"
