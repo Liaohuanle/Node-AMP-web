@@ -21,6 +21,4 @@ echo "*****current port: "+PORT
 # 启动服务
 sudo -u tiger -H sh -c "cd $CURRENT_DIR"
 NODE_ENV=production ROUTE_IP=$ROUTE_IP NAME=$INSTANCE_NAME PORT=$PORT \
-node ./index.js -n $INSTANCE_NAME --no-daemon
-
-./play.sh
+pm2 start ./index.js -n $INSTANCE_NAME --no-daemon
