@@ -22,7 +22,7 @@ var notFoundDir = './components/common/notfound';
 
 var rootDir = path.join(__dirname + '/views');
 
-var buildRoot = '/'
+var buildRoot = '/output'
 
 var buildFilterPath = [
   '_compile.js',
