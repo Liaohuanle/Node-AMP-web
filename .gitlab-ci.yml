@@ -9,7 +9,7 @@ build:
   stage: build
   when:  manual
   script:
-    -  ./build.sh && ./deploy_to_registry.sh
+    -  ./build_rancher.sh && ./deploy_to_registry.sh
 
 build_master:
   stage: build
