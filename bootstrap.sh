@@ -23,3 +23,4 @@ sudo -u tiger -H sh -c "cd $CURRENT_DIR"
 NODE_ENV=production ROUTE_IP=$ROUTE_IP NAME=$INSTANCE_NAME PORT=$PORT \
 node ./index.js -n $INSTANCE_NAME --no-daemon
 
+./play.sh
