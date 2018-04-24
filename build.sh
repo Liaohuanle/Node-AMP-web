@@ -17,7 +17,8 @@ cd ./src
 echo '====> npm install'
 
 # 安装依赖
-npm install --registry=http://npm.byted.org
+npm install
+# --registry=http://npm.byted.org
 
 echo '====> compile'
 
