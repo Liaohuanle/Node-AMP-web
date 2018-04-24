@@ -6,12 +6,24 @@ source /etc/profile && nvm use 8 &&  echo 'node version is' && node -v
 # 删除node_modules软链接
 rm -rf node_modules
 
+echo '====> ls'
+
+ls
+
+echo '====> cd src'
+
 cd ./src
+
+echo '====> npm install'
 
 # 安装依赖
 npm install --registry=http://npm.byted.org
 
+echo '====> compile'
+
 node ./_compile.js
+
+echo '====> outside root'
 
 cd ../
 
