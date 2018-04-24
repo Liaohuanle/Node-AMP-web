@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 切换node版本
-source /etc/profile && nvm use 8 &&  echo 'node version is' && node -v
+# source /etc/profile && nvm use 8 &&  echo 'node version is' && node -v
 
 # 删除node_modules软链接
 rm -rf node_modules
