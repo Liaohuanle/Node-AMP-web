@@ -17,8 +17,6 @@ npm install --registry=http://npm.byted.org
 echo '====> compile'
 node ./_compile.js
 
-cp ./node_modules ../
-
 echo '====> outside root'
 cd ../
 

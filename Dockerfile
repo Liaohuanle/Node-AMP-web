@@ -7,7 +7,7 @@ RUN mkdir -p /app/node-h5/
 COPY * /app/node-h5/
 
 WORKDIR /app/node-h5/
-WORKDIR /app/node-h5
+RUN npm install
 
 COPY program.supervisord.conf /etc/supervisor/conf.d/program.supervisord.conf
 COPY elb_add_remove.sh site.nginx.conf /app/node-h5/
