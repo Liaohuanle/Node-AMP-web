@@ -1,16 +1,10 @@
 #!/bin/bash
-
-# cd src
-# npm install
-# node ./_compile.js
-# cd ../
-# rm -rf src
-# echo " =====> ls2:"
-# ls
-
+test -d output || mkdir output
 cd src
-cp -r .* ./output
 npm install
+node ./_compile.js
 
-echo " =====> ls2:"
+cd ../output
+npm install
+echo " =====> ls1:"
 ls
