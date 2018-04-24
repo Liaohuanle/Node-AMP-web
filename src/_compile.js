@@ -9,8 +9,6 @@ var config = require('./_config');
 
 var compileLength = 0;
 
-cp.exec(`rm -rf ../${config.buildRoot}`);
-
 (function fetchAllFIleList(root) {
 
   var allFiles = fs.readdirSync(root);
@@ -33,11 +31,7 @@ cp.exec(`rm -rf ../${config.buildRoot}`);
 
       var isJs = /\.js$/.test(item)
       
-      const targetSrc = root.replace('src', config.buildRoot)
-
-      if(/\.png$/.test(item)){
-        console.info('!!!!!!!=>',currentFileRoot, targetSrc,item)
-      }
+      const targetSrc = root.replace('/src', config.buildRoot)
 
       cp.exec(`test -d ${targetSrc} || mkdir -p ${targetSrc} && cp ${currentFileRoot} ${targetSrc}`);
       
