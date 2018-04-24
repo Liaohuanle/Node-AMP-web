@@ -8,3 +8,4 @@ cd ../output
 npm install
 echo " =====> ls1:"
 ls
+rm -rf ../src

@@ -8,7 +8,7 @@ rm -rf node_modules
 
 echo '====> cd src'
 
-cd ./src
+cd src
 
 # 安装依赖
 echo '====> npm install'
@@ -18,9 +18,10 @@ echo '====> compile'
 node ./_compile.js
 
 echo '====> outside root'
-cd ../
+cd ../output
+npm install
 
-rm -rf src
+# rm -rf src
 
 # 创建输出目录
 DIR=`pwd`
