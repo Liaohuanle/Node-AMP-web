@@ -4,9 +4,10 @@ cd src
 cp -r .* ./output
 npm install
 node ./_compile.js
-ls
 cd ../
-echo " =====> ls:"
+echo " =====> ls1:"
+ls
 rm -rf src
 cp -r ./dist/* ./
-echo " =====> ls:"
+echo " =====> ls2:"
+ls
