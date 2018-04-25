@@ -1,5 +1,5 @@
 "use strict";
-
+const logger = require('./util/logger')
 var _toConsumableArray2 = require("babel-runtime/helpers/toConsumableArray");
 
 var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
@@ -47,12 +47,15 @@ var routerList = [].concat((0, _toConsumableArray3.default)(api), [route_1.defau
 var distuributePath = function distuributePath(item) {
   return function (req, res) {
     if (item.isApi) {
+      logger.info('get api request from :', item.path)
       res.render(item.containerSrc);
     } else if (item.isRest) {
       item.callback && item.callback(req.query).then(function (r) {
+        logger.info('get rest api request from :', item.path)
         return res.send(r);
       });
     } else {
+      logger.info('get render request from :', item.path)
       res.render(_config_1.layoutDir, item);
     }
   };
@@ -66,6 +69,7 @@ module.exports = function (app) {
   });
 
   app.get('/*', function (req, res, next) {
+    logger.warn('get request 404 :', req.url)
     res.status(404);
     res.render(_config_1.notFoundDir, { url: req.url });
   });
