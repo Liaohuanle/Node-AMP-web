@@ -7,7 +7,6 @@ source /etc/profile && nvm use 8 &&  echo 'node version is' && node -v
 rm -rf node_modules
 
 echo '====> cd src'
-
 cd src
 
 # 安装依赖
@@ -21,7 +20,7 @@ echo '====> outside root'
 cd ../output
 npm install
 
-# rm -rf src
+rm -rf ../src
 
 # 创建输出目录
 DIR=`pwd`
