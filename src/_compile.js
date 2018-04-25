@@ -39,7 +39,6 @@ var compileLength = 0;
       if(isJs){
 
         logger.info(`********* compile ${compileLength++} js files : ${ item }`)
-        logger.warn(`npx babel ${currentFileRoot} -o ${targetFile}`)
         cp.exec(`npx babel ${currentFileRoot} -o ${targetFile}`);
 
       }

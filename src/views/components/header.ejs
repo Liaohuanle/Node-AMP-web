@@ -16,6 +16,7 @@
   <meta name="referrer" content="origin">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name='description' content='musical.ly one million'>
+  <meta name="pathname" content="<%=path%>">
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91635834-2"></script>
   <script>
     window.dataLayer = window.dataLayer || []
@@ -25,6 +26,13 @@
     gtag('js', new Date())
     gtag('config', 'UA-91635834-2')
   </script>
+  <script>
+  var TT_PERF_CONFIG = {
+      metrics: true, 
+      percent: 50
+  };
+  </script>
+  <script src="//s3.pstatp.com/inapp/ta.js"></script>
   <style>
     <%- include(cssSrc) %>
   </style>

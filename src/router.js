@@ -10,11 +10,13 @@ var route_1 = require("./views/us/route");
 var route_2 = require("./views/india/route");
 var route_3 = require('./views/europe/router');
 var api = require('./views/europe/rule-api');
+const mailRouter = require('./views/mail/route')
+
 var _config_1 = require("./_config");
 var DB = require('./db/db-connect');
 var geoip = require('geoip-lite');
 
-var routerList = [].concat((0, _toConsumableArray3.default)(api), [route_1.default], (0, _toConsumableArray3.default)(route_2.default), (0, _toConsumableArray3.default)(route_3));
+var routerList =[ route_1, route_2, ...route_3, ...api, mailRouter]
 
 // const set = (DATA) => new Promise((resolve, reject) => {
 //   try {

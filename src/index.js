@@ -14,8 +14,6 @@ app.set('view engine', 'ejs');
 
 router_1(app);
 
-console.info(process.env.PORT)
-
 app.listen(process.env.PORT || 3000, function () {
   logger.success('**** node server for you ,lunch success !!! ****')
 });
