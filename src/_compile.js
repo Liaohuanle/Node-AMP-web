@@ -6,6 +6,7 @@ var fs = require('fs');
 var cp = require('child_process');
 
 var config = require('./_config');
+const logger = require('./util/logger')
 
 var compileLength = 0;
 
@@ -32,13 +33,14 @@ var compileLength = 0;
       var isJs = /\.js$/.test(item)
       
       const targetSrc = root.replace('/src', config.buildRoot)
+      const targetFile = path.join(targetSrc,'/',item)
       cp.exec(`test -d ${targetSrc} || mkdir -p ${targetSrc} && cp ${currentFileRoot} ${targetSrc}`);
       
       if(isJs){
 
-        console.info(`********* compile ${compileLength++} js files : ${ item }`)
-        
-        cp.exec(`npx babel ${currentFileRoot} -o ${targetSrc}`);
+        logger.info(`********* compile ${compileLength++} js files : ${ item }`)
+        logger.warn(`npx babel ${currentFileRoot} -o ${targetFile}`)
+        cp.exec(`npx babel ${currentFileRoot} -o ${targetFile}`);
 
       }
 

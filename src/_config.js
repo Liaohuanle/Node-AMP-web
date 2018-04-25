@@ -1,30 +1,30 @@
 "use strict";
 
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+const _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _appId;
+const _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var path = require('path');
+const path = require('path');
 
-var indCountry = 'india';
+const indCountry = 'india';
 
-var usCountry = "us";
+const usCountry = "us";
+
+var _appId;
 
 var appId = (_appId = {}, (0, _defineProperty3.default)(_appId, indCountry, indCountry), (0, _defineProperty3.default)(_appId, usCountry, usCountry), _appId);
 
-var layoutDir = './components/layout/oneMilloneLayout';
+const layoutDir = './components/layout/oneMilloneLayout';
 
-var notFoundDir = './components/common/notfound';
+const notFoundDir = './components/common/notfound';
 
-var rootDir = path.join(__dirname + '/views');
+const rootDir = path.join(__dirname + '/views');
 
-var buildRoot = '/output'
+const buildRoot = '/output'
 
-var buildFilterPath = [
+const buildFilterPath = [
   '_compile.js',
   '_dev.js',
   'node_modules',
