@@ -13,7 +13,7 @@
   const winHeight = $(window).height()
 
   function initTermOfUse(){
-    $(".ampstart-nav a[href$='officalRules'], #getTermOfUse, #rule")
+    $(".ampstart-nav a[href$='officalRules'], #getTermOfUse")
     .on('click',function(){
       $('#section-container').removeClass('text-center')
       $.ajax({
@@ -21,11 +21,18 @@
       }).done(appendTerm)
     })
 
+    $('#rule').on('click', function(){
+      $('#section-container').removeClass('text-center')
+      $.ajax({
+        url: '/act/es/rule'
+      }).done(appendTerm)
+    })
+
 
     $('#section-container').click(function(){
       $('#section-container.section-container-show').animate({
           top: '100vh'
-        },500, function(){
+        }, 100, function(){
         $('#section-container')
         .css("top",0)
         .removeClass('section-container-show text-center')

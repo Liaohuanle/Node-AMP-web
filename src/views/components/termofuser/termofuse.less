@@ -1,3 +1,4 @@
+@import './markdown.less';
 #termofuse{
   width: 100%;
   background: #000;
@@ -27,14 +28,19 @@
   position: fixed;
   z-index: 1000;
   background: #fbf8f8;
-  transition: all .3s;
+  transition: all .1s;
   transform: translateY(100vh);
+  padding-left: 2vw; 
+  padding-bottom: 3vh;
+  padding-top: 2rem;
   &.section-container-show{
     height: 100vh;
     overflow-y: scroll;
     top: 0px;
     transform: translateY(0vh);
-    // padding: 2rem 0;
+  }
+  h1{
+    text-align: center;
   }
   h2{
     text-align: center;
@@ -49,36 +55,12 @@
     margin-left: 1vw;
     padding-right: 1vw;
   }
-
-  p{
-    font-size: 1.2rem;
-    line-height: 1.3rem;
-    line-height: 2rem;
-    font-weight: 500;
-  }
   .es{
     padding: 1rem 2rem;
     font-size: 12px;
     line-height: 2rem;
     text-align: justify;
 
-  }
-  ol{
-    margin: initial;
-    padding: initial;
-    padding-left: 2rem; 
-    li{
-      font-size: 1.2rem;
-      font-weight: 600;
-      line-height: 2.2rem;
-    }
-
-    ul{
-      padding-left: 2vw; 
-      li{
-        padding-left: 1rem;
-      }
-    }
   }
 }
 #close{

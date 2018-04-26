@@ -1,5 +1,6 @@
 
 var mongoose = require('mongoose');
+const log = require('../util/logger')
 var url = "mongodb://127.0.0.1:27017/IPDataBase";
 
 mongoose.connect(url);
@@ -25,7 +26,7 @@ const IP = mongoose.model('IP', ipSchema)
 const setTable = (data) => {
   const ipInfo = new IP(data)
   ipInfo.save(function(err, obj){
-    !!!err && console.success('insert success')
+    !!!err && log.success('insert success', ipInfo.city)
   })
 }
 

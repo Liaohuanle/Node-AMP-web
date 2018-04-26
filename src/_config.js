@@ -32,12 +32,26 @@ const buildFilterPath = [
   '.less'
 ]
 
+const countryList = {
+  'PL': 'poland',
+  'FR': 'french',
+  'GF': 'french',
+  'PF': 'french',
+  'TF': 'french',
+  'PF': 'french',
+  'GF': 'french',
+  'TF': 'french',
+  'DE': 'german',
+  'IT': 'itali'
+}
+
 module.exports = {
     rootDir: rootDir,
     appId: appId,
     layoutDir: layoutDir,
     notFoundDir: notFoundDir,
     buildRoot: buildRoot,
-    buildFilterPath: buildFilterPath
+    buildFilterPath: buildFilterPath,
+    countryList
 };
 //# sourceMappingURL=_config.js.map

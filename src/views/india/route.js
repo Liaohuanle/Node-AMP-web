@@ -3,57 +3,63 @@ exports.__esModule = true;
 var a = {
     path: 'India',
     isOnline: false,
-    data: {},
+    data: _ => {},
     cssSrc: '',
     containerSrc: '',
     jsSrc: '',
-    title: ''
+    title: '',
+    authority: _ => true
 };
 var b = {
     path: 'India/English',
     isOnline: false,
-    data: {},
+    data: _ => {},
     cssSrc: '',
     containerSrc: '',
     jsSrc: '',
-    title: ''
+    title: '',
+    authority: _ => true
 };
 var c = {
     path: 'India/termofuse',
     isOnline: true,
     isApi: true,
-    data: {},
+    data: _ => {},
     cssSrc: '',
     containerSrc: './components/termofuser/termofuse-content',
     jsSrc: '',
-    title: ''
+    title: '',
+    authority: _ => true
 };
 var d = {
     path: 'India/Hindi/rule',
     isOnline: false,
-    data: {},
+    data: _ => {},
     cssSrc: '',
     containerSrc: '',
     jsSrc: '',
-    title: ''
+    title: '',
+    authority: _ => true
 };
 var e = {
     path: 'India/English/rule',
     isOnline: false,
-    data: {},
+    data: _ => {},
     cssSrc: '',
     containerSrc: '',
     jsSrc: '',
-    title: ''
+    title: '',
+    authority: _ => true
 };
 var f = {
     path: 'India/fetchWinnerList',
     isOnline: false,
-    data: {},
+    data: _ => {},
     cssSrc: '',
     containerSrc: '',
     jsSrc: '',
-    title: ''
+    title: '',
+    authority: _ => true
 };
 exports["default"] = [
     a,

@@ -1,0 +1,26 @@
+
+<script>
+  <%- include('../../assets/js/jquery.js') %>
+  $("#submit").click(function(){
+    var val = $('#text-input').val()
+    var path= $('#path').val()
+    $.ajax({
+      type: 'POST',
+      url: '/act/markdown/submit',
+      data: {
+        file: val,
+        path: path
+      }
+    }).done(res => {
+      console.info(res)
+    })
+  })
+  // $(function(){
+  //     var path= $('#path').val()
+  //     $.ajax({
+  //       url: '/act/markdown/pathList'
+  //     }).done(res => {
+  //       $('.list-container').append(res)
+  //     })
+  // })
+</script>

@@ -11,7 +11,8 @@ exports.default = [
     data: data_1,
     cssSrc: `../${fileD}/css`,
     containerSrc: `../../${fileD}/index`,
-    jsSrc: `.../../${fileD}/js`
+    jsSrc: `.../../${fileD}/js`,
+    authority: _ => true,
   },{
     path: 'sendToMail',
     isOnline: false,
@@ -22,6 +23,7 @@ exports.default = [
     containerSrc: '',
     jsSrc: '',
     title: '',
-    callback: mailUtil
+    callback: mailUtil,
+    authority: _ => true,
   }
 ];

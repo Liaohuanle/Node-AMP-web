@@ -1,24 +1,17 @@
 "use strict";
 
-var _promise = require('babel-runtime/core-js/promise');
+const _promise = require('babel-runtime/core-js/promise');
+const operationMarkdown = require('../../util/markdown-model')
+const querystring = require('querystring')
 
-var _promise2 = _interopRequireDefault(_promise);
+const _promise2 = _interopRequireDefault(_promise);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var util = require('../../util/util');
-var DB = require('../../db/db-connect');
+const util = require('../../util/util');
+const DB = require('../../db/db-connect');
 
 module.exports = [{
-  path: 'prize/rules',
-  isOnline: true,
-  isApi: true,
-  data: {},
-  cssSrc: '',
-  containerSrc: './europe/component/rule/index',
-  jsSrc: '',
-  title: ''
-}, {
   path: 'fetchWinnerList',
   isOnline: true,
   isApi: false,
@@ -28,9 +21,9 @@ module.exports = [{
   containerSrc: '',
   jsSrc: '',
   title: '',
-  callback: function callback(query) {
-    var source = query.source,
-        length = query.length;
+  callback: function callback(res) {
+    var source = res.query.source,
+        length = res.query.length;
 
     return new _promise2.default(function (resolve, reject) {
       resolve(util.solveWinnerData(source, length));
@@ -46,16 +39,54 @@ module.exports = [{
   containerSrc: '',
   jsSrc: '',
   title: '',
-  callback: function callback(query) {
-    return DB.queryAllIP(query);
+  callback: function callback(res) {
+    return DB.queryAllIP(res.query);
   }
-}, {
-  path: 'es/termofuse',
+},{
+  path: 'markdown/submit',
   isOnline: true,
-  isApi: true,
-  data: {},
-  cssSrc: '',
-  containerSrc: './components/termofuser/es-termofus',
-  jsSrc: '',
-  title: ''
+  isApi: false,
+  isRest: true,
+  method: 'post',
+  authority: _ => true,
+  callback: freq => {
+    return new Promise((resolve, reject) => {
+      freq.on('data', function(params) {
+        params = Buffer.from(params, 'utf-8').toLocaleString()
+        params = querystring.parse(params)
+        const { path, file } = params
+        const mk = new operationMarkdown()
+        mk.save({
+          buffer: file,
+          path,
+          callBackSuccess: () => resolve({
+            success: true,
+            path
+          }),
+          callBackfail: () => reject({
+            success: false,
+            path
+          })
+        })
+      })
+    })
+  }
+},{
+  path: 'markdown/pathList',
+  isOnline: true,
+  isApi: false,
+  isRest: true,
+  authority: _ => true,
+  callback: freq => {
+    return new Promise((resolve, reject) => {
+      const mk = new operationMarkdown()
+      mk.getFilePathList({
+        callBackSuccess: (res) => resolve({
+          success: true,
+          path: res
+        }),
+        callBackfail: () => reject(false)
+      })
+    })
+  }
 }];

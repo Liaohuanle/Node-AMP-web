@@ -104,7 +104,11 @@ const winnerObj = {
 
 const bannerMobileVideoGif = '/act/assets/banner-mobile-europe.gif'
 module.exports = {
-  showLanguageBtn: false,
+  showLanguageBtn: true,
+  langList: {
+    curr: util.europeLanglist['italy'].title,
+    list: util.europeLanglist
+  },
   prizeList,
   bannerMobileVideoGif,
   bannerMobileVideoPoster,
