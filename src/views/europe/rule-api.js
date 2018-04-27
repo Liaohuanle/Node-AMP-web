@@ -1,13 +1,7 @@
 "use strict";
 
-const _promise = require('babel-runtime/core-js/promise');
 const operationMarkdown = require('../../util/markdown-model')
 const querystring = require('querystring')
-
-const _promise2 = _interopRequireDefault(_promise);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 const util = require('../../util/util');
 const config = require('../../_config')
 const DB = require('../../db/db-connect');
@@ -22,11 +16,11 @@ module.exports = [{
   containerSrc: '',
   jsSrc: '',
   title: '',
-  callback: function callback(res) {
+  callback: res => {
     var source = res.query.source,
         length = res.query.length;
 
-    return new _promise2.default(function (resolve, reject) {
+    return new Promise( (resolve, reject) => {
       resolve(util.solveWinnerData(source, length));
     });
   }
