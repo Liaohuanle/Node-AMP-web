@@ -6,6 +6,8 @@ const util = require('../../util/util');
 const config = require('../../_config')
 const DB = require('../../db/db-connect');
 
+const log = require('../../util/logger')
+
 module.exports = [{
   path: 'fetchWinnerList',
   isOnline: true,
@@ -47,11 +49,13 @@ module.exports = [{
   callback: freq => {
     return new Promise((resolve, reject) => {
       freq.on('data', function(params) {
-        params = Buffer.from(params, 'utf-8').toLocaleString()
-        params = querystring.parse(params)
-        const { path, file, authority } = params
+        const getFromBuffer = new Buffer(params, 'utf-8').toLocaleString()
+        const parseVal = querystring.parse(getFromBuffer)
+        const authority = parseVal.authority
+        const { path, file } = parseVal
+        log.info('authority:',authority)
         if(authority != config.authority){
-          resolve({
+          return resolve({
             success: false,
             path,
             msg: 'authority failed...'
