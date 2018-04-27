@@ -5,7 +5,6 @@ const querystring = require('querystring')
 const util = require('../../util/util');
 const config = require('../../_config')
 const DB = require('../../db/db-connect');
-
 const log = require('../../util/logger')
 
 module.exports = [{
@@ -48,32 +47,37 @@ module.exports = [{
   authority: freq => true,
   callback: freq => {
     return new Promise((resolve, reject) => {
-      freq.on('data', function(params) {
-        const getFromBuffer = new Buffer(params, 'utf-8').toLocaleString()
-        const parseVal = querystring.parse(getFromBuffer)
-        const authority = parseVal.authority
-        const { path, file } = parseVal
-        log.info('authority:',authority)
-        if(authority != config.authority){
-          return resolve({
-            success: false,
+      const res = []
+      freq
+      .on('data', params => {
+        res.push(params) 
+      })
+      .on('end', _ => {
+          const getFromBuffer = Buffer.concat(res).toLocaleString()
+          const parseVal = querystring.parse(getFromBuffer)
+          const authority = parseVal.authority
+          const { path, file } = parseVal
+          log.info(JSON.stringify(parseVal))
+          if(authority != config.authority){
+            return resolve({
+              success: false,
+              path,
+              msg: 'authority failed...'
+            })
+          }
+          const mk = new operationMarkdown()
+          mk.save({
+            buffer: file,
             path,
-            msg: 'authority failed...'
+            callBackSuccess: () => resolve({
+              success: true,
+              path
+            }),
+            callBackfail: () => reject({
+              success: false,
+              path
+            })
           })
-        }
-        const mk = new operationMarkdown()
-        mk.save({
-          buffer: file,
-          path,
-          callBackSuccess: () => resolve({
-            success: true,
-            path
-          }),
-          callBackfail: () => reject({
-            success: false,
-            path
-          })
-        })
       })
     })
   }
