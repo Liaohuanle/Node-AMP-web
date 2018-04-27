@@ -1,6 +1,25 @@
 .container{
-  width: 100%;
-  padding: 1.5rem;
+  width: 70%;
+  min-width: 120rem;
+  margin: 2rem auto;
+  background: transparent;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+  padding: 2rem 2rem 2rem 2rem;
+  position: relative;
+  &:before{
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: url('/act/assets/musically_logo@2x.png');
+    width: 100%;
+    height: 100%;
+    filter: blur(20px);
+    opacity: .15;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
   p{
     display: block;
     font-size: 1.6rem;
@@ -23,6 +42,9 @@
   .preview{
     padding: 1rem;
   }
+  .float{
+    float: right;
+  }
   button{
     width: 200px;
     height: 40px;
@@ -33,9 +55,11 @@
     cursor: pointer;
     background: tomato;
     display: block;
+    display: inline-block;
   }
   .path{
     display: block;
+    margin-top: 2rem;
     margin-bottom: 2rem;
     label{
       font-size: 1.6rem;
@@ -53,9 +77,34 @@
       text-indent: 1rem;
     }
   }
+  .list-container{
+    ul,li{
+      padding: 1rem 0;
+      margin: initial;
+      display: block;
+      list-style: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+    li{
+      width: 100%;
+      border-bottom: 1px solid #eee;
+      &:last-child{
+        border: none;
+      }
+    }
+  }
+  .tip{
+    font-size: 1.6rem;
+    color: tomato;
+    margin-left: 2rem;
+  }
+  .none{
+    display: none;
+  }
 }
 body, html{
-  background: rgba(200,200,200,0.06);
+  background: rgba(240, 240, 240, 0.1);
   font-size: 10px;
   padding: 0;
   margin: 0;

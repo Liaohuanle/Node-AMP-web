@@ -45,6 +45,8 @@ const countryList = {
   'IT': 'itali'
 }
 
+const authority = '370897'
+
 module.exports = {
     rootDir: rootDir,
     appId: appId,
@@ -52,6 +54,7 @@ module.exports = {
     notFoundDir: notFoundDir,
     buildRoot: buildRoot,
     buildFilterPath: buildFilterPath,
-    countryList
+    countryList,
+    authority
 };
 //# sourceMappingURL=_config.js.map

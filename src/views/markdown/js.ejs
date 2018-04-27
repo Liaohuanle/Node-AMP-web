@@ -4,23 +4,70 @@
   $("#submit").click(function(){
     var val = $('#text-input').val()
     var path= $('#path').val()
+    var authority= $('#authority').val()
+    $('#tip-authority').addClass('none')
     $.ajax({
       type: 'POST',
       url: '/act/markdown/submit',
       data: {
         file: val,
-        path: path
+        path: path,
+        authority: authority
       }
     }).done(res => {
-      console.info(res)
+      if(!res.success){
+        $('#tip-authority').removeClass('none')
+        return
+      }
+      renderVal('', '')
     })
   })
-  // $(function(){
-  //     var path= $('#path').val()
-  //     $.ajax({
-  //       url: '/act/markdown/pathList'
-  //     }).done(res => {
-  //       $('.list-container').append(res)
-  //     })
-  // })
+  $(function(){
+    var path= $('#path').val()
+    $.ajax({
+      url: '/act/markdown/pathList'
+    }).done(renderPathList)
+    initClick()
+    addInit()
+  })
+
+  function renderPathList(result){
+    const { path, success } = result
+    var res=[]
+    res = path.map(item => `<li>${item}</li>`)
+    res.unshift('<ul>')
+    res.push('</ul>')
+    $('.list-container').html(res.join('').toString())
+  }
+
+  function initClick(){
+    $(document).on('click', '.list-container>ul>li' , function(e) {
+      e.preventDefault();
+      var val = $(e.currentTarget).text()
+      $.ajax({
+        url: `/act/markdown/getMD?path=${val}`
+      }).done(res => {
+        if(res.success){
+          renderVal(val, res.result)
+        }
+      })
+    })
+  }
+
+  function renderVal(path, content){
+    $('#text-input').val(content)
+    $('#path').removeAttr('disabled')
+    if(!!path){
+      $('#path').attr('disabled', 'true')
+    }
+    $('#path').val(path)
+    $('#authority').val()
+  }
+
+  function addInit(){
+    $(document).on('click', '#add' , function(e){
+      renderVal('','')
+    })
+  }
+
 </script>

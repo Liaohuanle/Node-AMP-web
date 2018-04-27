@@ -9,6 +9,7 @@ const _promise2 = _interopRequireDefault(_promise);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const util = require('../../util/util');
+const config = require('../../_config')
 const DB = require('../../db/db-connect');
 
 module.exports = [{
@@ -48,13 +49,20 @@ module.exports = [{
   isApi: false,
   isRest: true,
   method: 'post',
-  authority: _ => true,
+  authority: freq => true,
   callback: freq => {
     return new Promise((resolve, reject) => {
       freq.on('data', function(params) {
         params = Buffer.from(params, 'utf-8').toLocaleString()
         params = querystring.parse(params)
-        const { path, file } = params
+        const { path, file, authority } = params
+        if(authority != config.authority){
+          resolve({
+            success: false,
+            path,
+            msg: 'authority failed...'
+          })
+        }
         const mk = new operationMarkdown()
         mk.save({
           buffer: file,
@@ -80,12 +88,27 @@ module.exports = [{
   callback: freq => {
     return new Promise((resolve, reject) => {
       const mk = new operationMarkdown()
-      mk.getFilePathList({
-        callBackSuccess: (res) => resolve({
-          success: true,
-          path: res
-        }),
-        callBackfail: () => reject(false)
+      const fileList = mk.getFilePathList()
+      resolve({
+        success: true,
+        path: fileList
+      })
+    })
+  }
+},{
+  path: 'markdown/getMD',
+  isOnline: true,
+  isApi: false,
+  isRest: true,
+  authority: _ => true,
+  callback: freq => {
+    const { path } = freq.query
+    return new Promise((resolve, reject) => {
+      const mk = new operationMarkdown()
+      const file = mk.getOneFile(path)
+      resolve({
+        success: true,
+        result: file
       })
     })
   }
