@@ -7,6 +7,7 @@ node ./_compile.js
 
 cd ../output
 npm install
+cat ./views/europe/rule-api.js
 
 cd ../
 rm -rf src

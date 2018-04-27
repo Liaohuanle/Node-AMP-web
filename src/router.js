@@ -14,7 +14,7 @@ const markdown = require('./views/markdown/route')
 const markDownAPI = require('./routers/index')
 
 const config = require("./_config");
-const DB = require('./db/db-connect');
+// const DB = require('./db/db-connect');
 const geoip = require('geoip-lite');
 
 const routerList =[ ...markDownAPI, route_1, route_2, ...route_3, ...api, markdown, mailRouter]
