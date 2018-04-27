@@ -48,13 +48,13 @@ const countryList = {
 const authority = '370897'
 
 module.exports = {
-    rootDir: rootDir,
-    appId: appId,
-    layoutDir: layoutDir,
-    notFoundDir: notFoundDir,
-    buildRoot: buildRoot,
-    buildFilterPath: buildFilterPath,
-    countryList,
-    authority
+  rootDir: rootDir,
+  appId: appId,
+  layoutDir: layoutDir,
+  notFoundDir: notFoundDir,
+  buildRoot: buildRoot,
+  buildFilterPath: buildFilterPath,
+  countryList,
+  authority
 };
 //# sourceMappingURL=_config.js.map

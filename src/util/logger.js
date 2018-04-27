@@ -1,8 +1,16 @@
 const colors = require('colors');
+const write = require('./wirte-file')
+
+const wr = new write('./db/log.txt')
+
+const con = (val, text) => {
+  console.info(val)
+  wr.write(text.toString())
+}
 
 module.exports = {
-  info: (...arg) => console.info(colors.blue(arg)),
-  warn: (...arg) => console.info(colors.yellow(arg)),
-  fatal: (...arg) => console.info(colors.red(arg)),
-  success: (...arg) => console.info(colors.green(arg))
+  info: (...arg) => con(colors.blue(arg), arg),
+  warn: (...arg) => con(colors.yellow(arg), arg),
+  fatal: (...arg) => con(colors.red(arg), arg),
+  success: (...arg) =>con(colors.green(arg), arg)
 }
