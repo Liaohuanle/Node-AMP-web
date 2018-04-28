@@ -22,11 +22,14 @@
       renderVal('', '')
     })
   })
-  $(function(){
-    var path= $('#path').val()
+  function getPathList(){
     $.ajax({
       url: '/act/markdown/pathList'
     }).done(renderPathList)
+  }
+  $(function(){
+    var path= $('#path').val()
+    getPathList()
     initClick()
     addInit()
   })
@@ -62,6 +65,7 @@
     }
     $('#path').val(path)
     $('#authority').val('')
+      getPathList()
   }
 
   function addInit(){

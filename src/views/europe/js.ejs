@@ -17,14 +17,14 @@
     .on('click',function(){
       $('#section-container').removeClass('text-center')
       $.ajax({
-        url: '/act/es/termofuse'
+        url: '/act/mk/file?path=es/termofuse'
       }).done(appendTerm)
     })
 
     $('#rule').on('click', function(){
       $('#section-container').removeClass('text-center')
       $.ajax({
-        url: '/act/es/rule'
+        url: '/act/mk/file?path=es/rule'
       }).done(appendTerm)
     })
 

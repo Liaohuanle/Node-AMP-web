@@ -5,19 +5,17 @@ const mk = new operationMarkdown()
 
 const mkPathList = mk.getFilePathList()
 
-const res = []
-
-for(const i in mkPathList){
-  res.push({
-    isOnline: true,
-    isRest: true,
-    authority: _ => true,
-    path: mkPathList[i],
-    callback: _ => new Promise((resolve, reject) => {
-      const text = mk.getOneFile(mkPathList[i])
-      resolve(markdown.toHTML(text))
-    })
+module.exports = {
+  isOnline: true,
+  isRest: true,
+  authority: _ => true,
+  path: 'mk/file',
+  callback: (req) => new Promise((resolve, reject) => {
+    const { path } = req.query
+    if(!path){
+      return resolve(null)
+    }
+    const text = mk.getOneFile(path)
+    return resolve(markdown.toHTML(text))
   })
 }
-
-module.exports = res
