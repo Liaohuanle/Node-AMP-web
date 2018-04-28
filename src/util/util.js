@@ -1,5 +1,6 @@
 var moment = require('moment') 
 var winnerListUs = require('../views/us/component/winnerData/index')
+var winnerListSpain = require('../views/europe/spain/component/winnerData/index')
 
 var countDown = function(lang, finnalTime){
   var currentStep = 3
@@ -61,12 +62,17 @@ var europeLanglist = {
 }
 
 var solveWinnerData = function(source, length){
-  var result = []
   switch (source) {
     case 'us':
+    var result = []
     result =  winnerListUs.slice(0, length)
-      break;
-  
+    break;
+    case 'es':
+    var result =　{}
+    for(const key in winnerListSpain){
+      result[key] =  winnerListSpain[key].slice(0, length/4)
+    }
+    break;
     default:
       break;
   }

@@ -44,17 +44,21 @@
 
   function generateWinners(res){
     let result='';
-    res.forEach(function(item){
-      result=`${result}
-        <li class="winner-item">
-          <span>${ item }</span>
-        </li>`
-    })
+    for(var i in res){
+      result=`${result}<li><span class="main-title">${ i }</span><ul>`
+      for(var j =0; j< res[i].length;j++){
+        result=`${result}
+          <li class="winner-item">
+            <span>${ res[i][j] }</span>
+          </li>`
+      }
+      result=`${result}</ul></li>`
+    }
     return result
   }
 
   function appendWinnerList(res){
-    if(!res || !res.length){
+    if(!res){
       $('.winner-top-container')
       .html('waiting...')
       return
@@ -186,7 +190,7 @@
   }
 
   function getAllWinnerList(size, callback){
-    var allHeight = winHeight * 0.8
+    var allHeight = winHeight * 0.5
     var allWidth = $('.nameList').width()
     var itemHeight = 48;
     var itemWidth = 189;
@@ -252,6 +256,7 @@
     SafariScable()
     sliderInit()
     initTermOfUse()
+    getAllWinnerList(-1, appendWinnerList)
     initLoadingAllWinnerList()
   })
 

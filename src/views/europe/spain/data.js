@@ -94,13 +94,11 @@ const prizeList = {
 }
 
 const winnerObj = {
-  hasWinnerList: false,
+  hasWinnerList: true,
   title: 'Ganadores',
   desc: 'How do we determine the winners of the audition?',
   content: 'Creator Score. It is from an algorithm score combining video quality, engagement, creativity, originality and which more fits the proposed themes. The score is calculated by musical.ly data team. We will announce the winners list with score to everyone here.'
 }
-
-
 
 const bannerMobileVideoGif = '/act/assets/banner-mobile-europe.gif'
 module.exports = {
