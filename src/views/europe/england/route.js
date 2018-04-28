@@ -15,7 +15,7 @@ const dataList = {
 }
 
 function getLanguageCode(countryCode){
-  return config.countryList[countryCode] || 'default'
+  return config.countryList[countryCode] || 'english'
 }
 
 const callback = (req, res)=>{

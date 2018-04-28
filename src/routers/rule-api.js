@@ -6,6 +6,7 @@ const util = require('../util/util');
 const config = require('../_config')
 const DB = require('../db/db-connect');
 const log = require('../util/logger')
+const mk = new operationMarkdown()
 
 module.exports = [{
   path: 'fetchWinnerList',
@@ -32,29 +33,30 @@ module.exports = [{
       result.push(params) 
     })
     .on('end', _ => {
-      const getFromBuffer = Buffer.concat(result).toLocaleString()
-      const parseVal = querystring.parse(getFromBuffer)
-      const authority = parseVal.authority
-      const { path, file } = parseVal
-      log.info(JSON.stringify(parseVal))
-      if(authority != config.authority){
-        return res.send({
-          success: false,
+      new Promise((resolve, reject)=>{
+        const getFromBuffer = Buffer.concat(result).toLocaleString()
+        const parseVal = querystring.parse(getFromBuffer)
+        const authority = parseVal.authority
+        const { path, file } = parseVal
+        log.info(JSON.stringify(parseVal))
+        if(authority != config.authority){
+          return res.send({
+            success: false,
+            path,
+            msg: 'authority failed...'
+          })
+        }
+        mk.save({
+          buffer: file,
           path,
-          msg: 'authority failed...'
-        })
-      }
-      const mk = new operationMarkdown()
-      mk.save({
-        buffer: file,
-        path,
-        callBackSuccess: () => res.send({
-          success: true,
-          path
-        }),
-        callBackfail: () => res.send({
-          success: false,
-          path
+          callBackSuccess: () => resolve(res.send({
+            success: true,
+            path
+          })),
+          callBackfail: () => resolve(res.send({
+            success: false,
+            path
+          }))
         })
       })
     })
@@ -63,7 +65,6 @@ module.exports = [{
   path: 'markdown/pathList',
   isOnline: true,
   callback: (freq, res) => {
-    const mk = new operationMarkdown()
     const fileList = mk.getFilePathList()
     res.send({
       success: true,
@@ -75,7 +76,6 @@ module.exports = [{
   isOnline: true,
   callback: (freq, res) => {
     const { path } = freq.query
-    const mk = new operationMarkdown()
     const file = mk.getOneFile(path)
     res.send({
       success: true,
