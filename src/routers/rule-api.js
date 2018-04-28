@@ -27,36 +27,35 @@ module.exports = [{
   isOnline: true,
   method: 'post',
   callback: (freq, res) => {
-    const result = []
+    let result = []
     freq
     .on('data', params => {
-      result.push(params) 
+      result = result.concat(params) 
     })
     .on('end', _ => {
-      new Promise((resolve, reject)=>{
-        const getFromBuffer = Buffer.concat(result).toLocaleString()
-        const parseVal = querystring.parse(getFromBuffer)
-        const authority = parseVal.authority
-        const { path, file } = parseVal
-        log.info(JSON.stringify(parseVal))
-        if(authority != config.authority){
-          return res.send({
-            success: false,
-            path,
-            msg: 'authority failed...'
-          })
-        }
-        mk.save({
-          buffer: file,
+      const getFromBuffer = Buffer.from(result[0]).toString()
+      log.info(getFromBuffer)
+      const parseVal = querystring.parse(getFromBuffer)
+      const authority = parseVal.authority
+      log.info('authority:',authority)
+      const { path, file } = parseVal
+      if(authority != config.authority){
+        return res.send({
+          success: false,
           path,
-          callBackSuccess: () => resolve(res.send({
-            success: true,
-            path
-          })),
-          callBackfail: () => resolve(res.send({
-            success: false,
-            path
-          }))
+          msg: 'authority failed...'
+        })
+      }
+      mk.save({
+        buffer: file,
+        path,
+        callBackSuccess: () => res.send({
+          success: true,
+          path
+        }),
+        callBackfail: () => res.send({
+          success: false,
+          path
         })
       })
     })

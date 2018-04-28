@@ -70,7 +70,7 @@ var solveWinnerData = function(source, length){
     case 'es':
     var result =　{}
     for(const key in winnerListSpain){
-      result[key] =  winnerListSpain[key].slice(0, length/4)
+      result[key] =  winnerListSpain[key].slice(0, length/5)
     }
     break;
     default:
