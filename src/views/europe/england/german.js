@@ -1,13 +1,12 @@
 const util = require('../../../util/util');
 const usBannerImgMobile = '/act/assets/banner-title-mobile-us.png';
 const usBannerImgPC = '/act/assets/banner-title-pc-us.png';
-const aboutUsTagList = ['#ShareAndWin', 'Category', 'Prize', 'Rules'];
 const navList = {
-    home: 'Inicio',
-    about: ' Acerca de',
-    winners: 'Ganadores',
-    media: 'Media',
-    officalRules: 'Reglas Oficiales'
+    home: 'Startseite',
+    about: 'Information',
+    winners: 'Gewinner',
+    media: 'Medien',
+    officalRules: 'Offizielle Regeln'
 };
 const rule = {
     titleText: 'Winner selection is based on creator score which will be announced after the end of each round.',
@@ -38,75 +37,80 @@ const bannerVideoUrl = '/act/assets/europe-banner-video-pc.mp4'
 
 const bannerVideoMobile = `/act/assets/europe-banner-video-mobile.mp4`
 
-const bannerImgPC = '/act/assets/spain-pc-banner-text.png'
+const bannerImgPC = '/act/assets/europe/default_banner_text.svg'
 
 const bannerImgMobile = '/act/assets/spain-mobile-banner-text.png'
 
 const aboutObject = [
   {
     src: '/act/assets/europe_about_comedy.svg',
-    title: 'Comedia'
+    title: 'Comedy'
   },{
     src: '/act/assets/europe_about_fitness.svg',
-    title: 'Deporte'
+    title: 'Sport'
   },{
     src: '/act/assets/europe_about_cooking.svg',
-    title: 'Cocina'
+    title: 'Food'
   },{
     src: '/act/assets/europe_about_mascota.svg',
-    title: 'Mascotas'
+    title: 'Talent'
   },{
     src: '/act/assets/europe_about_style.svg',
-    title: 'Maquillaje'
+    title: 'Fashion'
   }
 ]
 
 const aboutContainerFile = {
-  phone: '/act/assets/phone.png',
-  description: '/act/assets/spain_about_sharewith.png'
+  title: 'Information',
+  subDesc: '1 Million Audition',
+  phone: '/act/assets/europe/default_about_phone.png',
+  description: '/act/assets/europe/default_about_desc.png'
 }
 
 const prizeList = {
   one: {
-    title: 'Round 1',
-    subtitle: 'Del 20 al 27 de abril',
-    src: '/act/assets/europe-prize-amazoncard.png',
+    title: 'Round 1 - Landesebene',
+    subtitle: '11.-20. Mai',
     desc: [
-      '400 Creadores pasarán a la segunda ronda. (México, Argentina, Colombia y España) '
+      'Insgesamt 300 Gewinner aus Europa '
     ]
   },
   two: {
-    title: 'Round 2',
-    subtitle: 'Del 29 de abril al 3 de mayo',
-    src: '/act/assets/europe-prize-canna.png',
+    title: 'Round 2 - EU Level',
+    subtitle: '22nd May - 27th May',
     desc: [
-      'Los top 100 de los 400 ganadores de la primera ronda ganarán $200 USD'
+      'Top100 from Top 300 Round 1 winners:',
+      'Top 20,  €700 worth prize',
+      'Top 21-50, €400 worth prize',
+      'Top 51-100, €200 worth prize'
     ]
   },
   three: {
-    title: 'Favoritos de musical.ly',
+    title: "musical.ly's Choice",
     subtitle: 'Campeones por categoría (Top 1 Por Categoria)',
-    src: '/act/assets/europe-prize-england.png',
     desc: [
-      'Premio: Un iPhone X'
+      `We will select Top 1 from each category as 1M Comedian, 1M SportsGuru, 1M Foodie, 1M Talent, 1M StyleGuru.`,
+      `Prize: Become the next musical.ly Ambassador (including hashtag official video, crown, opening page, official account shout-out, in-app banner for one month), 
+      and worth €2000 winner package including a professional studio video shooting in London (with a travel package) as future 1 Million
+      Audition ad video, private party with top social influencers, ect.`
     ]
   }
 }
 
 const winnerObj = {
-  hasWinnerList: false,
-  title: 'Ganadores',
-  desc: 'How do we determine the winners of the audition?',
-  content: 'Creator Score. It is from an algorithm score combining video quality, engagement, creativity, originality and which more fits the proposed themes. The score is calculated by musical.ly data team. We will announce the winners list with score to everyone here.'
+  hasWinnerList: true,
+  title: 'Winners',
+  desc: '',
+  content: 'will be coming soon'
 }
 
 
 
 const bannerMobileVideoGif = '/act/assets/banner-mobile-europe.gif'
 module.exports = {
-  showLanguageBtn: false,
+  showLanguageBtn: true,
   langList: {
-    curr: util.europeLanglist['german'].title,
+    curr: util.europeLanglist['en'].title,
     list: util.europeLanglist
   },
   prizeList,

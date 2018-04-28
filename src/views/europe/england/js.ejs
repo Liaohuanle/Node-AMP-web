@@ -1,13 +1,14 @@
 
 <script>
-  <%- include('../../assets/js/jquery.js') %>
-  <%- include('../../assets/js/slider.js') %>
-  <%- include('../../assets/js/playinline.js') %>
+  <%- include('../../../assets/js/jquery.js') %>
+  <%- include('../../../assets/js/slider.js') %>
+  <%- include('../../../assets/js/playinline.js') %>
 </script>
 <script>
   const timeNode = <%- JSON.stringify(setIntervalTimeNode) %>
   const YTP= <%- JSON.stringify(YTvideoinfo) %>
   const bannerGif =<%- JSON.stringify(bannerMobileVideoGif) %>
+  const currentPath =<%- JSON.stringify(country) %>
   const restTime = timeNode.restTime
   const winWidth = $(window).width()
   const winHeight = $(window).height()
@@ -17,14 +18,14 @@
     .on('click',function(){
       $('#section-container').removeClass('text-center')
       $.ajax({
-        url: '/act/mk/file?path=es/termofuse'
+        url: '/act/mk/file?path=eu/'+currentPath+'/termofuse'
       }).done(appendTerm)
     })
 
     $('#rule').on('click', function(){
       $('#section-container').removeClass('text-center')
       $.ajax({
-        url: '/act/mk/file?path=es/rule'
+        url: '/act/mk/file?path=eu/'+currentPath+'/rule'
       }).done(appendTerm)
     })
 
@@ -76,21 +77,6 @@
 
     $('#media iframe').width(winWidth)
     $('#media iframe').height(winWidth * YTP.proportion)
-  }
-
-  function slideInit(){
-    $(".slider").slick({
-      infinite: true,
-      dots: false,
-      slidesToShow: 1,
-      autoplaySpeed: 2000,
-      slidesToScroll: 1,
-      pauseOnDotsHover: true,
-      appendArrows: false,
-      cssEase: 'linear',
-      mobileFirst: true,
-      initialSlide: timeNode.currentStep
-    })
   }
 
   function initTime(day, hour, min, sec, ele){
@@ -208,7 +194,7 @@
     var widthLength = allWidth / itemWidth
     var allLength = size > 0 ? size : Math.ceil(heightLength * widthLength)
     $.ajax({
-      url: '/act/fetchWinnerList?source=us&length='+allLength
+      url: '/act/fetchWinnerList?source='+currentPath+'&length='+allLength
     }).done(callback)
   }
 
@@ -221,6 +207,19 @@
 
 
   function sliderInit(){
+
+    $(".slider").slick({
+      infinite: true,
+      dots: false,
+      slidesToShow: 1,
+      autoplaySpeed: 2000,
+      slidesToScroll: 1,
+      pauseOnDotsHover: true,
+      appendArrows: false,
+      cssEase: 'linear',
+      mobileFirst: true,
+      initialSlide: 0
+    })
     $('.subItem').click(function(){
       $(".slider")
       .slick('slickGoTo', $(this).index())
@@ -246,16 +245,14 @@
 
   $(function(){
     countDownTime(restTime, '#bannerPanel')
-    slideInit()
     initScroll()
     transformBanner()
     initBanner()
     clickScroll()
     SafariScable()
-    // getAllWinnerList(-1, appendWinnerList)
-    // initLoadingAllWinnerList()
     sliderInit()
     initTermOfUse()
+    initLoadingAllWinnerList()
   })
 
 

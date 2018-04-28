@@ -44,11 +44,7 @@ var countDown = function(lang, finnalTime){
 var europeLanglist = {
   en: {
     title: 'English',
-    link: 'England'
-  },
-  german: {
-    title: 'German',
-    link: 'German'
+    link: 'English'
   },
   french: {
     title: 'French',

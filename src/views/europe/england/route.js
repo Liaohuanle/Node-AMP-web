@@ -1,25 +1,43 @@
 "use strict";
-const engilsh = require("./default");
-const german = require("./german");
-const itali = require("./itali");
+const english = require("./default");
+const italy = require("./itali");
 const french = require("./french");
 const poland = require("./poland");
+const config = require("../../../_config");
+const geoip = require('geoip-lite');
+
 
 const dataList = {
-  default: engilsh,
-  german,
-  itali,
+  english,
+  italy,
   french,
   poland
 }
 
-module.exports  = {
-    title: 'Musical.ly - English',
+function getLanguageCode(countryCode){
+  return config.countryList[countryCode] || 'default'
+}
+
+const callback = (req, res)=>{
+  const { lang } = req.query
+  const ip = req.host
+  const countryIp = geoip.lookup(ip)
+  const country = getLanguageCode(countryIp)
+  const currentKey = (lang || country || 'english').toLocaleLowerCase()
+  const data = dataList[currentKey]
+  const renderData = {
     path: '1m',
-    isOnline: false,
-    data: lang => dataList[lang || 'default'],
+    data,
     cssSrc: '../europe/england/css',
     containerSrc: '../../europe/england/index',
-    jsSrc: '../../europe/js',
-    authority: _ => true
+    jsSrc: '../../europe/england/js',
+    title: `Musical.ly - ${currentKey}`,
+  }
+  res.render(config.layoutDir, renderData);
+}
+
+module.exports  = {
+  path: '1m',
+  isOnline: true,
+  callback
 };

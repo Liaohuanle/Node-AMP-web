@@ -1,5 +1,22 @@
 <section class='banner-container' id='home'>
   <img src='/act/assets/mobile-logo.png' class='mobile-logo'/>
+  <%if(!!showLanguageBtn){%>
+    <div class='langBtnDrop banner-lang'>
+      <button>
+        <%= langList.curr %>
+        <img src="/act/assets/drop-down.svg" alt="musical.ly one million"/>
+      </button>
+      <ul class="dropdown-container">
+        <%for(var item in langList.list){%>
+          <li>
+            <a href="?lang=<%=langList.list[item].link%>">
+              <%= langList.list[item].title %>
+            </a>
+          </li>
+        <%}%>
+      </ul>
+    </div>
+  <% }%>
   <div class='banner-content'>
     <img src='<%= bannerImgPC %>' class='banner-image banner-image-pc'/>
     <img src='<%= bannerImgMobile %>' class='banner-image banner-image-mobile'/>

@@ -1,6 +1,4 @@
 const util = require('../../../util/util');
-const usBannerImgMobile = '/act/assets/banner-title-mobile-us.png';
-const usBannerImgPC = '/act/assets/banner-title-pc-us.png';
 const navList = {
     home: 'Homepage',
     about: 'About',
@@ -37,9 +35,9 @@ const bannerVideoUrl = '/act/assets/europe-banner-video-pc.mp4'
 
 const bannerVideoMobile = `/act/assets/europe-banner-video-mobile.mp4`
 
-const bannerImgPC = '/act/assets/spain-pc-banner-text.png'
+const bannerImgPC = '/act/assets/europe/default_banner_text.svg'
 
-const bannerImgMobile = '/act/assets/spain-mobile-banner-text.png'
+const bannerImgMobile = '/act/assets/europe/default_banner_text_mobile.svg'
 
 const aboutObject = [
   {
@@ -61,15 +59,24 @@ const aboutObject = [
 ]
 
 const aboutContainerFile = {
+  title: 'About',
+  subDesc: '1 Million Audition',
   phone: '/act/assets/europe/default_about_phone.png',
-  description: '/act/assets/europe/default_about_desc.png'
+  description: '/act/assets/europe/default_about_desc.png',
+  shareRuleClick: {
+    content: '',
+    clickHere: ''
+  },
+  prizeRuleClick: {
+    content: 'Rules Winner selection is based on creator score.',
+    clickHere: 'Check out the rules here.'
+  }
 }
 
 const prizeList = {
   one: {
     title: 'Round 1 - Country level',
     subtitle: '11th May - 20th May ',
-    src: '/act/assets/europe-prize-amazoncard.png',
     desc: [
       '300 winners from Europe in total'
     ]
@@ -77,7 +84,6 @@ const prizeList = {
   two: {
     title: 'Round 2 - EU Level',
     subtitle: '22nd May - 27th May',
-    src: '/act/assets/europe-prize-canna.png',
     desc: [
       'Top100 from Top 300 Round 1 winners:',
       'Top 20,  €700 worth prize',
@@ -88,7 +94,6 @@ const prizeList = {
   three: {
     title: "musical.ly's Choice",
     subtitle: 'Campeones por categoría (Top 1 Por Categoria)',
-    src: '/act/assets/europe-prize-england.png',
     desc: [
       `We will select Top 1 from each category as 1M Comedian, 1M SportsGuru, 1M Foodie, 1M Talent, 1M StyleGuru.`,
       `Prize: Become the next musical.ly Ambassador (including hashtag official video, crown, opening page, official account shout-out, in-app banner for one month), 
@@ -99,17 +104,18 @@ const prizeList = {
 }
 
 const winnerObj = {
-  hasWinnerList: true,
+  hasWinnerList: false,
   title: 'Winners',
   desc: '',
   content: 'will be coming soon'
 }
 
-
+const country = 'english'
 
 const bannerMobileVideoGif = '/act/assets/banner-mobile-europe.gif'
 module.exports = {
   showLanguageBtn: true,
+  country,
   langList: {
     curr: util.europeLanglist['en'].title,
     list: util.europeLanglist

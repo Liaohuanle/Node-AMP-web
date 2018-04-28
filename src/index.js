@@ -1,7 +1,7 @@
 "use strict";
 
 var express = require("express");
-var router_1 = require("./router");
+var router_1 = require("./routers/router");
 var requestIp = require('request-ip');
 
 const logger = require('./util/logger')

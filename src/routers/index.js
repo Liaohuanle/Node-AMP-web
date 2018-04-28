@@ -7,15 +7,13 @@ const mkPathList = mk.getFilePathList()
 
 module.exports = {
   isOnline: true,
-  isRest: true,
-  authority: _ => true,
   path: 'mk/file',
-  callback: (req) => new Promise((resolve, reject) => {
+  callback: (req, res) => {
     const { path } = req.query
     if(!path){
-      return resolve(null)
+      return res.send(null)
     }
     const text = mk.getOneFile(path)
-    return resolve(markdown.toHTML(text))
-  })
+    res.send(markdown.toHTML(text))
+  }
 }

@@ -1,13 +1,10 @@
 const util = require('../../../util/util');
-const usBannerImgMobile = '/act/assets/banner-title-mobile-us.png';
-const usBannerImgPC = '/act/assets/banner-title-pc-us.png';
-const aboutUsTagList = ['#ShareAndWin', 'Category', 'Prize', 'Rules'];
 const navList = {
-    home: 'Inicio',
-    about: ' Acerca de',
-    winners: 'Ganadores',
-    media: 'Media',
-    officalRules: 'Reglas Oficiales'
+    home: 'Accueil',
+    about: 'À propos',
+    winners: 'Vainqueurs',
+    media: 'Média',
+    officalRules: 'Règles Officielles'
 };
 const rule = {
     titleText: 'Winner selection is based on creator score which will be announced after the end of each round.',
@@ -28,6 +25,7 @@ const aboutSubList = {
     abouttab1Image: '/act/assets/about_tab_1.png',
     abouttab1Phone: '/act/assets/phone.png'
 };
+
 const setIntervalTimeNode = util.countDown('spainish', '2018.5.03 23:59:59');
 
 const bannerMobileVideoPoster = '/act/assets/banner-mobile-poster-europe.png'
@@ -38,75 +36,87 @@ const bannerVideoUrl = '/act/assets/europe-banner-video-pc.mp4'
 
 const bannerVideoMobile = `/act/assets/europe-banner-video-mobile.mp4`
 
-const bannerImgPC = '/act/assets/spain-pc-banner-text.png'
+const bannerImgPC = '/act/assets/europe/french_banner_text.svg'
 
-const bannerImgMobile = '/act/assets/spain-mobile-banner-text.png'
+const bannerImgMobile = '/act/assets/europe/french_banner_text_mobile.svg'
 
 const aboutObject = [
   {
     src: '/act/assets/europe_about_comedy.svg',
-    title: 'Comedia'
+    title: 'Comédie'
   },{
     src: '/act/assets/europe_about_fitness.svg',
-    title: 'Deporte'
+    title: 'Sport'
   },{
     src: '/act/assets/europe_about_cooking.svg',
-    title: 'Cocina'
+    title: 'Cuisine'
   },{
     src: '/act/assets/europe_about_mascota.svg',
-    title: 'Mascotas'
+    title: 'Talent'
   },{
     src: '/act/assets/europe_about_style.svg',
-    title: 'Maquillaje'
+    title: 'Fashion'
   }
 ]
 
 const aboutContainerFile = {
-  phone: '/act/assets/phone.png',
-  description: '/act/assets/spain_about_sharewith.png'
+  title: 'À propos',
+  subDesc: '1 Million Audition',
+  phone: '/act/assets/europe/default_about_phone.png',
+  description: '/act/assets/europe/default_about_desc.png',
+  shareRuleClick: {
+    content: '',
+    clickHere: ''
+  },
+  prizeRuleClick: {
+    content: 'Règles Les vainqueurs sont sélectionnés en fonction du score de création. ',
+    clickHere: "Merci de cliquer ici pour plus d'informations."
+  }
 }
 
 const prizeList = {
   one: {
-    title: 'Round 1',
-    subtitle: 'Del 20 al 27 de abril',
-    src: '/act/assets/europe-prize-amazoncard.png',
+    title: 'Étape 1 - Niveau national',
+    subtitle: '11 - 20 mai',
     desc: [
-      '400 Creadores pasarán a la segunda ronda. (México, Argentina, Colombia y España) '
+      '300 vainqueurs au total en Europe'
     ]
   },
   two: {
-    title: 'Round 2',
-    subtitle: 'Del 29 de abril al 3 de mayo',
-    src: '/act/assets/europe-prize-canna.png',
+    title: 'Étape 2 - Niveau européen',
+    subtitle: '22 - 27 mai',
     desc: [
-      'Los top 100 de los 400 ganadores de la primera ronda ganarán $200 USD'
+      "Top 100 du Top 300 des vainqueurs de l'étape 1",
+      "Top 20, prix d'une valeur de 700€",
+      "Top 21-50, prix d'une valeur de 400€",
+      "Top 51-100, prix d'une valeur de 200€"
     ]
   },
   three: {
-    title: 'Favoritos de musical.ly',
+    title: "Choix musical.ly",
     subtitle: 'Campeones por categoría (Top 1 Por Categoria)',
-    src: '/act/assets/europe-prize-england.png',
     desc: [
-      'Premio: Un iPhone X'
+      `Nous sélectionnerons le Top1 de chaque catégorie en tant que 1M Comédien, 1M Guru du Sport, 1M Cuisinier, 1M Talent, 1M Guru du Style`,
+      `Prix : Deviens le futur Ambassadeur musical.ly (incluant une vidéo officielle de hashtag, la couronne, un page d'ouverture, une mise en avant sur le compte officiel, une bannière pendant 1 mois), et gagne un package gagnant d'une valeur de 2000€, incluant un shooting vidéo dans un studio professionnel de Londres (avec un pack voyage) qui servira de futur publicité pour la 1 Million Audition, une fête privée avec la crème des influenceurs, etc. .`
     ]
   }
 }
 
 const winnerObj = {
   hasWinnerList: false,
-  title: 'Ganadores',
-  desc: 'How do we determine the winners of the audition?',
-  content: 'Creator Score. It is from an algorithm score combining video quality, engagement, creativity, originality and which more fits the proposed themes. The score is calculated by musical.ly data team. We will announce the winners list with score to everyone here.'
+  title: 'Vainqueurs',
+  desc: '',
+  content: 'will be coming soon'
 }
 
-
+const country = 'french'
 
 const bannerMobileVideoGif = '/act/assets/banner-mobile-europe.gif'
 module.exports = {
-  showLanguageBtn: false,
+  showLanguageBtn: true,
+  country,
   langList: {
-    curr: util.europeLanglist['french'].title,
+    curr: util.europeLanglist[country].title,
     list: util.europeLanglist
   },
   prizeList,
