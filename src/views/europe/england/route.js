@@ -26,7 +26,7 @@ const callback = (req, res)=>{
   const currentKey = (lang || country || 'english').toLocaleLowerCase()
   const data = dataList[currentKey]
   const renderData = {
-    path: '1m',
+    path: 'eu',
     data,
     cssSrc: '../europe/england/css',
     containerSrc: '../../europe/england/index',
@@ -37,7 +37,7 @@ const callback = (req, res)=>{
 }
 
 module.exports  = {
-  path: '1m',
+  path: 'eu',
   isOnline: true,
   callback
 };

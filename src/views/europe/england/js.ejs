@@ -30,6 +30,13 @@
     })
 
 
+    $('#ShareRule').on('click', function(){
+      $('#section-container').removeClass('text-center')
+      $.ajax({
+        url: '/act/mk/file?path=eu/'+currentPath+'/shareRules'
+      }).done(appendTerm)
+    })
+  
     $('#section-container').click(function(){
       $('#section-container.section-container-show').animate({
           top: '100vh'

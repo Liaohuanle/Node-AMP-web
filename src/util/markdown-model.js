@@ -29,7 +29,7 @@ class operationMarkdown{
       return
     }
     this.getAllFile()
-    return this.allFile[path].content
+    return this.allFile[path] ? this.allFile[path].content : '# wiating for you!'
   }
 
   getFilePathList(){

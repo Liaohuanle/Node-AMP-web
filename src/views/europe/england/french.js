@@ -65,8 +65,8 @@ const aboutContainerFile = {
   phone: '/act/assets/europe/default_about_phone.png',
   description: '/act/assets/europe/default_about_desc.png',
   shareRuleClick: {
-    content: '',
-    clickHere: ''
+    content: 'Règles Les vainqueurs sont sélectionnés en fonction du score de création. ',
+    clickHere: "Merci de cliquer ici pour plus d'informations."
   },
   prizeRuleClick: {
     content: 'Règles Les vainqueurs sont sélectionnés en fonction du score de création. ',
@@ -135,7 +135,7 @@ module.exports = {
   winnerObj,
   noBannerVideo: false,
   YTvideoinfo: {
-    videoUrl: 'https://www.youtube.com/embed/wQDTAQXsJEY?rel=0&amp;showinfo=0',
+    videoUrl: 'https://www.youtube.com/embed/e0eKhLAtwzU?rel=0&amp;controls=0&amp;showinfo=0',
     proportion: 315 / 560
   }
 }

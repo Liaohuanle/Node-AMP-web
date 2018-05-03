@@ -64,8 +64,8 @@ const aboutContainerFile = {
   phone: '/act/assets/europe/default_about_phone.png',
   description: '/act/assets/europe/default_about_desc.png',
   shareRuleClick: {
-    content: '',
-    clickHere: ''
+    content: 'Rules Winner selection is based on creator score.',
+    clickHere: 'Check out the rules here.'
   },
   prizeRuleClick: {
     content: 'Rules Winner selection is based on creator score.',
@@ -113,6 +113,7 @@ const winnerObj = {
 const country = 'english'
 
 const bannerMobileVideoGif = '/act/assets/banner-mobile-europe.gif'
+
 module.exports = {
   showLanguageBtn: true,
   country,
@@ -136,7 +137,7 @@ module.exports = {
   winnerObj,
   noBannerVideo: false,
   YTvideoinfo: {
-    videoUrl: 'https://www.youtube.com/embed/wQDTAQXsJEY?rel=0&amp;showinfo=0',
+    videoUrl: 'https://www.youtube.com/embed/e0eKhLAtwzU?rel=0&amp;controls=0&amp;showinfo=0',
     proportion: 315 / 560
   }
 }
