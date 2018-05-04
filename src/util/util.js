@@ -32,6 +32,24 @@ var countDown = function(lang, finnalTime){
       hour: 'Horas',
       minute: 'Minutos',
       second: 'Segundos'
+    },
+    french: {
+      day: 'jours',
+      hour: 'heures',
+      minute: 'minutes',
+      second: 'secondes'
+    },
+    italy: {
+      day: 'Giorni',
+      hour: 'Ore',
+      minute: 'Minuti',
+      second: 'Secondi'
+    },
+    poland: {
+      day: 'dn',
+      hour: 'godz',
+      minute: 'min',
+      second: 'sek'
     }
   }
   var result = {

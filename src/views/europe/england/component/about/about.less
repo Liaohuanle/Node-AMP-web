@@ -116,7 +116,6 @@
       flex-wrap: wrap;
       justify-content: center;
       .description{
-        max-height: 190px;
         margin-left: 17%;
         margin-top: 17%;
         img{
@@ -134,6 +133,11 @@
       }
       .phone{
         max-height: 500px;
+      }
+      @media (min-width: 769px) and ( max-width: 1110px) {
+        .description{
+          margin-left: 4%;
+        }
       }
     }
     .prize-layout{

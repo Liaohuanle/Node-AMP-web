@@ -26,7 +26,7 @@ const aboutSubList = {
     abouttab1Phone: '/act/assets/phone.png'
 };
 
-const setIntervalTimeNode = util.countDown('spainish', '2018.5.03 23:59:59');
+const setIntervalTimeNode = util.countDown('french', '2018.5.11 12:00:00');
 
 const bannerMobileVideoPoster = '/act/assets/banner-mobile-poster-europe.png'
 
@@ -36,9 +36,9 @@ const bannerVideoUrl = '/act/assets/europe-banner-video-pc.mp4'
 
 const bannerVideoMobile = `/act/assets/europe-banner-video-mobile.mp4`
 
-const bannerImgPC = '/act/assets/europe/french_banner_text.svg'
+const bannerImgPC = '/act/assets/europe/french_banner_text.png'
 
-const bannerImgMobile = '/act/assets/europe/french_banner_text_mobile.svg'
+const bannerImgMobile = '/act/assets/europe/french_banner_text_mobile.png'
 
 const aboutObject = [
   {
