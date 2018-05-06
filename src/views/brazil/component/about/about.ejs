@@ -1,0 +1,136 @@
+<section id='about' class='about-section'>
+  <div class="about-container">
+    <div class='title-container'>
+      <h1> Acerca de </h1>
+      <p>1 Million Audition Español</p>
+    </div>
+    <section class="badge-container">
+      <ul>
+        <% for(var i =0; i < aboutObject.length; i++) { %>
+          <li>
+            <figure>
+              <img src="<%=aboutObject[i].src%>"/>
+            </figure>
+            <p><%=aboutObject[i].title%></p>
+          </li>
+        <%
+          }
+        %>
+      </ul>
+    </section>
+    <section class="tab-container">
+      <ul>
+        <li class="subItem tab-item-text active">Reglas y Premio</li>
+        <li class="subItem tab-item-text">Prêmios</li>
+        <li class="subItem tab-item-text">Como e Quem pode participar?</li>
+      </ul>
+      <div class="slider">
+        <div class='tab-item prize-layout'>
+        <% for(var i in prizeList) { %>
+          <div class="prize-item">
+            <div class="title-area">
+              <h2>
+                <%=prizeList[i].title%>
+              </h2>
+              <span>
+                <%=prizeList[i].subtitle%>
+              </span>
+            </div>
+            <div class="desc-area">
+              <% for(var j =0; j < prizeList[i].desc.length; j++) { %>
+                <span> <%=prizeList[i].desc[j]%> </span>
+              <%}%>
+            </div>
+          </div>
+        <%
+          }
+        %>
+        <p>
+          A escolha do selecionados será baseada na pontuação dos criadores, que será calculada com base na qualidade do vídeo, criatividade, originalidade e que melhor abordou o tema proposto! 
+          <a id="rule" href="javascript:void(0)"> Clique aqui para confira as regras</a>
+        </p>
+      </div>
+      <div class='tab-item prize-layout'>
+        <div class='round-container'>
+          <div class='round-card'>
+            <h2>
+              O grupo ganhador
+              <small>(3 pessoas)</small>
+            </h2>
+            <p>
+              ganhará uma viagem para NY Comic Con. 
+            </p>
+          </div>
+          <div class='round-card'>
+            <h2>egundo, terceiro e quarto lugares <small>(9 pessoas)</small></h2>
+            <p>
+               ganharão o Creators Boost, o programa de aceleramento de Creators da YOUPIX.
+            </p>
+          </div>
+          <div class='round-card'>
+            <h2>Top 13-150</h2>
+            <p>
+               TBD
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class='tab-item prize-layout'>
+        <div class="desc-area">
+          <h2>1. Quem pode participar? </h2>
+
+          <p>A 1M Audition é aberta para usuários que tenham 16 anos ou mais. Cada participante poderá escolher mais de uma categoria para concorrer na primeira fase. Na segunda fase deve escolher apenas uma. 
+
+          O concurso é aberto a participantes da ultima edição, no entanto novos candidatos terão vantagem quando selecionados à final.</p>
+
+          <h2>2. Como participar? </h2>
+
+         <p> Para se inscrever na 1M Audition, você deverá postar vídeos no formato vertical, de autoria própria, relacionados a um dos temas propostos usando a hashtag da categoria escolhida e a hashtag geral da campanha. A campanha será dividida em 3 fases. 
+
+          A primeira fase será do dia 18/05 a 23/05. Todos os participantes deverão postar seus vídeos usando a hashtag da categoria escolhida e a hashtag geral durante esse intervalo. 150 criadores serão escolhidos pelo Creator Comscore baseados em suas performances na primeira fase para seguir para a próxima etapa. 
+
+          A segunda fase será do dia 24/05 a 28/05. Os 150 vencedores da primeira fase terão 5 dias para postar pelo menos um vídeo usando a hashtag #1MABrasilFase2 em uma das 4 categorias propostas. Os 150 participantes receberão um score automático baseado nos vídeos postados durante a fase 2. Os 12 participantes que tiverem o maior score serão selecionados para a final 
+
+          A final será nos dia 02 e 03 de junho, na cidade do Rio de Janeiro. Os 12 vencedores da segunda fase serão divididos em 4 equipes, que serão convidadas para um bootcamp no Rio de Janeiro para criar, organizar, gravar e entregar para a equipe do musical.ly Brasil um vídeo em colaboração. Os usuários da plataforma terão 3 dias para votar nos 4 vídeos. O vídeo com mais curtidas no final do período será o vencedor. 
+
+          A competição irá durar, no total, 3 semanas. </p>
+          <div id="hide-toggle" class="hide">
+            <h2>3. Como serão selecionados os vencedores? </h2>
+
+            <p>Score : o musical.ly usará um algoritmo para calcular sua performance durante a campanha baseado na qualidade do conteúdo, criatividade, adequação ao tema proposto e outros dados interativos dos vídeos propriamente inseridos (hahstags) na 1M Audition.</p>
+
+            <h2>4. Regras Gerais</h2>
+            <p>Para participar da audição, as regras abaixo devem ser seguidas: </p>
+
+            <span>•        O participante deve ter uma conta no musical.ly;</span>
+            <span>•        O participante deve enviar seus vídeos pelo aplicativo musical.ly com a hashtag da categoria escolhida e a hashtag geral da campanha;</span>
+            <span>•        O vídeo deve ser produzido no formato vertical. Videos na Horizontal ou subidos no formato “quadrado” não serão considerados</span>
+            <span>•        Além da música autorizada acompanhando o vídeo, todo o restante do material deve ser original e de autoria do participante. </span>
+            <span>•        Apenas conteúdos inéditos serão considerados (conteúdos repostados serão desqualificados</span>
+
+            <h2>5. Critérios de Eliminação</h2>
+            <p>Um candidato será desclassificado se: </p>
+
+            <span>•        Violar uma ou mais regras gerais; </span>
+            <span>•        Não tiver 16 anos ou mais; </span>
+            <span>•        Providenciar informações durante a inscrição incompletas ou que não possam ser verificadas; </span>
+            <span>•        Submeter um vídeo que não seja de autoria própria ou cujo conteúdo, ou parte dele, não tenha autorização de terceiros quando cabível;</span>
+            <span>•        Submeter um conteúdo que viole as leis brasileiras ou não estejam de acordo com o regulamento da One Million Audition;</span>
+            <span>•        Não responder às tentativas de contato por parte do musical.ly;</span>
+            <span>•        Tentar alterar ou manipular o processo de inscrição ou a operação da Audição, do aplicativo ou do site; </span>
+            <span>•        Agir de maneira não desportiva, perturbadora ou com intenção de irritar, abusar, ameaçar ou assediar qualquer funcionário do musical.ly ou usuário do aplicativo, não se limitando exclusivamente a estes. </span>
+
+
+            <h2>6. Avisos</h2>
+
+            <span>•        Evite fazer spam nas hashtags e poste apenas conteúdo relevante dentro da categoria escolhida.</span>  
+            <span>•        Qualquer tipo de curtida gerada por um sistema não será tolerada. Se você desconfia que algum participante está usando curtidas falsas para aumentar seu score, por favor reporte à equipe do musical.ly Brasil. Após verificado, o participante será desclassificado. </span>
+          </div>
+
+          <button class="toggle-btn">read more</button>
+        </div>
+      </div>
+      </div>
+    </section>
+  </div>
+</section>

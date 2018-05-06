@@ -4,10 +4,12 @@ const europeRouter = require('../views/europe/router');
 const usRouter = require('../views/us/route');
 const api = require('./rule-api');
 const markdown = require('../views/markdown/route')
+const brazil = require('../views/brazil/route');
 const markDownAPI = require('./index')
 const config = require("../_config");
 const geoip = require('geoip-lite');
-const routerList =[ usRouter, ...europeRouter, ...api, markDownAPI, markdown ]
+
+const routerList =[ usRouter, ...europeRouter, ...api, markDownAPI, markdown, brazil ]
 
 const distuributePath = item => item.callback
 
