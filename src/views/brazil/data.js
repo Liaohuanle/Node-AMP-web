@@ -124,7 +124,7 @@ module.exports = {
   winnerObj,
   noBannerVideo: false,
   YTvideoinfo: {
-    videoUrl: 'https://www.youtube.com/embed/e0eKhLAtwzU?rel=0&amp;controls=0&amp;showinfo=0',
+    videoUrl: 'https://www.youtube.com/embed/pY-TVEowkT0?rel=0&amp;controls=0&amp;showinfo=0',
     proportion: 315 / 560
   }
 }
