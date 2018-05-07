@@ -80,7 +80,7 @@ const prizeList = {
   },
   three: {
     title: 'Bootcamp',
-    subtitle: '',
+    subtitle: '2 e 3 de Junho:',
     src: '',
     desc: [
       '2 e 3 de Junho:',
@@ -90,7 +90,7 @@ const prizeList = {
   },
   four: {
     title: 'Votação e Ganhadores',
-    subtitle: '',
+    subtitle: '5 a 7 de Junho',
     src: '',
     desc: [
       '4 vídeos finais serão postados em contas distintas no aplicativo, e todos os usuários vão poder votar por curtidas. O grupo (3 pessoas) que o vídeo tiver o maior número de curtidas ganhará o 1 Million Audition Brasil. ' 
@@ -100,7 +100,7 @@ const prizeList = {
 
 const winnerObj = {
   hasWinnerList: false,
-  title: 'Ganadores',
+  title: 'Ganhadores',
   desc: 'How do we determine the winners of the audition?',
   content: 'Creator Score. It is from an algorithm score combining video quality, engagement, creativity, originality and which more fits the proposed themes. The score is calculated by musical.ly data team. We will announce the winners list with score to everyone here.'
 }
