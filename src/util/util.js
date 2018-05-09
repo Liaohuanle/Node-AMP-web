@@ -28,7 +28,7 @@ var countDown = function(lang, finnalTime){
       second: 'सेकंड'
     },
     spainish: {
-      day: 'Días',
+      day: 'DIAS',
       hour: 'Horas',
       minute: 'Minutos',
       second: 'Segundos'

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="878px" height="538px" viewBox="0 0 878 538" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
-    <title>Group 8 Copy</title>
+    <title>Group 14</title>
     <desc>Created with Sketch.</desc>
     <defs>
         <text id="text-1" font-family="AvenirNext-DemiBoldItalic, Avenir Next" font-size="36" font-style="italic" font-weight="500" line-spacing="40" letter-spacing="0.200000018">
@@ -22,10 +22,10 @@
             <g id="font-page-font" transform="translate(31.000000, 39.000000)">
                 <g id="center" transform="translate(219.000000, 185.000000)">
                     <g id="Group-8-Copy">
-                        <text id="18-de-Maio-até-7-de" font-family="DINCondensed-Bold, DIN Condensed" font-size="60" font-style="condensed" font-weight="bold" letter-spacing="0.333333373" fill="#FFFFFF">
-                            <tspan x="214.133333" y="537">18 de Maio até 7 de Junho</tspan>
-                        </text>
-                        <g id="banner">
+                        <g id="Group-14">
+                            <text id="18-de-Maio-até-7-de" font-family="DINCondensed-Bold, DIN Condensed" font-size="60" font-style="condensed" font-weight="bold" letter-spacing="0.333333373" fill="#FFFFFF">
+                                <tspan x="214.133333" y="537">18 de Maio até 7 de Junho</tspan>
+                            </text>
                             <g id="Group-15" transform="translate(0.000000, 351.000000)" fill="#FFFFFF">
                                 <g id="A-busca-pelos-melhor">
                                     <use fill-opacity="1" filter="url(#filter-2)" xlink:href="#text-1"></use>
@@ -53,8 +53,8 @@
                                     <g id="Clip-2"></g>
                                     <path d="M44.592648,52.982084 L35.4477476,47.418206 L26.3031903,52.9828758 C25.7783993,53.3014904 25.1286231,53.2641752 24.6394162,52.8904786 C24.1496701,52.5146539 23.9143548,51.8618354 24.0401733,51.2372261 L26.2237389,40.3542956 L18.3882427,32.9032273 C17.9392761,32.4745972 17.6838651,31.8115343 17.8693824,31.2052857 C18.0579876,30.5986411 18.6507607,30.1663982 19.2526994,30.0987458 L29.7469993,28.924306 L34.0494814,18.7663499 C34.2959229,18.1839058 34.8433092,17.7328568 35.4481397,17.7328568 C36.052186,17.7328568 36.5997684,18.1839058 36.8469451,18.7663499 L41.1494272,28.924306 L51.643531,30.0987458 C52.2456658,30.1663982 52.64356,30.5986411 52.8309888,31.2052857 C53.0184176,31.8115343 52.9562191,32.4757849 52.5079877,32.9032273 L44.6715112,40.3542956 L46.8566453,51.2372261 C46.9812875,51.8618354 46.7463642,52.51406 46.2574024,52.8892908 C45.9902771,53.0940297 45.6739909,53.1984034 45.3561853,53.1984034 C45.0937163,53.1984034 44.830414,53.1264949 44.592648,52.982084 Z" id="Fill-1" fill="#FFFFFF" mask="url(#mask-6)"></path>
                                 </g>
-                                <text id="--Brazil--" font-family="AvenirNext-BoldItalic, Avenir Next" font-size="60" font-style="italic" font-weight="bold" fill="#FFFFFF">
-                                    <tspan x="268.3" y="321">- Brazil -</tspan>
+                                <text id="--Brasil--" font-family="AvenirNext-BoldItalic, Avenir Next" font-size="60" font-style="italic" font-weight="bold" fill="#FFFFFF">
+                                    <tspan x="269.65" y="321">- Brasil -</tspan>
                                 </text>
                             </g>
                         </g>

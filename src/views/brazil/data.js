@@ -83,7 +83,7 @@ const prizeList = {
     subtitle: '2 e 3 de Junho:',
     src: '',
     desc: [,
-      'Os 12 melhores serão destribuidos em 4 grupos.',
+      'Os 12 melhores serão distribuídos em 4 grupos.',
       '4 grupos irão participar do 1 Million Audition Brazil bootcamp, no Rio de Janeiro. Cada grupo produzirá um video em colab.' 
     ]
   },
