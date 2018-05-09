@@ -1,4 +1,7 @@
 const util = require('../../../util/util');
+const winnerTop5 = require('./component/winnerData/top5winner')
+const winnerTop100 = require('./component/winnerData/winner-second')
+
 const usBannerImgMobile = '/act/assets/banner-title-mobile-us.png';
 const usBannerImgPC = '/act/assets/banner-title-pc-us.png';
 const aboutUsTagList = ['#ShareAndWin', 'Category', 'Prize', 'Rules'];
@@ -96,8 +99,8 @@ const prizeList = {
 const winnerObj = {
   hasWinnerList: true,
   title: 'Ganadores',
-  desc: 'How do we determine the winners of the audition?',
-  content: 'Creator Score. It is from an algorithm score combining video quality, engagement, creativity, originality and which more fits the proposed themes. The score is calculated by musical.ly data team. We will announce the winners list with score to everyone here.'
+  top5: winnerTop5,
+  top100: winnerTop100
 }
 
 const bannerMobileVideoGif = '/act/assets/banner-mobile-europe.gif'

@@ -1,0 +1,27 @@
+<section id='winners'>
+  <div class='winner-container'>
+    <h1> <%=title%> </h1>
+    <div class="top5-container">
+      <%for(var i in top5){%>
+        <div class="top-item">
+          <img src="/act/assets/es-winner/<%=top5[i].name%>.jpg"/>
+          <p><%=top5[i].prize%></p>
+          <p><%=top5[i].name%></p>
+          <p><%=top5[i].country%></p>
+        </div>
+      <%}%>
+    </div>
+    <div class="top100-container">
+      <%for(var i in top100){%>
+        <div class="top-sub-item">
+          <h3><%=i%></h3>
+          <div>
+            <%for(var j in top100[i]){%>
+              <p class="name"><%=top100[i][j]%></p>
+            <%}%>
+          </div>
+        </div>
+      <%}%>
+    </div>
+  </div>
+</section>
