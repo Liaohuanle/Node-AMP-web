@@ -132,12 +132,6 @@ const mentorObject = _ => {
       sub: 'Food',
       youtube: 'https://www.youtube.com/embed/aHV9ZntjWB8?rel=0&amp;controls=0&amp;showinfo=0'
     },{
-      isShow: moment('2018.5.16').isSame(moment(), 'day'),
-      head: '/act/assets/india/user/user5.png',
-      name: 'Tiger Shroff',
-      sub: 'Fitness',
-      youtube: 'https://youtu.be/UjRDJuCrF-g'
-    },{
       isShow: moment('2018.5.14').isSame(moment(), 'day'),
       head: '/act/assets/india/user/user3.png',
       name: 'Shirley Setia',
@@ -145,13 +139,20 @@ const mentorObject = _ => {
       youtube: 'https://www.youtube.com/embed/cB3VDvn8s_Y?rel=0&amp;controls=0&amp;showinfo=0'
     },{
       isShow: moment('2018.5.15').isSame(moment(), 'day'),
+      head: '/act/assets/india/user/user5.png',
+      name: 'Tiger Shroff',
+      sub: 'Fitness',
+      youtube: 'https://youtu.be/UjRDJuCrF-g'
+    },{
+      isShow: moment('2018.5.16').isSame(moment(), 'day'),
       head: '/act/assets/india/user/user4.png',
       name: 'Lauren Gottlieb',
       sub: 'Special Skills',
       youtube: 'https://youtu.be/UjRDJuCrF-g'
     }
   ];
-  this.currentMentorVideo = this.mentorList[0].youtube
+  const canShowList = this.mentorList.filter(item => item.isShow)
+  this.currentMentorVideo = canShowList[canShowList.length-1].youtube
   return this
 }
 
