@@ -1,0 +1,22 @@
+<section class='about-section'>
+  <div class="about-container">
+    <div class='title-container'>
+      <h1><%=aboutContainerFile.title%></h1>
+      <p><%=aboutContainerFile.subDesc%></p>
+    </div>
+    <section class="badge-container">
+      <ul>
+        <% for(var i =0; i < aboutObject.length; i++) { %>
+          <li>
+            <figure>
+              <img src="<%=aboutObject[i].src%>"/>
+            </figure>
+            <p><%=aboutObject[i].title%></p>
+          </li>
+        <%
+          }
+        %>
+      </ul>
+    </section>
+  </div>
+</section>

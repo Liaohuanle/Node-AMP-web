@@ -1,0 +1,31 @@
+<section class='about-section mentor-section'>
+  <div class="about-container">
+    <div class='title-container'>
+      <h1><%=mentorObject.title%></h1>
+      <p><%=mentorObject.subtitle%></p>
+    </div>
+    <section class="badge-container">
+      <ul>
+        <% for(var i =0; i < mentorObject.mentorList.length; i++) { %>
+          <li>
+            <figure class="<%=mentorObject.mentorList[i].isShow?'' : 'hidden'%>">
+              <img src="<%=mentorObject.mentorList[i].head%>"/>
+            </figure>
+            <%if(mentorObject.mentorList[i].isShow){%>
+              <h3><%=mentorObject.mentorList[i].name%></h3>
+              <p><%=mentorObject.mentorList[i].sub%></p>
+            <%}else{%>
+              <h3>Mysterious</h3>
+                <p>surprise</p>
+            <%}%>
+          </li>
+        <%
+          }
+        %>
+      </ul>
+    </section>
+    <section id="metor-media">
+      <iframe src="<%= mentorObject.currentMentorVideo %>" frameborder="0" allow="encrypted-media"></iframe>
+    </section>
+  </div>
+</section>

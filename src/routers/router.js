@@ -8,8 +8,9 @@ const brazil = require('../views/brazil/route');
 const markDownAPI = require('./index')
 const config = require("../_config");
 const geoip = require('geoip-lite');
+const india = require('../views/india/route')
 
-const routerList =[ usRouter, ...europeRouter, ...api, markDownAPI, markdown, brazil ]
+const routerList =[ usRouter, ...europeRouter, india, ...api, markDownAPI, markdown, brazil ]
 
 const distuributePath = item => item.callback
 

@@ -79,6 +79,17 @@ var europeLanglist = {
   }
 }
 
+var indiaLanglist = {
+  en: {
+    title: 'English',
+    link: 'english'
+  },
+  india: {
+    title: 'India',
+    link: 'india'
+  },
+}
+
 var solveWinnerData = function(source, length){
   switch (source) {
     case 'us':
@@ -100,5 +111,6 @@ var solveWinnerData = function(source, length){
 module.exports = {
   countDown,
   europeLanglist,
-  solveWinnerData
+  solveWinnerData,
+  indiaLanglist
 }

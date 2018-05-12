@@ -1,0 +1,33 @@
+ <body>
+  <%- include('../components/nav/nav' , { navList, showLanguageBtn }) %>
+  <section class='main'>
+    <div class='main-container'>
+      <%- include('../components/banner/banner', {
+          bannerVideoPoster,
+          bannerMobileVideoPoster,
+          bannerVideoUrl,
+          spanText,
+          bannerImgPC,
+          bannerImgMobile,
+          showLanguageBtn
+        }) %>
+      <%- include('./component/about/about', {
+          aboutObject,
+          aboutContainerFile,
+          prizeList
+        }) %>
+      <%- include('./component/mentor/index', {
+        mentorObject
+      }) %>
+      <%- include('./component/about/about-share', {
+          aboutObject,
+          aboutContainerFile,
+          prizeList
+        }) %>
+
+      <%- include('../components/winners/winners', winnerObj) %>
+      <%- include('../components/video/video', YTvideoinfo) %>
+      <%- include('../components/termofuser/termofuse', navList) %>
+    </div>
+  </section>
+</body>
