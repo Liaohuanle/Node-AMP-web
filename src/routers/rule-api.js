@@ -33,7 +33,7 @@ module.exports = [{
       result = result.concat(params) 
     })
     .on('end', _ => {
-      const getFromBuffer = Buffer.from(result[0]).toString()
+      const getFromBuffer = Buffer.from(result[0], 'utf-8').toString()
       log.info(getFromBuffer)
       const parseVal = querystring.parse(getFromBuffer)
       const authority = parseVal.authority

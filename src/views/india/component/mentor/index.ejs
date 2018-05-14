@@ -6,7 +6,7 @@
     </div>
     <section class="badge-container">
       <ul>
-        <% for(var i =0; i < mentorObject.mentorList.length; i++) { %>
+        <% for(var i in mentorObject.mentorList) { %>
           <li>
             <figure class="<%=mentorObject.mentorList[i].isShow?'' : 'hidden'%>">
               <img src="<%=mentorObject.mentorList[i].head%>"/>

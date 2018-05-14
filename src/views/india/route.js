@@ -3,14 +3,14 @@ const data = require("./data");
 const hindia = require("./hindia");
 const config = require("../../_config");
 const currentKey = 'india'
+const moment = require('moment');
 
 
-
-const dataList = {
-  'india': hindia,
-  'english': data
-}
 const callback = (req, res)=>{
+  const dataList = {
+    'india': hindia(moment()),
+    'english': data(moment())
+  }
   const { lang } = req.query
   const la = (lang||currentKey).toLocaleLowerCase()
   const renderData = {

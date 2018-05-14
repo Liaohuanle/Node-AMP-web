@@ -14,6 +14,6 @@ module.exports = {
       return res.send(null)
     }
     const text = mk.getOneFile(path)
-    res.send(markdown.toHTML(text))
+    res.send(markdown.toHTML(decodeURI(text)))
   }
 }

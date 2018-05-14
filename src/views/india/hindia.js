@@ -116,54 +116,55 @@ const country = 'india'
 
 const bannerMobileVideoGif = '/act/assets/india/banner-mobile.png'
 
-const mentorObject = _ => {
+const mentorObject = date => {
   this.title = 'Mentor';
   this.subtitle = 'Jald aa raha hai!';
   this.mentorList = [
     {
-      isShow: moment('2018.5.12').isSame(moment(), 'day'),
+      isShow: moment("2018.5.12").isBefore(moment(moment(), 'day')),
       head: '/act/assets/india/user/useer2.png',
       name: 'Mallika Dua',
       sub: 'Comedy',
       youtube: 'https://www.youtube.com/embed/UjRDJuCrF-g?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media'
     },{
-      isShow: moment('2018.5.13').isSame(moment(), 'day'),
+      isShow: moment("2018.5.13").isBefore(moment(moment(), 'day')),
       head: '/act/assets/india/user/user1.png',
       name: 'Rakul Singh',
       sub: 'Food',
       youtube: 'https://www.youtube.com/embed/aHV9ZntjWB8?rel=0&amp;controls=0&amp;showinfo=0'
     },{
-      isShow: moment('2018.5.16').isSame(moment(), 'day'),
-      head: '/act/assets/india/user/user5.png',
-      name: 'Tiger Shroff',
-      sub: 'Fitness',
-      youtube: 'https://youtu.be/UjRDJuCrF-g'
-    },{
-      isShow: moment('2018.5.14').isSame(moment(), 'day'),
+      isShow: moment("2018.5.14").isBefore(moment(moment(), 'day')),
       head: '/act/assets/india/user/user3.png',
       name: 'Shirley Setia',
       sub: 'Sing',
       youtube: 'https://www.youtube.com/embed/cB3VDvn8s_Y?rel=0&amp;controls=0&amp;showinfo=0'
     },{
-      isShow: moment('2018.5.15').isSame(moment(), 'day'),
+      isShow: moment("2018.5.15").isBefore(moment(moment(), 'day')),
+      head: '/act/assets/india/user/user5.png',
+      name: 'Tiger Shroff',
+      sub: 'Fitness',
+      youtube: 'https://youtu.be/UjRDJuCrF-g'
+    },{
+      isShow: moment("2018.5.16").isBefore(moment(moment(), 'day')),
       head: '/act/assets/india/user/user4.png',
       name: 'Lauren Gottlieb',
       sub: 'Special Skills',
       youtube: 'https://youtu.be/UjRDJuCrF-g'
     }
   ];
-  this.currentMentorVideo = this.mentorList[0].youtube
+  const canShowList = this.mentorList.filter(item => item.isShow)
+  this.currentMentorVideo = canShowList[canShowList.length-1].youtube
   return this
 }
 
-module.exports = {
+module.exports = date => ({
   showLanguageBtn: true,
   country,
   langList: {
-    curr: util.indiaLanglist['en'].title,
+    curr: util.indiaLanglist['india'].title,
     list: util.indiaLanglist
   },
-  mentorObject: mentorObject(),
+  mentorObject: mentorObject(date),
   prizeList,
   bannerMobileVideoGif,
   bannerMobileVideoPoster,
@@ -183,4 +184,4 @@ module.exports = {
     videoUrl: 'https://www.youtube.com/embed/aHV9ZntjWB8?rel=0&amp;controls=0&amp;showinfo=0',
     proportion: 315 / 560
   }
-}
+})
