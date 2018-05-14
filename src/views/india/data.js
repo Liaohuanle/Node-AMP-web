@@ -143,13 +143,13 @@ const mentorObject = date => {
       head: '/act/assets/india/user/user5.png',
       name: 'Tiger Shroff',
       sub: 'Fitness',
-      youtube: 'https://youtu.be/UjRDJuCrF-g'
+      youtube: 'https://www.youtube.com/embed/68xc8JLU17w?rel=0&amp;controls=0&amp;showinfo=0'
     },{
       isShow: moment("2018.5.16").isBefore(moment(date, 'day')),
       head: '/act/assets/india/user/user4.png',
       name: 'Lauren Gottlieb',
       sub: 'Special Skills',
-      youtube: 'https://youtu.be/UjRDJuCrF-g'
+      youtube: 'https://www.youtube.com/embed/Opzd0Pzn8Sk?rel=0&amp;controls=0&amp;showinfo=0'
     }
   ];
   const canShowList = this.mentorList.filter(item => item.isShow)
@@ -181,7 +181,7 @@ module.exports = date => ({
   winnerObj,
   noBannerVideo: true,
   YTvideoinfo: {
-    videoUrl: 'https://www.youtube.com/embed/aHV9ZntjWB8?rel=0&amp;controls=0&amp;showinfo=0',
+    videoUrl: 'https://www.youtube.com/embed/Ccx2eqmQd6k?rel=0&amp;controls=0&amp;showinfo=0',
     proportion: 315 / 560
   }
 })
