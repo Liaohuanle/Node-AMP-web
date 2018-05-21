@@ -1,6 +1,6 @@
 const util = require('../../util/util');
 const moment = require('moment');
-const winnerTop100 = require('./component/winners/data')
+// const winnerTop100 = require('./component/winners/data')
 const navList = {
     home: 'Homepage',
     about: 'About',
@@ -107,12 +107,12 @@ const prizeList = {
 }
 
 const winnerObj = {
-  hasWinnerList: true,
+  hasWinnerList: false,
   title: 'Winners',
   desc: 'How do we determine the winners of the audition? Creator Score. It is from an algorithm score combining video quality, engagement, creativity, originality and which more fits the proposed themes. The score is calculated by musical.ly data team. We will announce the winners list with score to everyone here.',
   content: 'Jald aa raha hai!',
 
-  top100: winnerTop100
+  // top100: winnerTop100
 }
 
 const country = 'india'
