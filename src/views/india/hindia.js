@@ -1,5 +1,6 @@
 const util = require('../../util/util');
 const moment = require('moment');
+const winnerTop100 = require('./component/winners/data')
 const navList = {
     home: 'Homepage',
     about: 'About',
@@ -27,7 +28,7 @@ const aboutSubList = {
     abouttab1Phone: '/act/assets/india/phone.png'
 };
 
-const setIntervalTimeNode = util.countDown('en', '2018.5.17 0:00:00');
+const setIntervalTimeNode = util.countDown('en', '2018.5.17 23:59:59');
 
 const bannerMobileVideoPoster = '/act/assets/banner-mobile-poster-europe.png'
 
@@ -106,10 +107,12 @@ const prizeList = {
 }
 
 const winnerObj = {
-  hasWinnerList: false,
+  hasWinnerList: true,
   title: 'Winners',
   desc: 'How do we determine the winners of the audition? Creator Score. It is from an algorithm score combining video quality, engagement, creativity, originality and which more fits the proposed themes. The score is calculated by musical.ly data team. We will announce the winners list with score to everyone here.',
-  content: 'Jald aa raha hai!'
+  content: 'Jald aa raha hai!',
+
+  top100: winnerTop100
 }
 
 const country = 'india'
@@ -121,35 +124,35 @@ const mentorObject = date => {
   this.subtitle = 'Jald aa raha hai!';
   this.mentorList = [
     {
-      isShow: moment("2018.5.12").isBefore(moment(moment(), 'day')),
+      isShow: moment("2018.5.12").isBefore(moment(date, 'day')),
       head: '/act/assets/india/user/useer2.png',
       name: 'Mallika Dua',
       sub: 'Comedy',
       youtube: 'https://www.youtube.com/embed/UjRDJuCrF-g?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media'
     },{
-      isShow: moment("2018.5.13").isBefore(moment(moment(), 'day')),
+      isShow: moment("2018.5.13").isBefore(moment(date, 'day')),
       head: '/act/assets/india/user/user1.png',
       name: 'Rakul Singh',
       sub: 'Food',
       youtube: 'https://www.youtube.com/embed/aHV9ZntjWB8?rel=0&amp;controls=0&amp;showinfo=0'
     },{
-      isShow: moment("2018.5.14").isBefore(moment(moment(), 'day')),
+      isShow: moment("2018.5.14").isBefore(moment(date, 'day')),
       head: '/act/assets/india/user/user3.png',
       name: 'Shirley Setia',
       sub: 'Sing',
       youtube: 'https://www.youtube.com/embed/cB3VDvn8s_Y?rel=0&amp;controls=0&amp;showinfo=0'
     },{
-      isShow: moment("2018.5.15").isBefore(moment(moment(), 'day')),
-      head: '/act/assets/india/user/user5.png',
+      isShow: moment("2018.5.15").isBefore(moment(date, 'day')),
+      head: '/act/assets/india/user/user4.png',
       name: 'Tiger Shroff',
       sub: 'Fitness',
-      youtube: 'https://youtu.be/UjRDJuCrF-g'
+      youtube: 'https://www.youtube.com/embed/68xc8JLU17w?rel=0&amp;controls=0&amp;showinfo=0'
     },{
-      isShow: moment("2018.5.16").isBefore(moment(moment(), 'day')),
-      head: '/act/assets/india/user/user4.png',
+      isShow: moment("2018.5.16").isBefore(moment(date, 'day')),
+      head: '/act/assets/india/user/user5.png',
       name: 'Lauren Gottlieb',
       sub: 'Special Skills',
-      youtube: 'https://youtu.be/UjRDJuCrF-g'
+      youtube: 'https://www.youtube.com/embed/Opzd0Pzn8Sk?rel=0&amp;controls=0&amp;showinfo=0'
     }
   ];
   const canShowList = this.mentorList.filter(item => item.isShow)
@@ -181,7 +184,7 @@ module.exports = date => ({
   winnerObj,
   noBannerVideo: true,
   YTvideoinfo: {
-    videoUrl: 'https://www.youtube.com/embed/aHV9ZntjWB8?rel=0&amp;controls=0&amp;showinfo=0',
+    videoUrl: 'https://www.youtube.com/embed/Ccx2eqmQd6k?rel=0&amp;controls=0&amp;showinfo=0',
     proportion: 315 / 560
   }
 })

@@ -1,4 +1,5 @@
 const util = require('../../util/util');
+const winnerTop100 = require('./component/winners/data')
 const moment = require('moment');
 const navList = {
     home: 'Homepage',
@@ -27,7 +28,7 @@ const aboutSubList = {
     abouttab1Phone: '/act/assets/india/phone.png'
 };
 
-const setIntervalTimeNode = util.countDown('en', '2018.5.17 0:00:00');
+const setIntervalTimeNode = util.countDown('en', '2018.5.17 23:59:59');
 
 const bannerMobileVideoPoster = '/act/assets/banner-mobile-poster-europe.png'
 
@@ -105,10 +106,11 @@ const prizeList = {
 }
 
 const winnerObj = {
-  hasWinnerList: false,
+  hasWinnerList: true,
   title: 'Winners',
   desc: 'How do we determine the winners of the audition? Creator Score. It is from an algorithm score combining video quality, engagement, creativity, originality and which more fits the proposed themes. The score is calculated by musical.ly data team. We will announce the winners list with score to everyone here.',
-  content: 'will be coming soon'
+  content: 'will be coming soon',
+  top100: winnerTop100
 }
 
 const country = 'india'
@@ -140,13 +142,13 @@ const mentorObject = date => {
       youtube: 'https://www.youtube.com/embed/cB3VDvn8s_Y?rel=0&amp;controls=0&amp;showinfo=0'
     },{
       isShow: moment("2018.5.15").isBefore(moment(date, 'day')),
-      head: '/act/assets/india/user/user5.png',
+      head: '/act/assets/india/user/user4.png',
       name: 'Tiger Shroff',
       sub: 'Fitness',
       youtube: 'https://www.youtube.com/embed/68xc8JLU17w?rel=0&amp;controls=0&amp;showinfo=0'
     },{
       isShow: moment("2018.5.16").isBefore(moment(date, 'day')),
-      head: '/act/assets/india/user/user4.png',
+      head: '/act/assets/india/user/user5.png',
       name: 'Lauren Gottlieb',
       sub: 'Special Skills',
       youtube: 'https://www.youtube.com/embed/Opzd0Pzn8Sk?rel=0&amp;controls=0&amp;showinfo=0'
