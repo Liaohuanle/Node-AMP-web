@@ -1,4 +1,5 @@
 const util = require('../../util/util');
+const winnerTop100 = require('./component/winners/data')
 const usBannerImgMobile = '/act/assets/banner-title-mobile-us.png';
 const usBannerImgPC = '/act/assets/banner-title-pc-us.png';
 const aboutUsTagList = ['#ShareAndWin', 'Category', 'Prize', 'Rules'];
@@ -98,10 +99,11 @@ const prizeList = {
 }
 
 const winnerObj = {
-  hasWinnerList: false,
+  hasWinnerList: true,
   title: 'Ganhadores',
-  desc: 'How do we determine the winners of the audition?',
-  content: 'Creator Score. It is from an algorithm score combining video quality, engagement, creativity, originality and which more fits the proposed themes. The score is calculated by musical.ly data team. We will announce the winners list with score to everyone here.'
+  top100: winnerTop100,
+  content: 'How do we determine the winners of the audition?',
+  desc: 'Se você foi um dos selecionados para a segunda fase da #1MABrasil, você tem 48h horas para entrar em contato com a produção pelo email brasil@musica.ly para receber seu steadycam.'
 }
 
 const bannerMobileVideoGif = '/act/assets/banner-mobile-europe.gif'
