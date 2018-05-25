@@ -1,0 +1,12 @@
+<section id='winners'>
+  <div class='winner-container'>
+    <h1> <%=title%> </h1>
+    <div class="top100-container">
+      <%for(var i =0 ; i< top100.length; i++){%>
+        <div class="top-sub-item">
+        <p class="name"><%= i + 1 %>. <%=top100[i]%></p>
+        </div>
+      <%}%>
+    </div>
+  </div>
+</section>
