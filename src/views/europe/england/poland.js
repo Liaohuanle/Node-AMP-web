@@ -1,5 +1,7 @@
 const util = require('../../../util/util');
 const winnerTop100 = require('./component/winners/data')
+const winnerTop = require('./component/winners/data2')
+
 const usBannerImgMobile = '/act/assets/banner-title-mobile-us.png';
 const usBannerImgPC = '/act/assets/banner-title-pc-us.png';
 const navList = {
@@ -112,7 +114,7 @@ const winnerObj = {
   title: 'Laureaci',
   desc: '',
   content: 'will be coming soon',
-  top100: winnerTop100,
+  top100: winnerTop,
 }
 
 const country = 'poland'

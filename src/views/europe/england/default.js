@@ -1,5 +1,6 @@
 const util = require('../../../util/util');
-const winnerTop100 = require('./component/winners/data')
+// const winnerTop100 = require('./component/winners/data')
+const winnerTop = require('./component/winners/data2')
 const navList = {
     home: 'Homepage',
     about: 'About',
@@ -109,7 +110,7 @@ const winnerObj = {
   title: 'Winners',
   desc: '',
   content: 'will be coming soon',
-  top100: winnerTop100
+  top100: winnerTop
 }
 
 const country = 'english'
