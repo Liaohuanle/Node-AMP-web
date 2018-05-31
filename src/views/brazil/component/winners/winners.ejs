@@ -2,17 +2,16 @@
   <div class='winner-container'>
     <h1> <%=title%> </h1>
     <p class="desc">Se você foi um dos selecionados para a segunda fase da #1MABrasil, você tem 48h horas para entrar em contato com a produção pelo email brasil@musica.ly para receber seu steadycam.</p>
-    <div class="top100-container">
       <%for(var i in top100){%>
-        <div class="top-sub-item">
-          <h3><%=i%></h3>
-          <div>
-            <%for(var j in top100[i]){%>
-              <p class="name"><%=top100[i][j]%></p>
-            <%}%>
-          </div>
+        <div class="top5-container">
+          <h2><%= i %></h2>
+          <%for(var j in top100[i]){%>
+            <div class="top-item">
+              <img src="/act/assets/brazil/<%=top100[i][j]%>.jpg"/>
+              <p><%=top100[i][j]%></p>
+            </div>
+          <%}%>
         </div>
       <%}%>
-    </div>
   </div>
 </section>

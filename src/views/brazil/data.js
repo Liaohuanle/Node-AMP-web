@@ -1,5 +1,5 @@
 const util = require('../../util/util');
-const winnerTop100 = require('./component/winners/data')
+const winnerTop100 = require('./component/winners/data2')
 const usBannerImgMobile = '/act/assets/banner-title-mobile-us.png';
 const usBannerImgPC = '/act/assets/banner-title-pc-us.png';
 const aboutUsTagList = ['#ShareAndWin', 'Category', 'Prize', 'Rules'];

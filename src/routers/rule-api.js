@@ -34,10 +34,8 @@ module.exports = [{
     })
     .on('end', _ => {
       const getFromBuffer = Buffer.from(result[0], 'utf-8').toString()
-      log.info(getFromBuffer)
       const parseVal = querystring.parse(getFromBuffer)
       const authority = parseVal.authority
-      log.info('authority:',authority)
       const { path, file } = parseVal
       if(authority != config.authority){
         return res.send({
