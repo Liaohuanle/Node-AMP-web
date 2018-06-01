@@ -151,7 +151,7 @@ const mentorObject = date => {
       head: '/act/assets/india/user/user5.png',
       name: 'Lauren Gottlieb',
       sub: 'Special Skills',
-      youtube: 'https://www.youtube.com/embed/Opzd0Pzn8Sk?rel=0&amp;controls=0&amp;showinfo=0'
+      youtube: 'https://www.youtube.com/embed/CWW8QOil18U?rel=0&amp;controls=0&amp;showinfo=0'
     }
   ];
   const canShowList = this.mentorList.filter(item => item.isShow)
